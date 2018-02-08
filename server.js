@@ -1,5 +1,3 @@
-const chalkAnimation = require('chalk-animation');
-
 // Dependencies
 const express = require("express");
 const mongojs = require("mongojs");
@@ -9,6 +7,7 @@ const request = require("request");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const exphbs = require("express-handlebars");
+const chalkAnimation = require('chalk-animation');
 
 // Initialize Express
 const app = express();
