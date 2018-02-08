@@ -34,8 +34,11 @@ mongoose.Promise = Promise;
 mongoose.connect("mongodb://localhost/scraper");
 // Database configuration
 // Save the URL of our database as well as the name of our collection
-const databaseUrl = "scraper";
-const collections = ["scrapedData"];
+const databaseUrl = "family";
+const donorCollection = ["donorCollection"];
+const volCollection = ["volCollection"];
+const shelterCollection = ["shelterCollection"];
+
 
 // Use mongojs to hook the database to the db variable
 const db = mongoose.connection;
