@@ -1,0 +1,20 @@
+{
+  "name": "project-3",
+  "version": "1.0.0",
+  "description": "![alt text](http://unwrittenagency.com/wp-content/uploads/2018/01/project-3.png)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandofuentes/project-3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fernandofuentes/project-3/issues"
+  },
+  "homepage": "https://github.com/fernandofuentes/project-3#readme"
+}
