@@ -1,17 +1,17 @@
 const chalkAnimation = require('chalk-animation');
 
 // Dependencies
-var express = require("express");
-var mongojs = require("mongojs");
-var bodyParser = require("body-parser");
-var cheerio = require("cheerio");
-var request = require("request");
-var logger = require("morgan");
-var mongoose = require("mongoose");
+const express = require("express");
+const mongojs = require("mongojs");
+const bodyParser = require("body-parser");
+const cheerio = require("cheerio");
+const request = require("request");
+const logger = require("morgan");
+const mongoose = require("mongoose");
 const exphbs = require("express-handlebars");
 
 // Initialize Express
-var app = express();
+const app = express();
 
 // Set up a static folder (public) for our web app
 app.engine("handlebars", exphbs({
@@ -34,11 +34,11 @@ mongoose.Promise = Promise;
 mongoose.connect("mongodb://localhost/scraper");
 // Database configuration
 // Save the URL of our database as well as the name of our collection
-var databaseUrl = "scraper";
-var collections = ["scrapedData"];
+const databaseUrl = "scraper";
+const collections = ["scrapedData"];
 
 // Use mongojs to hook the database to the db variable
-var db = mongoose.connection;
+const db = mongoose.connection;
 
 // This makes sure that any errors are logged if mongodb runs into an issue
 db.on("error", function(error) {
