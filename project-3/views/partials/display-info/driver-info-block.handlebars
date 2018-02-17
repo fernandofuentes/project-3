@@ -1,0 +1,18 @@
+
+{{!-- need to be able to search by bus number or drive name --}}
+
+<div class="form-row">
+  <div class="form-group col-md-12">>
+    <input class="form-control" id="input-driverbus-number" type="search" placeholder="Enter your name or bus number" aria-label="Search">
+  </div>
+  <div class="form-group">>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </div>
+</div>
+
+
+{{> maps/map-block}}
+{{!-- google maps --}}
+<script src="../assets/js/maps.js"></script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEkI7qU2GiLBFGdTKSINkkZnHToR6DXxU&callback=initMap"></script>

@@ -23,3 +23,23 @@ Volunteers will pick a pin on the "pick up" board convenient to them, and the po
 The volunteer will deliver the food and the recipient will log in and check in the app that the food was delivered.
 
 The volunteer will receive points based on how much food was delivered and/or other things and donors will have their donations total displayed as well.
+
+Notes:
+db = we will use Sequelize
+db will be named family
+tables:
+  (1) donors
+  (2) volunteers
+  (3) shelters
+  (4) donations
+
+  (1) id (auto_incremented), (business name), (business type), (address), (phone number), (manager), (manager's cell #), (comments)
+
+
+  (2)id (auto_incremented), (last name), (first name), (address), (phone number), (comments)
+
+
+  (3) id (auto_incremented), (shelter name), (address), (phone number), (POC), (POC cell number) (comments)
+
+
+  (4) id (auto_incremented), (date/time posted), (date/time picked up), (date/time delivered), (donor), (volunteer), (recipient)
