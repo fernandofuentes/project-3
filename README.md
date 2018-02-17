@@ -3,7 +3,7 @@
 ## Team members
 - Brandon Gatlin : Project Manager
 - Fernando Fuentes : Git Master
-- Dan
+- Daniel Smith
 - Alex
 - Will
 
