@@ -30,7 +30,7 @@ app.use(express.static("public"));
 // By default mongoose uses callbacks for async queries, we're setting it to use promises (.then syntax) instead
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/scraper");
+mongoose.connect("mongodb://localhost/family");
 // Database configuration
 // Save the URL of our database as well as the name of our collection
 const databaseUrl = "family";
@@ -49,4 +49,8 @@ db.on("error", function(error) {
 
 app.listen(3000, function() {
   chalkAnimation.rainbow("App running on port 3000!");
+});
+
+app.get('/', function(req, res) {
+  res.render("index");
 });
