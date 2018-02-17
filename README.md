@@ -43,3 +43,11 @@ tables:
 
 
   (4) id (auto_incremented), (date/time posted), (date/time picked up), (date/time delivered), (donor), (volunteer), (recipient)
+
+  html pages:
+  (1) home page/about (all types of users can log in/sign up) -> goes to user profile
+  (2) volunteer (can see donation board, also see donations mapped using pins)
+  (3) donor (can create donation, can approve volunteers who have picked up THEIR donations)
+  (4) shelter (can see donation board, can request donation)
+
+  (5) donation board (table of available donations, map of their locations)
