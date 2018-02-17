@@ -3,7 +3,7 @@ const methodOverride = require("method-override");
 const bodyParser = require("body-parser");
 const app = express();
 const path = require("path");
-const db = require("./models");
+// const db = require("./models");
 const exphbs = require("express-handlebars");
 const sequelize = require("sequelize");
 
@@ -24,10 +24,10 @@ app.use(bodyParser.json({
 
 //testing
 // Set Handlebars as the default templating engine.
-app.engine("handlebars", exphbs({
-  defaultLayout: "main"
-}));
-app.set("view engine", "handlebars");
+// app.engine("handlebars", exphbs({
+//   defaultLayout: "main"
+// }));
+// app.set("view engine", "handlebars");
 // //tesing end
 
 // Static directory
@@ -36,17 +36,21 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 
-const routes = require("./controllers/busController.js")
-app.use("/", routes);
+// const routes = require("./controllers/busController.js")
+// app.use("/", routes);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({
-  //force: true,
-  logging: true
+// db.sequelize.sync({
+//   //force: true,
+//   logging: true
+//
+// }).then(function() {
+//   app.listen(PORT, function() {
+//     chalkAnimation.rainbow("App listening on PORT ", 2 + PORT);
+//   });
+// });
 
-}).then(function() {
-  app.listen(PORT, function() {
-    chalkAnimation.rainbow("App listening on PORT ", 2 + PORT);
-  });
-});
+app.listen(PORT, function() {
+  console.log("App listening on PORT ", + PORT);
+})
