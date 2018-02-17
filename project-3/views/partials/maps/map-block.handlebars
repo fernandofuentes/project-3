@@ -1,0 +1,59 @@
+<div class="container">
+
+  <!--HTML & Code for Map -->
+  <div class="row">
+    <h2>Map</h2>
+    <div id="map"></div>
+    <div id="right-panel">
+      <div>
+        <b>Start:</b>
+        <select id="start">
+          <option class="directions-text" value="3200 W Davis St, Conroe, TX 77304">CHS</option>
+        </select>
+        <br>
+        <b>Waypoints:</b> <br>
+        <i class="directions-text">(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
+        <select multiple id="waypoints">
+          {{#each addresses}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+    </form>
+
+  </select>
+        <br>
+        <b>End:</b>
+        <select id="end">
+          <option value="3200 W Davis St, Conroe, TX 77304">CHS</option>
+        </select>
+        <br>
+        <input type="submit" id="submit">
+      </div>
+      <!-- <div id="directions-panel"></div> -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div id="routing-div">
+      <h2 id="routing-header">Routing</h2>
+
+      <p class="directions-text" id="turn-by-turn">
+          <ul class="directions-text" id="steps-list">
+          </ul>
+      </p>
+    </div>
+  </div>
+
+  <div class="row"></div>
+  <div id="manifest-div">
+    <h2 id="manifest-header">Student Manifest</h2>
+
+    <ul id="manifest-list-students">
+      {{#each students}}
+        <li class="name-li">{{student_last_name}}, {{student_first_name}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+
+</div>
