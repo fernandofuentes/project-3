@@ -33,13 +33,13 @@ tables:
   (3) shelters
   (4) donations
 
-  (1) id (auto_incremented), (business name), (business type), (address), (phone number), (manager), (manager's cell #), (comments)
+  (1) id (auto_incremented), (business name), (business type), (email), (address), (phone number), (manager), (manager's cell #), (comments)
 
 
-  (2)id (auto_incremented), (last name), (first name), (address), (phone number), (comments)
+  (2)id (auto_incremented), (last name), (first name), (gender), (address), (phone number), (email), (comments)
 
 
-  (3) id (auto_incremented), (shelter name), (address), (phone number), (POC), (POC cell number) (comments)
+  (3) id (auto_incremented), (shelter name), (address), (phone number), (email), (point of contact), (POC cell number) (comments)
 
 
   (4) id (auto_incremented), (date/time posted), (date/time picked up), (date/time delivered), (donor), (volunteer), (recipient)
