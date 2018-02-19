@@ -2,8 +2,8 @@ var Sequelize = require("sequelize");
 
 module.exports = function (sequelize, DataTypes) {
 
-    var Volunteer = sequelize.define('Volunteer', {
-        volunteer_last_name: {
+    var Donation = sequelize.define('Dononation', {
+        food_item: {
             allowNull: false,
             type: DataTypes.STRING(50),
             validate: {
@@ -11,17 +11,19 @@ module.exports = function (sequelize, DataTypes) {
             }
 
         },
-        volunteer_first_name: {
+        date_time_posted: {
             allowNull: false,
             type: DataTypes.STRING(50),
+            timestamps: false,
             validate: {
                 len: [1, 50]
             }
 
         },
-        phone_number: {
+        date_time_dispatched: {
             allowNull: true,
-            type: DataTypes.STRING(11),
+            type: DataTypes.STRING(50),
+            timestamps: false
             validate: {
                 len: [1, 11]
             }
@@ -43,12 +45,23 @@ module.exports = function (sequelize, DataTypes) {
             }
 
         },
-        vehicle: {
+        manager_name: {
             allowNull: false,
             type: DataTypes.STRING(50),
             validate: {
                 len: [1, 50]
             }
+        },
+        manager_phone_number: {
+            allowNull: false,
+            type: Datatypes.STRING(11),
+            validate: {
+                len: [1, 50]
+            }
+        },
+        comments: {
+            allowNull: true,
+            type: DataTypes.STRING(50),
         }
     }, {
 
@@ -56,15 +69,15 @@ module.exports = function (sequelize, DataTypes) {
 
         });
 
-    Volunteer.associate = function (models) {
+    Donor.associate = function (models) {
 
-        Student.belongsTo(models.Bus, {
+        Donor.belongsTo(models.Bus, {
             foreignKey: {
                 allowNull: true
             },
         });
     };
 
-    return Volunteer;
+    return Donor;
 
 };
