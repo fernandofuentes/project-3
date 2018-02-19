@@ -22,7 +22,8 @@ module.exports = function (sequelize, DataTypes) {
         },
         date_time_dispatched: {
             allowNull: true,
-            type: DataTypes.STRING(11),
+            type: DataTypes.STRING(50),
+            timestamps: false
             validate: {
                 len: [1, 11]
             }
