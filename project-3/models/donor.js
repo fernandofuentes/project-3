@@ -63,18 +63,9 @@ module.exports = function (sequelize, DataTypes) {
         }
     }, {
 
-            timestamps: false
-
+        createdAt: Sequelize.DATE,
+        updatedAt: Sequelize.DATE,
         });
-
-    Donor.associate = function (models) {
-
-        Donor.belongsTo(models.Bus, {
-            foreignKey: {
-                allowNull: true
-            },
-        });
-    };
 
     return Donor;
 

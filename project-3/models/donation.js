@@ -2,7 +2,7 @@ var Sequelize = require("sequelize");
 
 module.exports = function (sequelize, DataTypes) {
 
-    var Donation = sequelize.define('Dononation', {
+    var Donation = sequelize.define('Donation', {
         food_item: {
             allowNull: false,
             type: DataTypes.STRING(50),
@@ -11,53 +11,21 @@ module.exports = function (sequelize, DataTypes) {
             }
 
         },
-        date_time_posted: {
+        quantity: {
             allowNull: false,
-            type: DataTypes.STRING(50),
-            timestamps: false,
+            type: DataTypes.INT(50),
             validate: {
                 len: [1, 50]
             }
 
         },
-        date_time_dispatched: {
-            allowNull: true,
-            type: DataTypes.STRING(50),
-            timestamps: false
-            validate: {
-                len: [1, 11]
-            }
-
-        },
-        email_address: {
+        donor_business_name: {
             allowNull: false,
             type: DataTypes.STRING(50),
             validate: {
                 len: [1, 50]
             }
 
-        },
-        physical_address: {
-            allowNull: false,
-            type: DataTypes.STRING(50),
-            validate: {
-                len: [1, 50]
-            }
-
-        },
-        manager_name: {
-            allowNull: false,
-            type: DataTypes.STRING(50),
-            validate: {
-                len: [1, 50]
-            }
-        },
-        manager_phone_number: {
-            allowNull: false,
-            type: Datatypes.STRING(11),
-            validate: {
-                len: [1, 50]
-            }
         },
         comments: {
             allowNull: true,
@@ -65,18 +33,18 @@ module.exports = function (sequelize, DataTypes) {
         }
     }, {
 
-            timestamps: false
-
+        createdAt: Sequelize.DATE,
+        updatedAt: Sequelize.DATE,
         });
 
-    Donor.associate = function (models) {
+        Donation.associate = function (models) {
 
-        Donor.belongsTo(models.Bus, {
-            foreignKey: {
-                allowNull: true
-            },
-        });
-    };
+            Donation.belongsTo(models.donor, {
+                foreignKey: {
+                    allowNull: true
+                },
+            });
+        };
 
     return Donor;
 

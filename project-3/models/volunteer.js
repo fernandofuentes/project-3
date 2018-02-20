@@ -51,19 +51,9 @@ module.exports = function (sequelize, DataTypes) {
             }
         }
     }, {
-
-            timestamps: false
-
+        createdAt: Sequelize.DATE,
+        updatedAt: Sequelize.DATE,
         });
-
-    Volunteer.associate = function (models) {
-
-        Student.belongsTo(models.Bus, {
-            foreignKey: {
-                allowNull: true
-            },
-        });
-    };
 
     return Volunteer;
 
