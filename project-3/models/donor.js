@@ -2,8 +2,8 @@ var Sequelize = require("sequelize");
 
 module.exports = function (sequelize, DataTypes) {
 
-    var Volunteer = sequelize.define('Volunteer', {
-        volunteer_last_name: {
+    var Donor = sequelize.define('Donor', {
+        business_name: {
             allowNull: false,
             type: DataTypes.STRING(50),
             validate: {
@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
             }
 
         },
-        volunteer_first_name: {
+        business_type: {
             allowNull: false,
             type: DataTypes.STRING(50),
             validate: {
@@ -43,18 +43,30 @@ module.exports = function (sequelize, DataTypes) {
             }
 
         },
-        vehicle: {
+        manager_name: {
             allowNull: false,
             type: DataTypes.STRING(50),
             validate: {
                 len: [1, 50]
             }
+        },
+        manager_phone_number: {
+            allowNull: false,
+            type: Datatypes.STRING(11),
+            validate: {
+                len: [1, 50]
+            }
+        },
+        comments: {
+            allowNull: true,
+            type: DataTypes.STRING(50),
         }
     }, {
+
         createdAt: Sequelize.DATE,
         updatedAt: Sequelize.DATE,
         });
 
-    return Volunteer;
+    return Donor;
 
 };
