@@ -48,7 +48,7 @@ INSERT INTO Donations (
 
 VALUES (
   "Donnie's Pizzeria",
-  "Peperoni Pizzas",
+  "Pepperoni Pizzas",
   10
 );
 
