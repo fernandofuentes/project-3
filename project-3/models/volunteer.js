@@ -21,9 +21,9 @@ module.exports = function (sequelize, DataTypes) {
         },
         phone_number: {
             allowNull: true,
-            type: DataTypes.STRING(11),
+            type: DataTypes.STRING(14),
             validate: {
-                len: [1, 11]
+                len: [1, 14]
             }
 
         },
