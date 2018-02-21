@@ -56,10 +56,6 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [1, 11]
             }
-        },
-        comments: {
-            allowNull: true,
-            type: DataTypes.STRING(50),
         }
     }, {
 

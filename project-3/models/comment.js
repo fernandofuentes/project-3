@@ -2,8 +2,9 @@ var Sequelize = require("sequelize");
 
 module.exports = function (sequelize, DataTypes) {
 
-    var Donation = sequelize.define('Donation', {
-        food_item: {
+    var Comment = sequelize.define('Comment', {
+        review_type: {
+          //user chooses if they're reviewing donors, vols or recipients
             allowNull: false,
             type: DataTypes.STRING(50),
             validate: {
@@ -11,7 +12,8 @@ module.exports = function (sequelize, DataTypes) {
             }
 
         },
-        quantity: {
+        reviewee: {
+          //name of person/place being reviewed
             allowNull: false,
             type: DataTypes.INT(50),
             validate: {
@@ -19,13 +21,9 @@ module.exports = function (sequelize, DataTypes) {
             }
 
         },
-        donor_business_name: {
+        comment: {
             allowNull: false,
-            type: DataTypes.STRING(50),
-            validate: {
-                len: [1, 50]
-            }
-
+            type: DataTypes.TEXT(),
         }
     }, {
 
@@ -35,13 +33,13 @@ module.exports = function (sequelize, DataTypes) {
 
         Donation.associate = function (models) {
 
-            Donation.belongsTo(models.donor, {
+            Comment.belongsTo(models.comment, {
                 foreignKey: {
                     allowNull: true
                 },
             });
         };
 
-    return Donor;
+    return Comment;
 
 };
