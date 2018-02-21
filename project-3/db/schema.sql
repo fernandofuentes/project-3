@@ -26,6 +26,13 @@ CREATE TABLE donors
     physical_address VARCHAR(100),
     manager_name VARCHAR(50),
     manager_phone_number VARCHAR(14),
-    comments TEXT
 
   );
+
+  CREATE TABLE comments
+    (
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    review_type VARCHAR(50),
+    reviewee VARCHAR(50),
+    comment TEXT
+    );
