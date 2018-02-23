@@ -50,10 +50,12 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1, 50]
             }
         }
-    }, {
-        createdAt: Sequelize.DATE,
-        updatedAt: Sequelize.DATE,
-        });
+    }
+     // {
+     //    createdAt: Sequelize.DATE,
+     //    updatedAt: Sequelize.DATE,
+     //    }
+      );
 
     return Volunteer;
 

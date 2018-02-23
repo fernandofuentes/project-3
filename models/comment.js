@@ -15,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
         reviewee: {
           //name of person/place being reviewed
             allowNull: false,
-            type: DataTypes.INT(50),
+            type: DataTypes.INTEGER(50),
             validate: {
                 len: [1, 50]
             }
@@ -25,20 +25,22 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             type: DataTypes.TEXT(),
         }
-    }, {
+    },
+    // {
+    //
+    // createdAt: Sequelize.DATE,
+    // updatedAt: Sequelize.DATE,
+    // }
+      );
 
-        createdAt: Sequelize.DATE,
-        updatedAt: Sequelize.DATE,
-        });
-
-        Donation.associate = function (models) {
-
-            Comment.belongsTo(models.comment, {
-                foreignKey: {
-                    allowNull: true
-                },
-            });
-        };
+        // Comment.associate = function (models) {
+        //
+        //      Comment.belongsTo(models.comment, {
+        //          foreignKey: {
+        // allowNull: true
+        //          },
+        //      });
+        //  };
 
     return Comment;
 

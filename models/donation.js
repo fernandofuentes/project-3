@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         quantity: {
             allowNull: false,
-            type: DataTypes.INT(50),
+            type: DataTypes.INTEGER(50),
             validate: {
                 len: [1, 50]
             }
@@ -27,21 +27,23 @@ module.exports = function (sequelize, DataTypes) {
             }
 
         }
-    }, {
+    }
+     // {
+     //
+     //    // createdAt: Sequelize.DATE,
+     //    // updatedAt: Sequelize.DATE,
+     //    }
+      );
 
-        createdAt: Sequelize.DATE,
-        updatedAt: Sequelize.DATE,
-        });
+        // Donation.associate = function (models) {
+        //
+        //     Donation.belongsTo(models.donor, {
+        //         foreignKey: {
+        //             allowNull: true
+        //         },
+        //     });
+        // };
 
-        Donation.associate = function (models) {
-
-            Donation.belongsTo(models.donor, {
-                foreignKey: {
-                    allowNull: true
-                },
-            });
-        };
-
-    return Donor;
+    return Donation;
 
 };

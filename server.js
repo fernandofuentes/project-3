@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const app = express();
 const path = require("path");
 const db = require("./models");
-
 const sequelize = require("sequelize");
 const chalkAnimation = require('chalk-animation');
 
@@ -33,6 +32,7 @@ app.use(express.static("public"));
 // =============================================================
 db.sequelize.sync({
     // force: true,
+    // force makes the db drop and recreate everytime you start the server
     logging: true
 
 }).then(function() {
@@ -40,7 +40,3 @@ db.sequelize.sync({
         chalkAnimation.rainbow("App listening on PORT ", 2 + PORT);
     });
 });
-
-// app.listen(PORT, function() {
-//   console.log("App listening on PORT ", + PORT);
-// })

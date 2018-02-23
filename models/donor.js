@@ -52,7 +52,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         manager_phone_number: {
             allowNull: false,
-            type: Datatypes.STRING(11),
+            type: DataTypes.STRING(11),
             validate: {
                 len: [1, 50]
             }
@@ -61,11 +61,13 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true,
             type: DataTypes.STRING(50),
         }
-    }, {
-
-        createdAt: Sequelize.DATE,
-        updatedAt: Sequelize.DATE,
-        });
+    }
+     // {
+     //
+     //    // createdAt: Sequelize.DATE,
+     //    // updatedAt: Sequelize.DATE,
+     //    }
+      );
 
     return Donor;
 
