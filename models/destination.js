@@ -21,9 +21,9 @@ module.exports = function (sequelize, DataTypes) {
         },
         phone_number: {
             allowNull: true,
-            type: DataTypes.INTEGER(11),
+            type: DataTypes.STRING(15),
             validate: {
-                len: [1, 11]
+                len: [1, 15]
             }
 
         },
@@ -52,18 +52,15 @@ module.exports = function (sequelize, DataTypes) {
         },
         poc_phone_number: {
             allowNull: false,
-            type: DataTypes.INTEGER(11),
+            type: DataTypes.STRING(15),
             validate: {
-                len: [1, 11]
+                len: [1, 15]
             }
         }
-    }
-     // {
-     //
-     //    // createdAt: Sequelize.DATE,
-     //    // updatedAt: Sequelize.DATE,
-     //    }
-      );
+    },
+    {
+      timestamps: false
+    });
 
     return Destination;
 

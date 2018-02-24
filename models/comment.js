@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
     var Comment = sequelize.define('Comment', {
         review_type: {
           //user chooses if they're reviewing donors, vols or recipients
-            allowNull: false,
+            allowNull: true,
             type: DataTypes.STRING(50),
             validate: {
                 len: [1, 50]
@@ -14,24 +14,22 @@ module.exports = function (sequelize, DataTypes) {
         },
         reviewee: {
           //name of person/place being reviewed
-            allowNull: false,
-            type: DataTypes.INTEGER(50),
+            allowNull: true,
+            type: DataTypes.STRING(50),
             validate: {
                 len: [1, 50]
             }
 
         },
         comment: {
-            allowNull: false,
+            allowNull: true,
             type: DataTypes.TEXT(),
         }
+
     },
-    // {
-    //
-    // createdAt: Sequelize.DATE,
-    // updatedAt: Sequelize.DATE,
-    // }
-      );
+    {
+      timestamps: false
+    });
 
         // Comment.associate = function (models) {
         //
