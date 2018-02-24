@@ -20,10 +20,10 @@ module.exports = function (sequelize, DataTypes) {
 
         },
         phone_number: {
-            allowNull: true,
-            type: DataTypes.STRING(11),
+            allowNull: false,
+            type: DataTypes.STRING(15),
             validate: {
-                len: [1, 11]
+                len: [1, 15]
             }
 
         },
@@ -52,22 +52,15 @@ module.exports = function (sequelize, DataTypes) {
         },
         manager_phone_number: {
             allowNull: false,
-            type: DataTypes.STRING(11),
+            type: DataTypes.STRING(15),
             validate: {
-                len: [1, 50]
+                len: [1, 15]
             }
-        },
-        comments: {
-            allowNull: true,
-            type: DataTypes.STRING(50),
         }
-    }
-     // {
-     //
-     //    // createdAt: Sequelize.DATE,
-     //    // updatedAt: Sequelize.DATE,
-     //    }
-      );
+    },
+    {
+      timestamps: false
+    });
 
     return Donor;
 

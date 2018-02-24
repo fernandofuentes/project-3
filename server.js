@@ -31,7 +31,7 @@ app.use(express.static("public"));
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({
-    // force: true,
+    force: true,
     // force makes the db drop and recreate everytime you start the server
     logging: true
 

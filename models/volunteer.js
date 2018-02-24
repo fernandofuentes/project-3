@@ -21,9 +21,9 @@ module.exports = function (sequelize, DataTypes) {
         },
         phone_number: {
             allowNull: true,
-            type: DataTypes.STRING(14),
+            type: DataTypes.STRING(15),
             validate: {
-                len: [1, 14]
+                len: [1, 15]
             }
 
         },
@@ -50,12 +50,10 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1, 50]
             }
         }
-    }
-     // {
-     //    createdAt: Sequelize.DATE,
-     //    updatedAt: Sequelize.DATE,
-     //    }
-      );
+    },
+    {
+      timestamps: false
+    });
 
     return Volunteer;
 

@@ -27,13 +27,10 @@ module.exports = function (sequelize, DataTypes) {
             }
 
         }
-    }
-     // {
-     //
-     //    // createdAt: Sequelize.DATE,
-     //    // updatedAt: Sequelize.DATE,
-     //    }
-      );
+    },
+    {
+      timestamps: false
+    });
 
         // Donation.associate = function (models) {
         //
