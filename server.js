@@ -6,6 +6,7 @@ const path = require("path");
 const db = require("./models");
 const sequelize = require("sequelize");
 const chalkAnimation = require('chalk-animation');
+var jade = require('jade');
 
 const PORT = process.env.PORT || 3000;
 
@@ -22,11 +23,13 @@ app.use(bodyParser.json({
 // Static directory
 app.use(express.static("public"));
 
+app.set('view engine', 'jade');
+
 // Routes
 // =============================================================
 
-// const routes = require("./app/controllers/home.js")
-// app.use("/", routes);
+const routes = require("./config/routes.js")
+app.use("/", routes);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
@@ -37,6 +40,6 @@ db.sequelize.sync({
 
 }).then(function() {
     app.listen(PORT, function() {
-        chalkAnimation.rainbow("App listening on PORT ", 2 + PORT);
+        chalkAnimation.rainbow(`App listening on PORT ${PORT}`);
     });
 });
