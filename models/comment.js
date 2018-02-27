@@ -33,34 +33,6 @@ module.exports = function (sequelize, DataTypes) {
            timestamps: true
     })
 
-        // Comment.associate = function (models) {
-        //
-        //      Comment.belongsTo(models.Volunteer, {
-        //          foreignKey: {
-        // allowNull: true
-        //          },
-        //      });
-        //  };
-
-
-         // Comment.associate = function (models) {
-         //
-         //      Comment.belongsTo(models.Donor, {
-         //          foreignKey: {
-         // allowNull: true
-         //          },
-         //      });
-         //  };
-         //
-         //
-         //  Comment.associate = function (models) {
-         //
-         //       Comment.belongsTo(models.Destination, {
-         //           foreignKey: {
-         //  allowNull: true
-         //           },
-         //       });
-         //   };
 
     return Comment;
 

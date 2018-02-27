@@ -1,20 +1,16 @@
-// app.get('/login', home.login);
-// app.get('/signup', home.signup);
+const express = require("express");
+const router = express.Router();
+const chalkAnimation = require('chalk-animation');
 
-// app.get('/', function() {
-//   res.render("index");
-//
-// }); //home
-// app.get('/home', home.loggedIn, home.home); //home
-//
-// app.post('/signup', passport.authenticate('local-signup', {
-//   successRedirect: '/home', // redirect to the secure profile section
-//   failureRedirect: '/signup', // redirect back to the signup page if there is an error
-//   failureFlash: true // allow flash messages
-// }));
-// // process the login form
-// app.post('/login', passport.authenticate('local-login', {
-//   successRedirect: '/home', // redirect to the secure profile section
-//   failureRedirect: '/login', // redirect back to the signup page if there is an error
-//   failureFlash: true // allow flash messages
-// }));
+//import models
+
+var db = require("../models");
+
+//html routes=================================================
+
+//home page
+router.get("/", function (req, res) {
+res.sendFile('index.html', { root: 'views' });
+});
+
+module.exports = router;
