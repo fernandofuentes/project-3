@@ -51,9 +51,20 @@ module.exports = function (sequelize, DataTypes) {
             }
         }
     },
+    
     {
       timestamps: false
     });
+
+
+    Volunteer.associate = function (models) {
+
+         Volunteer.hasMany(models.Comment, {
+             foreignKey: {
+    allowNull: true
+             },
+         });
+     };
 
     return Volunteer;
 

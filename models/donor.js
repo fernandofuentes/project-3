@@ -62,6 +62,15 @@ module.exports = function (sequelize, DataTypes) {
       timestamps: false
     });
 
+    Donor.associate = function (models) {
+
+         Donor.hasMany(models.Comment, {
+             foreignKey: {
+    allowNull: true
+             },
+         });
+     };
+
     return Donor;
 
 };
