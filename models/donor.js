@@ -2,8 +2,8 @@ var Sequelize = require("sequelize");
 
 module.exports = function (sequelize, DataTypes) {
 
-    var Destination = sequelize.define('Destination', {
-        organization_name: {
+    var Donor = sequelize.define('Donor', {
+        business_name: {
             allowNull: false,
             type: DataTypes.STRING(50),
             validate: {
@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
             }
 
         },
-        organization_type: {
+        business_type: {
             allowNull: false,
             type: DataTypes.STRING(50),
             validate: {
@@ -20,10 +20,10 @@ module.exports = function (sequelize, DataTypes) {
 
         },
         phone_number: {
-            allowNull: true,
-            type: DataTypes.INT(11),
+            allowNull: false,
+            type: DataTypes.STRING(15),
             validate: {
-                len: [1, 11]
+                len: [1, 15]
             }
 
         },
@@ -43,30 +43,34 @@ module.exports = function (sequelize, DataTypes) {
             }
 
         },
-        point_of_contact: {
+        manager_name: {
             allowNull: false,
             type: DataTypes.STRING(50),
             validate: {
                 len: [1, 50]
             }
         },
-        poc_phone_number: {
+        manager_phone_number: {
             allowNull: false,
-            type: Datatypes.INT(11),
+            type: DataTypes.STRING(15),
             validate: {
-                len: [1, 11]
+                len: [1, 15]
             }
-        },
-        comments: {
-            allowNull: true,
-            type: DataTypes.STRING(50),
         }
-    }, {
+    },
+    {
+      timestamps: false
+    });
 
-        createdAt: Sequelize.DATE,
-        updatedAt: Sequelize.DATE,
-        });
+    Donor.associate = function (models) {
 
-    return Destination;
+         Donor.hasMany(models.Comment, {
+             foreignKey: {
+    allowNull: true
+             },
+         });
+     };
+
+    return Donor;
 
 };
