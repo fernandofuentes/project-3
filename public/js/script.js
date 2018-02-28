@@ -33,8 +33,8 @@ $( document ).ready( function () {
       function () {
         console.log( "added new volunteer" );
 
-        $( ".modal" ).modal( 'show' );
-        $( "#modal-body-text" ).text( 'Welcome to the team, ' + newVol.volunteer_first_name + '!' );
+        // $( ".modal" ).modal( 'show' );
+        // $( "#modal-body-text" ).text( 'Welcome to the team, ' + newVol.volunteer_first_name + '!' );
 
         //the below reload is commented out because it was breaking the modal
 
