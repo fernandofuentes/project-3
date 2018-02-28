@@ -26,21 +26,22 @@ $( document ).ready( function () {
 
 
     // Send the POST request.
-    $.ajax( "/sign-up/volunteer", {
-      type: "POST",
-      data: newVol
-    } ).then(
-      function () {
-        console.log( "added new volunteer" );
+    $.ajax( "/sign-up/volunteer", newVol, function ( res ) {
+      if ( res ) {
+        console.log( res );
 
-        // $( ".modal" ).modal( 'show' );
-        // $( "#modal-body-text" ).text( 'Welcome to the team, ' + newVol.volunteer_first_name + '!' );
+      } else {
+        console.log( "error" );
+      }
 
-        //the below reload is commented out because it was breaking the modal
+      // $( ".modal" ).modal( 'show' );
+      // $( "#modal-body-text" ).text( 'Welcome to the team, ' + newVol.volunteer_first_name + '!' );
 
-        //Reload the page to get the updated list
-        // location.reload();
-      } );
+      //the below reload is commented out because it was breaking the modal
+
+      //Reload the page to get the updated list
+      // location.reload();
+    } );
   } ); //end submit event
 
 

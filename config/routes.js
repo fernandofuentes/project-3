@@ -1,5 +1,6 @@
 const express = require( "express" );
-const router = express.Router();
+// const router = express.Router();
+const router = require( "../controllers/controller.js" );
 const chalkAnimation = require( 'chalk-animation' );
 
 //import models
@@ -31,6 +32,9 @@ router.get( "/sign-up/donor", function ( req, res ) {
 router.get( "/sign-up/recipient", function ( req, res ) {
   res.sendFile( '/sign-up/sign-up-recipient.html', { root: 'views' } );
 } );
+
+
+
 
 
 

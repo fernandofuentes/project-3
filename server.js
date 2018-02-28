@@ -4,9 +4,10 @@ const bodyParser = require( "body-parser" );
 const app = express();
 const path = require( "path" );
 const db = require( "./models" );
+const router = require( "./controllers/controller.js" )
 const sequelize = require( "sequelize" );
 const chalkAnimation = require( 'chalk-animation' );
-var jade = require( 'jade' );
+const jade = require( 'jade' );
 
 const PORT = process.env.PORT || 3000;
 
@@ -29,7 +30,8 @@ app.set( 'view engine', 'jade' );
 // =============================================================
 
 const routes = require( "./config/routes.js" )
-app.use( "/", routes );
+// app.use( "/", routes );
+app.use( "/", router, routes );
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
