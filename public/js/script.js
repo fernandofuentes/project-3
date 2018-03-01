@@ -26,7 +26,7 @@ $( document ).ready( function () {
 
 
     // Send the POST request.
-    $.ajax( "/sign-up/volunteer", newVol, function ( res ) {
+    $.post( "/sign-up/volunteer", newVol, function ( res ) {
       if ( res ) {
         console.log( res );
 
