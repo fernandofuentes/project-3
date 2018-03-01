@@ -34,12 +34,12 @@ $( document ).ready( function () {
         console.log( "error" );
       }
 
-      // $( ".modal" ).modal( 'show' );
-      // $( "#modal-body-text" ).text( 'Welcome to the team, ' + newVol.volunteer_first_name + '!' );
+      $( ".modal" ).modal( 'show' );
+      $( "#modal-body-text" ).text( 'Welcome to the team, ' + newVol.volunteer_first_name + '!' );
 
-      //the below reload is commented out because it was breaking the modal
-
-      //Reload the page to get the updated list
+      // the below reload is commented out because it was breaking the modal
+      //
+      // Reload the page to get the updated list
       // location.reload();
     } );
   } ); //end submit event
