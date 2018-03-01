@@ -8,7 +8,8 @@ var db = require( "../models" );
 
 // POST route for saving a new volunteer
 router.post( "/sign-up/volunteer", function ( req, res ) {
-  console.log( "post" );
+  console.log( "create happened" );
+
   db.Volunteer.create( {
         volunteer_first_name: req.body.volunteer_first_name,
         volunteer_last_name: req.body.volunteer_last_name,
@@ -23,12 +24,14 @@ router.post( "/sign-up/volunteer", function ( req, res ) {
       //   }]
       // }
     ).then( function ( dbFam ) {
-      console.log( "create .then happened" );
       res.json( dbFam );
-
+      console.log( ".then happened" );
     } )
     .catch( function ( err ) {
-
+      // Whenever a validation or flag fails, an error is thrown
+      // We can "catch" the error to prevent it from being "thrown", which could crash our node router
       res.json( err );
     } );
 } );
+
+module.exports = router;
