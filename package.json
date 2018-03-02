@@ -4,8 +4,10 @@
   "description": "![alt text](http://unwrittenagency.com/wp-content/uploads/2018/01/project-3.png)",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,9 @@
     "path": "^0.12.7",
     "request": "^2.83.0",
     "sequelize": "^4.33.4",
-    "sequelize-mysql-timestamp": "^1.3.0"
+    "sequelize-mysql-timestamp": "^1.3.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "^1.1.1"
   }
 }
