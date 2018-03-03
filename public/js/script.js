@@ -34,6 +34,20 @@ $( document ).ready( function () {
         console.log( "error" );
       }
 
+      //empty form after submission
+      $( "#input-first-name" ).val( '' );
+      $( "#input-last-name" ).val( '' );
+      $( "#input-vol-phone" ).val( '' );
+      $( "#input-email-vol" ).val( '' );
+      $( "#input-vehicle-vol" ).val( '' );
+      $( "#input-address" ).val( '' );
+      $( "#input-address-2" ).val( '' );
+      $( "#input-city" ).val( '' );
+      $( "#input-state" ).val( '' );
+      $( "#input-zip" ).val( '' );
+
+
+
       $( ".modal" ).modal( 'show' );
       $( "#modal-body-text" ).text( 'Welcome to the team, ' + newVol.volunteer_first_name + '!' );
 
