@@ -19,7 +19,7 @@
   "homepage": "https://github.com/fernandofuentes/project-3#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "chalk-animation": "^1.4.0",
+    "chalk-animation": "*",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.2",
     "jade": "^1.11.0",
