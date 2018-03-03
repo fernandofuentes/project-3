@@ -33,6 +33,11 @@ router.get( "/sign-up/recipient", function ( req, res ) {
   res.sendFile( '/sign-up/sign-up-recipient.html', { root: 'views' } );
 } );
 
+//faq
+router.get( "/faq", function ( req, res ) {
+  res.sendFile( '/faq.html', { root: 'views' } );
+} );
+
 
 
 
