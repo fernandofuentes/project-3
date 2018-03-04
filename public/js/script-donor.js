@@ -1,32 +1,33 @@
-var volAddress;
+var donorAddress;
 
 $( document ).ready( function () {
  
  
- $( ".add-volunteer-form" ).on( "submit", function ( event ) {
+ $( ".add-donor-form" ).on( "submit", function ( event ) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
     console.log( "submit clicked" );
 
-    volAddress = `${$("#input-address").val().trim()} ${$("#input-address-2").val().trim()} ${$("#input-city").val().trim()} ${$("#input-state").val().trim()} ${$("#input-zip").val().trim()}`;
+    donorAddress = `${$("#input-phyical-address").val().trim()} ${$("#input-city").val().trim()} ${$("#input-state").val().trim()} ${$("#input-zip-code").val().trim()}`;
 
-    // console.log( volAddress );
+    // console.log( donorAddress );
 
-    newVol = {
-      volunteer_first_name: $( "#input-first-name" ).val().trim(),
-      volunteer_last_name: $( "#input-last-name" ).val().trim(),
-      phone_number: $( "#input-vol-phone" ).val().trim(),
-      email_address: $( "#input-email-vol" ).val().trim(),
-      physical_address: volAddress,
-      vehicle: $( "#input-vehicle-vol" ).val().trim(),
+    newDonor = {
+      business_name: $( "#input-business-name" ).val().trim(),
+      business_type: $( "#input-business-type" ).val().trim(),
+      phone_number: $( "#input-phone-number" ).val().trim(),
+      email_address: $( "#input-email-address" ).val().trim(),
+      physical_address: donorAddress,
+      manager_name: $( "#input-manager-name" ).val().trim(),
+      manager_phone_number: $( "#input-manager-phone-number" ).val().trim(),
     };
 
     //console.log(studentAddress);
-    console.log( "newVol is:", newVol );
+    console.log( "newDonor is:", newDonor );
 
 
     // Send the POST request.
-    $.post( "/sign-up/volunteer", newVol, function ( res ) {
+    $.post( "/sign-up/donor", newDonor, function ( res ) {
       if ( res ) {
         console.log( res );
 
@@ -35,21 +36,21 @@ $( document ).ready( function () {
       }
 
       //empty form after submission
-      $( "#input-first-name" ).val( '' );
-      $( "#input-last-name" ).val( '' );
-      $( "#input-vol-phone" ).val( '' );
-      $( "#input-email-vol" ).val( '' );
-      $( "#input-vehicle-vol" ).val( '' );
-      $( "#input-address" ).val( '' );
-      $( "#input-address-2" ).val( '' );
+      $( "#input-business-name" ).val( '' );
+      $( "#input-business-type" ).val( '' );
+      $( "#input-phone-number" ).val( '' );
+      $( "#input-email-address" ).val( '' );
+      $( "#input-physical-address" ).val( '' );
       $( "#input-city" ).val( '' );
       $( "#input-state" ).val( '' );
-      $( "#input-zip" ).val( '' );
+      $( "#input-zip-code" ).val( '' );
+      $( "#input-manager-name" ).val( '' );
+      $( "#input-manager-phone-number" ).val( '' );
 
 
 
       $( ".modal" ).modal( 'show' );
-      $( "#modal-body-text" ).text( 'Welcome to the team, ' + newVol.volunteer_first_name + '!' );
+      $( "#modal-body-text" ).text( 'Welcome to the team, ' + newDonor.business_name + '!' );
 
       // the below reload is commented out because it was breaking the modal
       //
