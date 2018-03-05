@@ -51,7 +51,7 @@ module.exports = function (sequelize, DataTypes) {
             }
 
         },
-        state: {
+        donor_state: {
             allowNull: false,
             type: DataTypes.STRING(50),
             validate: {

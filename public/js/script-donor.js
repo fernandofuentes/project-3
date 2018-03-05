@@ -1,4 +1,4 @@
-var donorAddress;
+var donorAddress = "";
 
 $( document ).ready( function () {
  
@@ -8,9 +8,9 @@ $( document ).ready( function () {
     event.preventDefault();
     console.log( "submit clicked" );
 
-    donorAddress = `${$("#input-phyical-address").val().trim()} ${$("#input-city").val().trim()} ${$("#input-state").val().trim()} ${$("#input-zip-code").val().trim()}`;
+    donorAddress = `${$("#input-physical-address").val().trim()} ${$("#input-city").val().trim()} ${$("#input-donor-state").val().trim()} ${$("#input-zip-code").val().trim()}`;
 
-    // console.log( donorAddress );
+     console.log( donorAddress );
 
     newDonor = {
       business_name: $( "#input-business-name" ).val().trim(),
@@ -18,6 +18,9 @@ $( document ).ready( function () {
       phone_number: $( "#input-phone-number" ).val().trim(),
       email_address: $( "#input-email-address" ).val().trim(),
       physical_address: donorAddress,
+      city: $( "#input-city" ),
+      donor_state: $( "#input-donor-state"),
+      zip_code: $( "#input-zip-code" ),
       manager_name: $( "#input-manager-name" ).val().trim(),
       manager_phone_number: $( "#input-manager-phone-number" ).val().trim(),
     };
@@ -35,6 +38,7 @@ $( document ).ready( function () {
         console.log( "error" );
       }
 
+      console.log("post");
       //empty form after submission
       $( "#input-business-name" ).val( '' );
       $( "#input-business-type" ).val( '' );
@@ -42,7 +46,7 @@ $( document ).ready( function () {
       $( "#input-email-address" ).val( '' );
       $( "#input-physical-address" ).val( '' );
       $( "#input-city" ).val( '' );
-      $( "#input-state" ).val( '' );
+      $( "#input-donor-state" ).val( '' );
       $( "#input-zip-code" ).val( '' );
       $( "#input-manager-name" ).val( '' );
       $( "#input-manager-phone-number" ).val( '' );
