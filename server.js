@@ -25,32 +25,10 @@ app.use(bodyParser.json({
 app.use(express.static("public"));
 
 app.set('view engine', 'jade');
-/////////////////////////////////
-////////// PASSPORT /////////////
-/////////////////////////////////
-Set up middleware: passport and express session
-app.use(session({
-    secret: 'somethingsecretive',
-    resave: true,
-    saveUninitialized: true
-}));
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
 
-
-// Sets up ROUTES
-require('./routes/html-routes.js')(app);
-require('./routes/api-routes.js')(app);
-require('./routes/user-routes.js')(app);
-require('./routes/favorite-routes.js')(app);
-var authRoute = require('./routes/auth.js')(app, passport);
-
-// load passport strategies
-require('./config/passport.js')(passport, db.user);
 
 // Routes
 // =============================================================
-var authRoute = require('./routes/auth.js')(app, passport);
 const routes = require("./config/routes.js")
 // app.use( "/", routes );
 app.use("/", router, routes);
