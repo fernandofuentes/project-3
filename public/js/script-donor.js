@@ -3,26 +3,23 @@ var donorAddress;
 $( document ).ready( function () {
  
  
- $( "#submit-donor-new" ).on( "click", function ( event ) {
+ $( ".add-donor-form" ).on( "submit", function ( event ) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
     console.log( "submit clicked" );
 
+    donorAddress = `${$("#input-physical-address").val().trim()} ${$("#input-city").val().trim()} ${$("#input-state").val().trim()} ${$("#input-zip-code").val().trim()}`;
 
-    donorAddress = `${$("#input-address").val().trim()} ${$("#input-city").val().trim()} ${$("#input-state").val().trim()} ${$("#input-zip").val().trim()}`;
-
-
-     console.log( donorAddress );
+    // console.log( donorAddress );
 
     newDonor = {
       business_name: $( "#input-business-name" ).val().trim(),
       business_type: $( "#input-business-type" ).val().trim(),
       phone_number: $( "#input-phone-number" ).val().trim(),
       email_address: $( "#input-email-address" ).val().trim(),
-      address: donorAddress,
-      city: $( "#input-city" ),
-      state: $( "#input-state"),
-      zip: $( "#input-zip" ),
+      physical_address: donorAddress,
+      manager_name: $( "#input-manager-name" ).val().trim(),
+      manager_phone_number: $( "#input-manager-phone-number" ).val().trim(),
     };
 
     //console.log(studentAddress);
@@ -38,16 +35,17 @@ $( document ).ready( function () {
         console.log( "error" );
       }
 
-      console.log("post");
       //empty form after submission
       $( "#input-business-name" ).val( '' );
       $( "#input-business-type" ).val( '' );
       $( "#input-phone-number" ).val( '' );
       $( "#input-email-address" ).val( '' );
-      $( "#input-address" ).val( '' );
+      $( "#input-physical-address" ).val( '' );
       $( "#input-city" ).val( '' );
       $( "#input-state" ).val( '' );
-      $( "#input-zip" ).val( '' );
+      $( "#input-zip-code" ).val( '' );
+      $( "#input-manager-name" ).val( '' );
+      $( "#input-manager-phone-number" ).val( '' );
 
 
 
