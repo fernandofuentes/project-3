@@ -34,4 +34,31 @@ router.post( "/sign-up/volunteer", function ( req, res ) {
     } );
 } );
 
+
+
+//get route for loading volunteer data into profile
+router.get( "/profiles/volunteer", function ( req, res ) {
+  console.log( "profile route hit" );
+
+  db.Volunteer.findByID( {
+        where: {
+          id: "1"
+        }
+      } //end Volunteer.findByID
+      // , {
+      //   include:[{
+      //     association: buses.BusId
+      //   }]
+      // }
+    ).then( function ( dbFam ) {
+      res.json( dbFam );
+      console.log( ".then volunteer profile load happened" );
+    } )
+    .catch( function ( err ) {
+      // Whenever a validation or flag fails, an error is thrown
+      // We can "catch" the error to prevent it from being "thrown", which could crash our node router
+      res.json( err );
+    } );
+} ); //end profiles/volunteer
+
 module.exports = router;

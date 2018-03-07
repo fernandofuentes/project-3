@@ -40,7 +40,13 @@ router.get( "/faq", function ( req, res ) {
 
 router.post( "/sign-up/donor", function ( req, res ) {
   res.sendFile( '/sign-up/sign-up-donor.html', { root: 'views' } );
- //res.send("response")
+  //res.send("response")
+} );
+//why is there and 2nd sign-up/donor?//
+
+//profile/volunteer
+router.get( "/profile/volunteer", function ( req, res ) {
+  res.sendFile( '/profiles/volunteer-profile.html', { root: 'views' } );
 } );
 
 
