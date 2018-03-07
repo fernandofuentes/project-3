@@ -1,15 +1,15 @@
-var donorAddress = "";
+var donorAddress;
 
 $( document ).ready( function () {
  
  
- $( ".add-donor-form" ).on( "submit", function ( event ) {
+ $( "#submit-donor-new" ).on( "click", function ( event ) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
     console.log( "submit clicked" );
 
 
-    donorAddress = `${$("#input-physical-address").val().trim()} ${$("#input-city").val().trim()} ${$("#input-state").val().trim()} ${$("#input-zip-code").val().trim()}`;
+    donorAddress = `${$("#input-address").val().trim()} ${$("#input-city").val().trim()} ${$("#input-state").val().trim()} ${$("#input-zip").val().trim()}`;
 
 
      console.log( donorAddress );
@@ -19,12 +19,10 @@ $( document ).ready( function () {
       business_type: $( "#input-business-type" ).val().trim(),
       phone_number: $( "#input-phone-number" ).val().trim(),
       email_address: $( "#input-email-address" ).val().trim(),
-      physical_address: donorAddress,
+      address: donorAddress,
       city: $( "#input-city" ),
-      donor_state: $( "#input-donor-state"),
-      zip_code: $( "#input-zip-code" ),
-      manager_name: $( "#input-manager-name" ).val().trim(),
-      manager_phone_number: $( "#input-manager-phone-number" ).val().trim(),
+      state: $( "#input-state"),
+      zip: $( "#input-zip" ),
     };
 
     //console.log(studentAddress);
@@ -46,12 +44,10 @@ $( document ).ready( function () {
       $( "#input-business-type" ).val( '' );
       $( "#input-phone-number" ).val( '' );
       $( "#input-email-address" ).val( '' );
-      $( "#input-physical-address" ).val( '' );
+      $( "#input-address" ).val( '' );
       $( "#input-city" ).val( '' );
-      $( "#input-donor-state" ).val( '' );
-      $( "#input-zip-code" ).val( '' );
-      $( "#input-manager-name" ).val( '' );
-      $( "#input-manager-phone-number" ).val( '' );
+      $( "#input-state" ).val( '' );
+      $( "#input-zip" ).val( '' );
 
 
 

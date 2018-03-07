@@ -39,7 +39,8 @@ router.get( "/faq", function ( req, res ) {
 } );
 
 router.post( "/sign-up/donor", function ( req, res ) {
-  res.sendFile( '/sign-up/sign-up-donor.html', { root: 'views' } );
+ // res.sendFile( '/sign-up/sign-up-donor.html', { root: 'views' } );
+ res.send("response")
 } );
 
 
