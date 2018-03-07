@@ -41,6 +41,30 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [1, 50]
             }
+        
+        },
+        city: {
+            allowNull: false,
+            type: DataTypes.STRING(50),
+            validate: {
+                len: [1, 50]
+            }
+
+        },
+        donor_state: {
+            allowNull: false,
+            type: DataTypes.STRING(50),
+            validate: {
+                len: [1, 50]
+            }
+
+        },
+        zip_code: {
+            allowNull: false,
+            type: DataTypes.STRING(50),
+            validate: {
+                len: [1, 50]
+            }
 
         },
         manager_name: {
@@ -49,6 +73,7 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [1, 50]
             }
+
         },
         manager_phone_number: {
             allowNull: false,

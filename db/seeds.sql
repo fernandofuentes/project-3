@@ -24,6 +24,9 @@ INSERT INTO Donors (
   phone_number,
   email_address,
   physical_address,
+  city,
+  donor_state,
+  zip_code,
   manager_name,
   manager_phone_number
 )
@@ -34,6 +37,9 @@ VALUES (
   "256-520-0000",
   "cici@yahoo.com",
   "1 Leaf Street",
+  "Houston",
+  "Texas",
+  "77001",
   "Cee Cee Thompson",
   "256-520-7777"
 );

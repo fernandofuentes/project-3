@@ -24,6 +24,9 @@ CREATE TABLE donors
     phone_number VARCHAR(20),
     email_address VARCHAR(50),
     physical_address VARCHAR(100),
+    city VARCHAR(50),
+    donor_state VARCHAR(50),
+    zip_code VARCHAR(50),
     manager_name VARCHAR(50),
     manager_phone_number VARCHAR(14),
   );
