@@ -8,7 +8,7 @@ $( document ).ready( function () {
     event.preventDefault();
     console.log( "submit clicked" );
 
-    donorAddress = `${$("#input-phyical-address").val().trim()} ${$("#input-city").val().trim()} ${$("#input-state").val().trim()} ${$("#input-zip-code").val().trim()}`;
+    donorAddress = `${$("#input-physical-address").val().trim()} ${$("#input-city").val().trim()} ${$("#input-state").val().trim()} ${$("#input-zip-code").val().trim()}`;
 
     // console.log( donorAddress );
 
