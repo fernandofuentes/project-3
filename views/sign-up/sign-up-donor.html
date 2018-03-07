@@ -1,67 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Family Meal</title>
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<head>
+  <meta charset="utf-8">
+  <title>Family Meal</title>
 
-  </head>
-  <body>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<div class="container">
+</head>
+
+<body>
+
+  <div class="container">
 
     <h1>Donor Sign-Up Page</h1>
 
     <form class="add-volunteer-form">
 
-        <h2> Please Enter Your Information Below To Get Started </h2>
+      <h2> Please Enter Your Information Below To Get Started </h2>
 
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="input-first-name">First Name</label>
-                <input type="text" class="form-control" id="input-first-name" placeholder="First Name">
-            </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="input-first-name">First Name</label>
+          <input type="text" class="form-control" id="input-first-name" placeholder="First Name">
         </div>
+      </div>
 
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="input-last-name">Last Name</label>
-                <input type="text" class="form-control" id="input-last-name" placeholder="Last Name">
-            </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="input-last-name">Last Name</label>
+          <input type="text" class="form-control" id="input-last-name" placeholder="Last Name">
         </div>
+      </div>
 
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <label for="input-email">Email</label>
-                <input type="email" class="form-control" id="input-email" placeholder="Email">
-            </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="input-email">Email</label>
+          <input type="email" class="form-control" id="input-email" placeholder="Email">
         </div>
+      </div>
 
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <label for="input-address">Address</label>
-                <input type="text" class="form-control" id="input-address" placeholder="1234 Main St">
-            </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="input-address">Address</label>
+          <input type="text" class="form-control" id="input-address" placeholder="1234 Main St">
         </div>
+      </div>
 
-        <div class="form-row">
-          <div class="form-group col-md-4">
-              <label for="input-address-2">Address 2</label>
-              <input type="text" class="form-control" id="input-address-2" placeholder="Apartment, studio, or floor">
-          </div>
-        </div>
-
+      <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="input-gender">Gender</label>
-            <select id="input-gender" class="form-control">
+          <label for="input-address-2">Address 2</label>
+          <input type="text" class="form-control" id="input-address-2" placeholder="Apartment, studio, or floor">
+        </div>
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="input-gender">Gender</label>
+        <select id="input-gender" class="form-control">
               <option selected>Choose One</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
             </select>
-        </div>
+      </div>
 
-        <!-- <div class="form-row">
+      <!-- <div class="form-row">
           <div class="form-group col-md-4">
               <div class="form-check">
                 <label class="form-check-label" for="input-transportation">
@@ -75,14 +77,14 @@
 
 
 
-        <div class="form-row">
-            <div class="form-group col-md-5">
-                <label for="input-city">City</label>
-                <input type="text" class="form-control" placeholder="Conroe"id="input-city">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="input-state">State</label>
-                <select id="input-state" class="form-control">
+      <div class="form-row">
+        <div class="form-group col-md-5">
+          <label for="input-city">City</label>
+          <input type="text" class="form-control" placeholder="Conroe" id="input-city">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="input-state">State</label>
+          <select id="input-state" class="form-control">
                     <option selected>Choose...</option>
                         <option value="TX">Texas</option>
                         <option value="AL">Alabama</option>
@@ -137,18 +139,18 @@
                         <option value="WY">Wyoming</option>
                     </option>
                 </select>
-            </div>
-
-            <div class="form-group col-md-3">
-                <label for="input-zip">Zip</label>
-                <input type="text" class="form-control" id="input-zip">
-            </div>
-
-
-            <div class="col-md-8">
-            <button type="submit" id="submit-student-new" class="btn btn-primary">Submit</button>
-    </div>
         </div>
+
+        <div class="form-group col-md-3">
+          <label for="input-zip">Zip</label>
+          <input type="text" class="form-control" id="input-zip">
+        </div>
+
+
+        <div class="col-md-8">
+          <button type="submit" id="submit-student-new" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
 
     </form>
 
@@ -157,27 +159,27 @@
   </div>
   <!--close container-->
 
-    <!-- Begin modal -->
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Student Data Successfully Added</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <!-- Begin modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Student Data Successfully Added</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-          </div>
-          <div class="modal-body">
-            <h5 id="modal-body-text"></h5>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+        </div>
+        <div class="modal-body">
+          <h5 id="modal-body-text"></h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
-    <!-- End modal -->
+  </div>
+  <!-- End modal -->
 
 
 
@@ -188,7 +190,11 @@
 
 
 
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  </body>
+  <script src="/js/donor-signup-script.js"></script>
+</body>
+
 </html>
