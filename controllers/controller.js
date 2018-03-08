@@ -34,8 +34,6 @@ router.post( "/sign-up/volunteer", function ( req, res ) {
     } );
 } );
 
-
-
 //get route for loading volunteer data into profile
 router.get( "/profiles/volunteer", function ( req, res ) {
   console.log( "profile route hit" );
@@ -60,5 +58,29 @@ router.get( "/profiles/volunteer", function ( req, res ) {
       res.json( err );
     } );
 } ); //end profiles/volunteer
+
+// POST route for saving a new Recipient
+router.post( "/sign-up/recipient", function ( req, res ) {
+  console.log( "create happened" );
+
+  db.Destination.create( {
+        recipient_name: req.body.recipient_name,
+        phone_number: req.body.phone_number,
+        email_address: req.body.email_address,
+        physical_address: req.body.physical_address
+      }
+
+    ).then( function ( dbFam ) {
+      res.json( dbFam );
+      console.log( ".then happened" );
+    } )
+    .catch( function ( err ) {
+      // Whenever a validation or flag fails, an error is thrown
+      // We can "catch" the error to prevent it from being "thrown", which could crash our node router
+      res.json( err );
+    } );
+} );
+
+
 
 module.exports = router;

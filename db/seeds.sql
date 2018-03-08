@@ -70,7 +70,7 @@ VALUES (
 );
 
 
-INSERT INTO destinations (
+INSERT INTO recipients (
   organization_name,
   organization_type,
   phone_number,
