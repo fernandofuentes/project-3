@@ -38,8 +38,10 @@ $(document).ready(function () {
         $("#input-city").val('');
         $("#input-state").val('');
         $("#input-zip").val('');
-        $(".modal").modal('show');
-        $("#modal-body-text").text('Welcome to the team, ' + newRecipient.recipient_first_name + '!');
+
+
+      $(".modal").modal('show');
+      $("#modal-body-text").text('Welcome to the team, ' + newRecipient.recipient_name + '!');
 
           // the below reload is commented out because it was breaking the modal
           //
