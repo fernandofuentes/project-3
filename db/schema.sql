@@ -47,7 +47,7 @@ CREATE TABLE donors
     quantity INT(5)
     );
 
-  CREATE TABLE destinations
+  CREATE TABLE recipients
   (
     id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     organization_name VARCHAR(50),
