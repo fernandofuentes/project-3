@@ -3,27 +3,31 @@ var Sequelize = require( "sequelize" );
 module.exports = function ( sequelize, DataTypes ) {
 
   var Comment = sequelize.define( 'Comment', {
-      review_type: {
-        //user chooses if they're reviewing donors, vols or recipients
-        allowNull: false,
-        type: DataTypes.STRING( 50 ),
-        validate: {
-          len: [ 1, 50 ]
-        }
 
-      },
       reviewee: {
         //name of person/place being reviewed
-        allowNull: false,
+        allowNull: true,
+        type: DataTypes.STRING( 50 ),
+
+        validate: {
+          len: [ 1, 25 ]
+        }
+      },
+
+      reviewer: {
+        //name of person/place given review
+        allowNull: true,
         type: DataTypes.STRING( 50 ),
         defaultValue: "Anonymous",
 
+
         validate: {
-          len: [ 1, 50 ]
+          len: [ 1, 25 ]
         }
       },
+
       comment: {
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.TEXT()
       }
     }, //end of 2nd argument

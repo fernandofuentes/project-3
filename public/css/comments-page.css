@@ -1,5 +1,5 @@
 .card {
-  /* border: 1px solid red; */
+/* padding: 10px; */
 }
 
 .comment-input {
@@ -7,6 +7,10 @@
   height: 300px;
 }
 
+.card-img-top {
+  margin-left: 20px;
+}
+
 * {
-  /* border: 1px solid red; */
+  /* border: .5px solid red; */
 }
