@@ -24,6 +24,7 @@ $( document ).ready( function () {
 
     //console.log(studentAddress);
     console.log( "newDonor is:", newDonor );
+    console.log("donor addres is:", donorAddress)
 
 
     // Send the POST request.
