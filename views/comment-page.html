@@ -20,15 +20,56 @@
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="/"><img class="navbar-brand" src="/img/fml-logo-2.png"></a>
+      <a class="navbar-brand" href="/"><img class="navbar-brand" src="img/fml-logo-2.png"></a>
       <a class="btn btn-primary" href="/sign-up">Sign In</a>
     </div>
   </nav>
 
-  <h1>body stuff</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div>
+          <p>Welcome to the comments page. Search below for the party you'd like to leave a comment for.
+          </p>
+        </div>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col-lg-12">
+        <div id="search-for-comment-div">
+          <div class="row">
+            <label>Search For Volunteer</label>
+            <input type="text" class="form-control" id="vol-search-for-comment" placeholder="Search Volunteer Database" aria-label="Username" aria-describedby="basic-addon1">
+            <button type="button" class="btn btn-primary" id="vol-comment-search-submit">Submit</button>
+          </div>
 
+          <div class="row">
+            <label>Search Our Donors</label>
+            <input type="text" class="form-control" id="donor-search-for-comment" placeholder="Search Donor Database" aria-label="Username" aria-describedby="basic-addon1">
+            <button type="button" class="btn btn-primary" id="donor-comment-search-submit">Submit</button>
+          </div>
 
+          <div class="row">
+            <label>Search Participating Shelters</label>
+            <input type="text" class="form-control" id="shelter-search-for-comment" placeholder="Search Shelter Database" aria-label="Username" aria-describedby="basic-addon1">
+            <button type="button" class="btn btn-primary" id="shelter-comment-search-submit">Submit</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div>
+          <p>Search Results</p>
+          <ul id="query-display"></ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
   <!-- Footer -->
   <footer class="footer bg-light">
     <div class="container">
@@ -76,6 +117,8 @@
     </div>
   </footer>
   <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+
+  <script src="/js/comment-page.js"></script>
 </body>
 
 </html>

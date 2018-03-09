@@ -51,6 +51,13 @@ router.get( "/profile/volunteer", function ( req, res ) {
 
 
 
+//comments
+router.get( "/comments", function ( req, res ) {
+  res.sendFile( '/comment-page.html', { root: 'views' } );
+} )
+
+
+
 
 
 

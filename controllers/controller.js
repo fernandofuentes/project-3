@@ -113,6 +113,30 @@ router.post( "/sign-up/recipient", function ( req, res ) {
     } );
 } );
 
+//get route for loading searchvolunteer data into for comment purposes
+router.get( "/query/:query", function ( req, res ) {
+
+  db.Volunteer.findOne( {
+        where: {
+          volunteer_first_name: req.params.query
+        }
+      } //end Volunteer.findOne
+      // , {
+      //   include:[{
+      //     association: buses.BusId
+      //   }]
+      // }
+    ).then( function ( dbFam ) {
+      res.json( dbFam );
+      console.log( 'res is:', res );
+    } )
+    .catch( function ( err ) {
+      // Whenever a validation or flag fails, an error is thrown
+      // We can "catch" the error to prevent it from being "thrown", which could crash our node router
+      res.json( err );
+    } );
+} ); //end profiles/volunteer
+
 
 
 module.exports = router;
