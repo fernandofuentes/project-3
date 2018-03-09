@@ -73,14 +73,14 @@ router.post( "/sign-up/donor", function ( req, res ) {
         manager_phone_number: req.body.manager_phone_number
       } //end Donor.create
 
- // , {
+      // , {
       //   include:[{
       //     association: buses.BusId
       //   }]
       // }
     ).then( function ( dbFam ) {
       res.json( dbFam );
-    console.log( ".then happened" );
+      console.log( ".then happened" );
     } )
     .catch( function ( err ) {
       // Whenever a validation or flag fails, an error is thrown
