@@ -1,6 +1,8 @@
 const express = require( "express" );
 const router = express.Router();
 
+var id;
+
 //import models
 var db = require( "../models" );
 
@@ -128,14 +130,45 @@ router.get( "/query/:query", function ( req, res ) {
       // }
     ).then( function ( dbFam ) {
       res.json( dbFam );
-      console.log( 'res is:', res );
+      console.log( 'res:', res );
+
+
     } )
     .catch( function ( err ) {
       // Whenever a validation or flag fails, an error is thrown
       // We can "catch" the error to prevent it from being "thrown", which could crash our node router
       res.json( err );
     } );
+
+
 } ); //end profiles/volunteer
+
+
+
+// POST route for saving a new comment
+router.post( "/comments", function ( req, res ) {
+  console.log( "create comment route hit" );
+
+  db.Comment.create( {
+        reviewee: req.params.reviewee,
+        comment: req.params.comment,
+        volunteerId: id
+
+      } //end create comment
+      // , {
+      //   include:[{
+      //     association: buses.BusId
+      //   }]
+      // }
+    ).then( function ( dbFam ) {
+      res.json( dbFam );
+      console.log( "comment .then happened" );
+    } )
+    .catch( function ( err ) {
+
+      res.json( err );
+    } );
+} );
 
 
 
