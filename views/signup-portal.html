@@ -1,39 +1,63 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset="utf-8">
-    <title>Family Meal</title>
+<head>
+  <meta charset="utf-8">
+  <title>Family Meal</title>
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="../public/css/style.css" rel="stylesheet">
-    <link href="../public/css/custom.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="../public/css/style.css" rel="stylesheet">
+  <link href="../public/css/custom.css" rel="stylesheet">
 
 
-  </head>
+</head>
 
-  <body>
+<body>
+
+  <!-- Navigation -->
+
+  <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-      <div class="row">
-        <h1>How would you like to help?</h1>
+      <a class="navbar-brand" href="/"><img class="navbar-brand" src="img/fml-logo-2.png"></a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/faq">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/comments">Comment</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/sign-up">Sign-Up</a>
+        </li>
+
+      </ul>
+      <a class="btn btn-primary" href="/sign-up">Sign In</a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <h1>How would you like to help?</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <label>Volunteer to deliver food</label><br>
+        <a href="/sign-up/volunteer"><button type="button" class="btn btn-primary">Sign Up</button></a>
       </div>
-      <div class="row">
-        <div class="col-md-4">
-          <label>Volunteer to deliver food</label><br>
-          <a href="/sign-up/volunteer"><button type="button" class="btn btn-primary">Sign Up</button></a>
-        </div>
 
-        <div class="col-md-4">
-          <label>I want to donate food from my business</label><br>
-          <a href="/sign-up/donor"><button type="button" class="btn btn-primary">Sign Up</button></a>
-        </div>
+      <div class="col-md-4">
+        <label>I want to donate food from my business</label><br>
+        <a href="/sign-up/donor"><button type="button" class="btn btn-primary">Sign Up</button></a>
+      </div>
 
-        <div class="col-md-4">
-          <label>I would like food</label><br>
-          <a href="/sign-up/recipient"><button type="button" class="btn btn-primary">Sign Up</button></a>
-        </div>
+      <div class="col-md-4">
+        <label>I would like food</label><br>
+        <a href="/sign-up/recipient"><button type="button" class="btn btn-primary">Sign Up</button></a>
       </div>
     </div>
+  </div>
 
 
 
@@ -42,7 +66,7 @@
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
 
 </html>
