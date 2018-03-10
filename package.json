@@ -35,6 +35,10 @@
         "react-dom": "^16.2.0",
         "react-scripts": "^1.1.1",
         "passport": "^0.4.0",
-        "passport-local": "^1.0.0"
+        "passport-local": "^1.0.0",
+        "express-handlebars": "*",
+        "express-session": "*",
+        "handlebars": "*",
+        "dotenv": "*"
     }
 }
