@@ -45,7 +45,7 @@ router.post( "/sign-up/donor", function ( req, res ) {
 //why is there and 2nd sign-up/donor?//
 
 //profile/volunteer
-router.get( "/profile/volunteer", function ( req, res ) {
+router.get( "/profiles/volunteer", function ( req, res ) {
   res.sendFile( '/profiles/volunteer-profile.html', { root: 'views' } );
 } );
 
