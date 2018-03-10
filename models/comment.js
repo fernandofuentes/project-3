@@ -18,7 +18,7 @@ module.exports = function ( sequelize, DataTypes ) {
         //name of person/place given review
         allowNull: true,
         type: DataTypes.STRING( 50 ),
-        defaultValue: "Anonymous",
+        // defaultValue: "Anonymous",
 
 
         validate: {

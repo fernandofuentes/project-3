@@ -148,11 +148,19 @@ router.get( "/query/:query", function ( req, res ) {
 // POST route for saving a new comment
 router.post( "/comments", function ( req, res ) {
   console.log( "create comment route hit" );
+  console.log( "req.body is:", req.body );
+
+  // var id = $( this ).attr( "data-id" );
+  // console.log( id );
+
 
   db.Comment.create( {
-        reviewee: req.params.reviewee,
-        comment: req.params.comment,
+        reviewee: req.body.reviewee,
+        reviewer: req.body.reviewer,
+        comment: req.body.comment,
         volunteerId: id
+
+
 
       } //end create comment
       // , {
