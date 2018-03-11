@@ -5,6 +5,7 @@ $( document ).ready( function () {
   var reviewer;
   var reviewee;
   var id;
+  var person;
 
   $( "#vol-comment-search-submit" ).on( "click", function ( event ) {
     // Make sure to preventDefault on a submit event.
@@ -60,12 +61,16 @@ $( document ).ready( function () {
     $( "#vol-comment-input" ).val( '' );
     $( "#vol-commenter-name-input" ).val( '' );
 
+
+
     //i think i need to bind the comment to the query id?
 
     $.post( "/comments", commentObj, function ( res ) {
       if ( res ) {
         console.log( "db response for comment post is:", res );
 
+        $( ".modal" ).modal( 'show' );
+        $( "#modal-body-text" ).text( 'Thanks for the feedback!' );
 
       } else {
         console.log( "error" );
