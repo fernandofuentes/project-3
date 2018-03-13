@@ -2,51 +2,77 @@
 <html lang="en">
 
 <head>
-    <title>Passport Authentication</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <title>Passport Authentication</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Custom fonts for this template -->
-    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+   <!-- Custom fonts for this template -->
+   <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   <link href="/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- Custom styles for this template -->
-    <link href="css/landing-page.css" rel="stylesheet">
+   <!-- Custom styles for this template -->
+   <link href="css/landing-page.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-light bg-light static-top">
-        <div class="container">
-            <a class="navbar-brand" href="/"><img class="navbar-brand" src="img/fml-logo-2.png"></a>
-            <ul class="nav nav-pills">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/faq">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/comments">Comment</a>
-                </li>
+   <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+         <a class="navbar-brand" href="/"><img class="navbar-brand" src="img/fml-logo-2.png"></a>
+         <ul class="nav nav-pills">
+            <li class="nav-item">
+               <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="/faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="/comments">Comment</a>
+            </li>
 
-            </ul>
-            <a class="btn btn-danger" href="/logout">Logout</a>
-        </div>
-    </nav>
+         </ul>
+         <a class="btn btn-danger" href="/logout">Logout</a>
+      </div>
+   </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h2>Welcome <span class="member-name"></span></h2>
-            </div>
-        </div>
-    </div>
+   <!-- Welcome *NAME" -->
+   <div class="container">
+      <div class="row">
+         <div class="col-12">
+            <h2>Welcome <span class="member-name"></span></h2>
+         </div>
+      </div>
+   </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/members.js"></script>
+   <!-- Sign up portal / 3 choices -->
+   <div class="container">
+      <div class="row">
+         <div class="col-12">
+            <h1>How would you like to help?</h1>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-4">
+            <label>Volunteer to deliver food</label><br>
+            <a href="/sign-up/volunteer"><button type="button" class="btn btn-primary">Sign Up</button></a>
+         </div>
+
+         <div class="col-md-4">
+            <label>I want to donate food from my business</label><br>
+            <a href="/sign-up/donor"><button type="button" class="btn btn-primary">Sign Up</button></a>
+         </div>
+
+         <div class="col-md-4">
+            <label>I would like food</label><br>
+            <a href="/sign-up/recipient"><button type="button" class="btn btn-primary">Sign Up</button></a>
+         </div>
+      </div>
+   </div>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script type="text/javascript" src="js/members.js"></script>
 
 </body>
 
