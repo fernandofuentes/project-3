@@ -37,7 +37,7 @@ router.post( "/sign-up/volunteer", function ( req, res ) {
 } );
 
 //get route for loading volunteer data into profile
-router.get( "/profiles/volunteer", function ( req, res ) {
+router.get( "/members/volunteers", function ( req, res ) {
   console.log( "profile route hit" );
 
   db.Volunteer.findByID( {
