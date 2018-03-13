@@ -40,19 +40,23 @@ router.post( "/sign-up/volunteer", function ( req, res ) {
 router.get( "/members/volunteers", function ( req, res ) {
   console.log( "profile route hit" );
 
-  db.Volunteer.findByID( {
+
+  db.Volunteer.findOne( {
         where: {
-          id: "1"
+          volunteer_first_name: "Brandon"
         }
-      } //end Volunteer.findByID
+      }
+      //end Volunteer.findByID
       // , {
       //   include:[{
       //     association: buses.BusId
       //   }]
       // }
     ).then( function ( dbFam ) {
+
       res.json( dbFam );
       console.log( ".then volunteer profile load happened" );
+      // console.log( "res is:", res );
     } )
     .catch( function ( err ) {
       // Whenever a validation or flag fails, an error is thrown
