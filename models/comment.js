@@ -6,7 +6,7 @@ module.exports = function ( sequelize, DataTypes ) {
 
       reviewee: {
         //name of person/place being reviewed
-        allowNull: true,
+        allowNull: false,
         type: DataTypes.STRING( 50 ),
 
         validate: {
@@ -16,7 +16,7 @@ module.exports = function ( sequelize, DataTypes ) {
 
       reviewer: {
         //name of person/place given review
-        allowNull: true,
+        allowNull: false,
         type: DataTypes.STRING( 50 ),
         // defaultValue: "Anonymous",
 
@@ -27,7 +27,7 @@ module.exports = function ( sequelize, DataTypes ) {
       },
 
       comment: {
-        allowNull: true,
+        allowNull: false,
         type: DataTypes.TEXT()
       }
     }, //end of 2nd argument
