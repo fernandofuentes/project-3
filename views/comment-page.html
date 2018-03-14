@@ -2,172 +2,172 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Family Meal Comment Page</title>
+  <meta charset="utf-8">
+  <title>Family Meal Comment Page</title>
 
-    <!-- BOOTSTRAP -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- BOOTSTRAP -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins|Roboto" rel="stylesheet">
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins|Roboto" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/comments-page.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/comments-page.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top">
-        <div class="container">
-            <a class="navbar-brand" href="/"><img class="navbar-brand" src="img/fml-logo-2.png"></a>
-            <ul class="nav nav-pills">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/faq">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/comments">Comment</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/sign-up">Sign-Up</a>
-                </li>
-
-            </ul>
-            <a class="btn btn-primary" href="/sign-up">Sign In</a>
-        </div>
-    </nav>
-
-
-
-
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-4 col-md-4">
-                <div>
-                    <h1>Comments</h1>
-                    <p><span class="search-instructions">Search below for the party you'd like to leave a comment for.</span></p>
-                </div>
-            </div>
+      <a class="navbar-brand" href="/"><img class="navbar-brand" src="img/fml-logo-2.png"></a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/faq">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/comments">Comment</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/sign-up">Sign-Up</a>
+        </li>
 
-            <div class="col-12 col-lg-8 col-md-8">
+      </ul>
+      <a class="btn btn-primary" href="/login">Sign In</a>
+    </div>
+  </nav>
 
-            </div>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-4 col-md-4">
+        <div>
+          <h1>Comments</h1>
+          <p><span class="search-instructions">Search below for the party you'd like to leave a comment for.</span></p>
         </div>
+      </div>
 
-        <div class="row">
-            <div id="search-for-comment-div" class="col-12 col-lg-4 col-md-4">
-                <div class="row search-row">
-                    <div class="col-12">
-                        <h4>Search For Volunteer</h4>
-                        <input type="text" class="form-control" id="vol-search-for-comment" placeholder="Search Volunteer Database" aria-label="Username" aria-describedby="basic-addon1">
-                        <button type="button" class="btn btn-primary" id="vol-comment-search-submit">Submit</button>
-                    </div>
-                </div>
+      <div class="col-12 col-lg-8 col-md-8">
 
-                <div class="row search-row">
-                    <div class="col-12">
-                        <h4>Search Our Donors</h4>
-                        <input type="text" class="form-control" id="donor-search-for-comment" placeholder="Search Donor Database" aria-label="Username" aria-describedby="basic-addon1">
-                        <button type="button" class="btn btn-primary" id="donor-comment-search-submit">Submit</button>
-                    </div>
-                </div>
-
-                <div class="row search-row">
-                    <div class="col-12">
-                        <h4>Search Participating Shelters</h4>
-                        <input type="text" class="form-control" id="shelter-search-for-comment" placeholder="Search Shelter Database" aria-label="Username" aria-describedby="basic-addon1">
-                        <button type="button" class="btn btn-primary" id="shelter-comment-search-submit">Submit</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-8 col-md-8">
-                <div>
-                    <!-- <p>Search Results</p> -->
-                    <div id="query-display"></div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
+    <div class="row">
+      <div id="search-for-comment-div" class="col-12 col-lg-4 col-md-4">
+        <div class="row search-row">
+          <div class="col-12">
+            <h4>Search For Volunteer</h4>
+            <input type="text" class="form-control" id="vol-search-for-comment" placeholder="Search Volunteer Database" aria-label="Username" aria-describedby="basic-addon1">
+            <button type="button" class="btn btn-primary" id="vol-comment-search-submit">Submit</button>
+          </div>
+        </div>
 
-    <!-- Footer -->
-    <footer class="footer bg-light fixed-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-                    <ul class="list-inline mb-2">
-                        <li class="list-inline-item">
-                            <a href="#">About</a>
-                        </li>
-                        <li class="list-inline-item">&sdot;</li>
-                        <li class="list-inline-item">
-                            <a href="#">Contact</a>
-                        </li>
-                        <li class="list-inline-item">&sdot;</li>
-                        <li class="list-inline-item">
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li class="list-inline-item">&sdot;</li>
-                        <li class="list-inline-item">
-                            <a href="#">Privacy Policy</a>
-                        </li>
-                    </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2018. All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item mr-3">
-                            <a href="#">
+        <div class="row search-row">
+          <div class="col-12">
+            <h4>Search Our Donors</h4>
+            <input type="text" class="form-control" id="donor-search-for-comment" placeholder="Search Donor Database" aria-label="Username" aria-describedby="basic-addon1">
+            <button type="button" class="btn btn-primary" id="donor-comment-search-submit">Submit</button>
+          </div>
+        </div>
+
+        <div class="row search-row">
+          <div class="col-12">
+            <h4>Search Participating Shelters</h4>
+            <input type="text" class="form-control" id="shelter-search-for-comment" placeholder="Search Shelter Database" aria-label="Username" aria-describedby="basic-addon1">
+            <button type="button" class="btn btn-primary" id="shelter-comment-search-submit">Submit</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-8 col-md-8">
+        <div>
+          <!-- <p>Search Results</p> -->
+          <div id="query-display"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="footer bg-light fixed-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2018. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
                   <i class="fa fa-facebook fa-2x fa-fw"></i>
                 </a>
-                        </li>
-                        <li class="list-inline-item mr-3">
-                            <a href="#">
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
                   <i class="fa fa-twitter fa-2x fa-fw"></i>
                 </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
                   <i class="fa fa-instagram fa-2x fa-fw"></i>
                 </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            </li>
+          </ul>
         </div>
-    </footer>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Begin modal -->
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <!-- <h5 class="modal-title" id="exampleModalLabel">Welcome to the team!</h5> -->
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <!-- Begin modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h5 class="modal-title" id="exampleModalLabel">Welcome to the team!</h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-                </div>
-                <div class="modal-body">
-                    <h5 id="modal-body-text" style="text-align: center"></h5>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
         </div>
+        <div class="modal-body">
+          <h5 id="modal-body-text" style="text-align: center"></h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
-    <!-- End modal -->
+  </div>
+  <!-- End modal -->
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script src="/js/vol-comment-page.js"></script>
-    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="/js/vol-comment-page.js"></script>
+  <script src="/js/recipient-comment-page.js"></script>
 
 </body>
 
