@@ -16,7 +16,7 @@ strong {
 
 a {
     font-family: 'Roboto', sans-serif;
-    color: #555555;
+    color: #333333 !important;
 }
 
 a, a:hover, a:focus {
