@@ -56,6 +56,10 @@ router.get( "/comments", function ( req, res ) {
   res.sendFile( '/comment-page.html', { root: 'views' } );
 } )
 
+router.get( "/members", function ( req, res ) {
+  res.sendFile( '../public/members.html', { root: 'views' } );
+} )
+
 
 
 

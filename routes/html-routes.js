@@ -33,10 +33,10 @@ module.exports = function ( app ) {
 
 
   //testing profile routes
-  router.get( "/members/volunteers/myprofile", isAuthenticated, function ( req, res ) {
-    // res.sendFile( path.join( __dirname, "../views/profiles/volunteer-profile.html" ) );
-    console.log( "vol profile html file served" );
-    // console.log( "res is:", res );
-  } );
+  // app.get( "/members/profiles/", isAuthenticated, function ( req, res ) {
+  //   res.sendFile( path.join( __dirname, "../views/profiles/volunteer-profile.html" ) );
+  //   console.log( "vol profile html file served" );
+  //   // console.log( "res is:", res );
+  // } );
 
 };

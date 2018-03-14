@@ -8,7 +8,6 @@ var id;
 var db = require( "../models" );
 
 
-
 // POST route for saving a new volunteer
 router.post( "/sign-up/volunteer", function ( req, res ) {
   console.log( "create happened" );
@@ -38,7 +37,7 @@ router.post( "/sign-up/volunteer", function ( req, res ) {
 } );
 
 //get route for loading volunteer data into profile
-router.get( "/members/volunteers/myprofile", function ( req, res ) {
+router.get( "/members/profiles", function ( req, res ) {
 
   db.Volunteer.findOne( {
         where: {
