@@ -107,6 +107,70 @@ router.post( "/sign-up/donor", function ( req, res ) {
     } );
 } );
 
+//get route for loading searchvolunteer data into for comment purposes
+router.get( "/query/:query", function ( req, res ) {
+
+  db.Donor.findOne( {
+        where: {
+          business_name: req.params.query
+        }
+      } //end Donor.findOne
+      // , {
+      //   include:[{
+      //     association: buses.BusId
+      //   }]
+      // }
+    ).then( function ( dbFam ) {
+      res.json( dbFam );
+      console.log( 'res:', res );
+
+
+    } )
+    .catch( function ( err ) {
+      // Whenever a validation or flag fails, an error is thrown
+      // We can "catch" the error to prevent it from being "thrown", which could crash our node router
+      res.json( err );
+    } );
+
+
+} ); //end profiles/donor
+
+
+
+// POST route for saving a new comment
+router.post( "/comments", function ( req, res ) {
+  console.log( "create comment route hit" );
+  console.log( "req.body is:", req.body );
+
+  // var id = $( this ).attr( "data-id" );
+  // console.log( id );
+
+
+  db.Comment.create( {
+        reviewee: req.body.reviewee,
+        reviewer: req.body.reviewer,
+        comment: req.body.comment,
+        volunteerId: id
+
+
+
+      } //end create comment
+      // , {
+      //   include:[{
+      //     association: buses.BusId
+      //   }]
+      // }
+    ).then( function ( dbFam ) {
+      res.json( dbFam );
+      console.log( "comment .then happened" );
+    } )
+    .catch( function ( err ) {
+
+      res.json( err );
+    } );
+} );
+
+
 
 
 // POST route for saving a new Recipient
