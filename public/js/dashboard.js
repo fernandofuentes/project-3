@@ -56,15 +56,20 @@ $( document ).ready( function () {
 
     console.log( "don obj:", donationObj );
 
+    $( "#food_item" ).val( '' );
+    $( "#quantity" ).val( '' );
+    $( "#donor_business_name" ).val( '' );
+
+
     $.post( "/dashboard", donationObj, function ( res ) {
 
       if ( res ) {
         console.log( "db response for donation post is:", res );
 
-        // $( ".modal" ).modal( 'show' );
-        // $( "#modal-body-text" ).text( 'Thanks for the feedback!' );
+        $( ".modal" ).modal( 'show' );
+        $( "#modal-body-text" ).text( "Thanks for the " + food_item + ", " + donor_business_name + "!" );
 
-        // $( "#dashboard" ).empty();
+        $( "#dashboard" ).empty();
 
       } else {
         console.log( "error" );
