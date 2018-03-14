@@ -131,6 +131,32 @@ router.post( "/sign-up/recipient", function ( req, res ) {
     } );
 } );
 
+//get route for loading searchrecipient data into for comment purposes
+router.get("/query/:query", function (req, res) {
+
+  db.Destination.findOne({
+    where: {
+      recipient_name: req.params.query
+    }
+  } 
+
+  ).then(function (dbFam) {
+    res.json(dbFam);
+    console.log('res:', res);
+
+
+  })
+    .catch(function (err) {
+      // Whenever a validation or flag fails, an error is thrown
+      // We can "catch" the error to prevent it from being "thrown", which could crash our node router
+      res.json(err);
+    });
+
+
+}); //end profiles/recipient
+
+
+
 //get route for loading searchvolunteer data into for comment purposes
 router.get( "/query/:query", function ( req, res ) {
 
