@@ -85,7 +85,7 @@ $( document ).ready( function () {
 
     $.get( "/dashboard/get", function ( res ) {
       if ( res ) {
-        console.log( "db response for donation query was:", res );
+        // console.log( "db response for donation query was:", res );
 
         for ( var i = 0; i < res.length; i++ ) {
           // var donashunz = $(

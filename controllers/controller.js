@@ -250,8 +250,15 @@ router.get( "/dashboard/donate", function ( req, res ) {
 } ); //end profiles/volunteer
 
 router.get( "/dashboard/get", function ( req, res ) {
-  db.Donation.findAll().then( function ( donations ) {
+  db.Donation.findAll( {
+      include: [
+        {
+          model: db.Donor
+        }
+      ]
+    } ).then( function ( donations ) {
       res.json( donations );
+      console.log( "db.donor is:", db.Donor );
       console.log( "all donations are:", donations );
       // console.log( 'controller line 238 res:', res );
     } )
