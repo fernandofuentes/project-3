@@ -32,11 +32,11 @@ module.exports = function ( app ) {
 
 
 
-  //testing profile routes
-  // app.get( "/members/profiles/", isAuthenticated, function ( req, res ) {
-  //   res.sendFile( path.join( __dirname, "../views/profiles/volunteer-profile.html" ) );
-  //   console.log( "vol profile html file served" );
-  //   // console.log( "res is:", res );
-  // } );
+  //testing dashboard routes
+  app.get( "/dashboard", isAuthenticated, function ( req, res ) {
+    res.sendFile( path.join( __dirname, "../views/dashboard.html" ) );
+    console.log( "dashboard file served" );
+    // console.log( "res is:", res );
+  } );
 
 };
