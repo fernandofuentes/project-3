@@ -19,11 +19,11 @@ $( document ).ready( function () {
 
         for ( var i = 0; i < res.length; i++ ) {
           var allDonors = $( "<option>" + res[ i ].business_name + "</option>" )
+          $( "#donor_business_name" ).append( allDonors );
 
         }
 
 
-        $( "#donor_business_name" ).append( allDonors );
 
       } else {
         console.log( "error" );
