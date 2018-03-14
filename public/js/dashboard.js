@@ -9,11 +9,12 @@ $( document ).ready( function () {
   $( "#donate" ).on( "click", function ( event ) {
     event.preventDefault();
 
-    q = "donate"
+    // q = "donate"
 
-    $.get( "/dashboard/" + q, function ( res ) {
+    $.get( "/dashboard/donate", function ( res ) {
       if ( res ) {
         console.log( "db response for donor query is:", res );
+        console.log( 'dashboard/donate route hit on front end' )
 
         console.log( res[ 0 ].business_name );
 
@@ -77,7 +78,34 @@ $( document ).ready( function () {
 
     } )
 
-  } )
+  } ) //end submit donation on click
+
+  $( "#get" ).on( "click", function ( event ) {
+    event.preventDefault();
+
+    $.get( "/dashboard/get", function ( res ) {
+      if ( res ) {
+        console.log( "db response for donation query was:", res );
+
+        for ( var i = 0; i < res.length; i++ ) {
+          // var donashunz = $(
+          //   "<table id='donation-table'><tr><th>ID</th><th>Food</th><th>Quantity</th><th>Donor</th><th>Location</th></tr>" + "<tr><td>" + res[ i ].id + "</td><td>" + res[ i ].food_item + "</td><td>" + res[ i ].quantity + "</td><td>" + res[ i ].donor_business_name + "</td><td>" + "address dummy" + "</td></tr></table>"
+          // )
+
+          var donashunz = $(
+            "<div class='row table-headers'><div class='col-md-1 head-cells'>ID</div><div class='col-md-3 head-cells'>Food</div><div class='col-md-1 head-cells'>Quantity</div><div class='col-md-3 head-cells'>Donor</div><div class='col-md-4 head-cells'>Address</div></div>" + "<div class='row'><div class='col-md-1 data-cell'>" + res[ i ].id + "</div><div class='col-md-3 data-cell'>" + res[ i ].food_item + "</div><div class='col-md-1 data-cell'>" + res[ i ].quantity + "</div><div class='col-md-3 data-cell'>" + res[ i ].donor_business_name + "</div><div class='col-md-4 data-cell'>" + 'dummy address' + "</div>"
+          )
+
+          $( "#dashboard" ).append( donashunz );
+        }
+
+      } else {
+        console.log( "error" );
+      }
+
+    } )
+
+  } ) //end on click #get button
 
 
 } ); //end doc . ready fx
