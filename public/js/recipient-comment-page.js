@@ -64,8 +64,12 @@ $(document).ready(function () {
 
         $.post("/comments", commentObj, function (res) {
             if (res) {
-                console.log("db response for comment post is:", res);
+                // console.log( "db response for comment post is:", res );
 
+                $(".modal").modal('show');
+                $("#modal-body-text").text('Thanks for the feedback!');
+
+                $("#query-display").empty();
 
             } else {
                 console.log("error");
