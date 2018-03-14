@@ -1,11 +1,11 @@
 const express = require( "express" );
 const router = express.Router();
+const path = require( "path" );
 
 var id;
 
 //import models
 var db = require( "../models" );
-
 
 
 // POST route for saving a new volunteer
@@ -37,22 +37,38 @@ router.post( "/sign-up/volunteer", function ( req, res ) {
 } );
 
 //get route for loading volunteer data into profile
-router.get( "/profiles/volunteer", function ( req, res ) {
-  console.log( "profile route hit" );
+router.get( "/members/profiles", function ( req, res ) {
 
-  db.Volunteer.findByID( {
+  db.Volunteer.findOne( {
         where: {
-          id: "1"
+          volunteer_first_name: "Brandon"
         }
-      } //end Volunteer.findByID
+      }
+      //end Volunteer.findByID
       // , {
       //   include:[{
       //     association: buses.BusId
       //   }]
       // }
     ).then( function ( dbFam ) {
-      res.json( dbFam );
+      // res.sendFile( path.join( __dirname, "../views/profiles/volunteer-profile.html" ) );
+      // res.sendFile( path.join( __dirname, "../views/profiles/volunteer-profile.html" ) );
+      res.json( dbFam )
       console.log( ".then volunteer profile load happened" );
+
+      var lastName = dbFam.volunteer_last_name;
+      var firstName = dbFam.volunteer_first_name;
+      var date = dbFam.createdAt;
+
+      var volDataObj = {
+        name: firstName,
+        date: date
+      }
+
+      console.log( "volData Object is:", volDataObj );
+
+
+      // console.log( "res is:", res );
     } )
     .catch( function ( err ) {
       // Whenever a validation or flag fails, an error is thrown

@@ -5,21 +5,21 @@ $( document ).ready( function () {
 
 
   // Send the POST request.
-  // $.post( "/sign-up/volunteer", newVol, function ( res ) {
-  //   if ( res ) {
-  //     console.log( res );
-  //
-  //   } else {
-  //     console.log( "error" );
-  //   }
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  // } );
+  $.get( "/members/profiles", function ( res ) {
+    if ( res ) {
+      console.log( "ajax call happened and res is:", res );
+
+    } else {
+      console.log( "error" );
+    }
+
+
+
+
+
+
+
+  } );
 
 
 
