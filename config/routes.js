@@ -60,6 +60,10 @@ router.get( "/members", function ( req, res ) {
   res.sendFile( '../public/members.html', { root: 'views' } );
 } )
 
+// router.get( "/dashboard", function ( req, res ) {
+//   res.sendFile( '../public/dashboard.html', { root: 'views' } );
+// } )
+
 
 
 

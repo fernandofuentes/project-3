@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>Dashboard</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -50,30 +50,47 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1>How would you like to help?</h1>
+        <h1>How would you like to help today?</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-md-4">
-        <label>Volunteer to deliver food</label><br>
-        <a href="/sign-up/volunteer"><button type="button" class="btn btn-primary">Sign Up</button></a>
+        <div>
+          <label>Volunteer to deliver food</label><br>
+          <button type="button" class="btn btn-primary" id="pickup">Pickup/Deliver</button>
+        </div>
       </div>
 
       <div class="col-md-4">
-        <label>I want to donate food from my business</label><br>
-        <a href="/sign-up/donor"><button type="button" class="btn btn-primary">Sign Up</button></a>
+        <div>
+          <label>I want to donate food from my business</label><br>
+          <button type="button" class="btn btn-primary" id="donate">Donate</button>
+        </div>
       </div>
 
       <div class="col-md-4">
-        <label>I would like food</label><br>
-        <a href="/sign-up/recipient"><button type="button" class="btn btn-primary">Sign Up</button></a>
+        <div>
+          <label>I would like food</label><br>
+          <button type="button" class="btn btn-primary" id="get">Receive</button>
+        </div>
       </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div id="dashboard"></div>
+      </div>
+      <div class="col-md-2"></div>
+
     </div>
 
   </div>
 
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="js/dashboard.js"></script>
 
 </body>
 

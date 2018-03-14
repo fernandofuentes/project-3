@@ -194,6 +194,21 @@ router.post( "/comments", function ( req, res ) {
     } );
 } );
 
+router.post( "/dashboard", function ( req, res ) {
+  db.Donation.create( {
+      food_item: req.body.food_item,
+      quantity: req.body.quantity,
+      donor_business_name: req.body.donor_business_name
+    } ).then( function ( dbFam ) {
+      res.json( dbFam );
+      console.log( "donation .then happened" );
+    } )
+    .catch( function ( err ) {
+
+      res.json( err );
+    } );
+} )
+
 
 
 module.exports = router;
