@@ -196,47 +196,47 @@ router.post( "/sign-up/recipient", function ( req, res ) {
 } );
 
 //get route for loading searchrecipient data into for comment purposes
-router.get("/query/:query", function (req, res) {
+router.get( "/query/:query", function ( req, res ) {
 
-  db.Destination.findOne({
-    where: {
-      recipient_name: req.params.query
-    }
-  } 
+  db.Destination.findOne( {
+        where: {
+          recipient_name: req.params.query
+        }
+      }
 
-  ).then(function (dbFam) {
-    res.json(dbFam);
-    console.log('res:', res);
+    ).then( function ( dbFam ) {
+      res.json( dbFam );
+      console.log( 'res:', res );
 
 
-  })
-    .catch(function (err) {
+    } )
+    .catch( function ( err ) {
       // Whenever a validation or flag fails, an error is thrown
       // We can "catch" the error to prevent it from being "thrown", which could crash our node router
-      res.json(err);
-    });
+      res.json( err );
+    } );
 
 
-}); //end profiles/recipient
+} ); //end profiles/recipient
 
 
 
 //get route for loading searchvolunteer data into for comment purposes
-router.get( "/query/:query", function ( req, res ) {
+router.get( "/dashboard/:q", function ( req, res ) {
 
-  db.Volunteer.findOne( {
-        where: {
-          volunteer_first_name: req.params.query
-        }
-      } //end Volunteer.findOne
+  db.Donor.findAll( {
+
+
+      } //end donor.findall
       // , {
       //   include:[{
       //     association: buses.BusId
       //   }]
       // }
-    ).then( function ( dbFam ) {
-      res.json( dbFam );
-      console.log( 'res:', res );
+    ).then( function ( donorz ) {
+      res.json( donorz );
+      console.log( donorz );
+      // console.log( 'controller line 238 res:', res );
 
 
     } )
@@ -283,6 +283,34 @@ router.post( "/comments", function ( req, res ) {
       res.json( err );
     } );
 } );
+
+//get route for loading donor data for posting of donations
+router.get( "/query/:query", function ( req, res ) {
+
+  db.Volunteer.findOne( {
+        where: {
+          volunteer_first_name: req.params.query
+        }
+      } //end Volunteer.findOne
+      // , {
+      //   include:[{
+      //     association: buses.BusId
+      //   }]
+      // }
+    ).then( function ( dbFam ) {
+      res.json( dbFam );
+      console.log( 'res:', res );
+
+
+    } )
+    .catch( function ( err ) {
+      // Whenever a validation or flag fails, an error is thrown
+      // We can "catch" the error to prevent it from being "thrown", which could crash our node router
+      res.json( err );
+    } );
+
+
+} ); //end profiles/volunteer
 
 router.post( "/dashboard", function ( req, res ) {
   db.Donation.create( {

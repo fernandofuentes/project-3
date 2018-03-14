@@ -3,12 +3,36 @@ $( document ).ready( function () {
   var quantity;
   var donor_business_name;
 
+  var q;
+
 
   $( "#donate" ).on( "click", function ( event ) {
     event.preventDefault();
 
+    q = "donate"
+
+    $.get( "/dashboard/" + q, function ( res ) {
+      if ( res ) {
+        console.log( "db response for donor query is:", res );
+
+        console.log( res[ 0 ].business_name );
+
+        for ( var i = 0; i < res.length; i++ ) {
+          var allDonors = $( "<option>" + res[ i ].business_name + "</option>" )
+
+        }
+
+
+        $( "#donor_business_name" ).append( allDonors );
+
+      } else {
+        console.log( "error" );
+      }
+
+    } )
+
     var enterDonation = $(
-      "<div class='row'><h5>Please enter your donation's info below</h5></div>" + "<div class='row'><label for='input'>Donor</label>" + "<input type='text' class='form-control' id='donor_business_name' placeholder='Donors' aria-label='donor' aria-describedby='basic-addon1'></div>" + "<div class='row'><label for='input'>Food</label>" + "<input type='text' class='form-control' id='food_item' placeholder='Foot Item/s' aria-label='food' aria-describedby='basic-addon1'></div>" + "<div class='row'><label for='input'>Quantity</label>" + "<input type='text' class='form-control' id='quantity' placeholder='Quantity' aria-label='food' aria-describedby='basic-addon1'></div>" + "<div class='row'><button type='button' class='btn btn-primary' id='submit-donation'>Submit</button></div>"
+      "<div class='row'><h5>Please enter your donation's info below</h5></div>" + "<div class='row'><label for='input'>Donor</label>" + "<select class='form-control' id='donor_business_name' placeholder='Donors' aria-label='donor' aria-describedby='basic-addon1'></div>" + "<div class='row'><label for='input'>Food</label>" + "<input type='text' class='form-control' id='food_item' placeholder='Foot Item/s' aria-label='food' aria-describedby='basic-addon1'></div>" + "<div class='row'><label for='input'>Quantity</label>" + "<input type='text' class='form-control' id='quantity' placeholder='Quantity' aria-label='food' aria-describedby='basic-addon1'></div>" + "<div class='row'><button type='button' class='btn btn-primary' id='submit-donation'>Submit</button></div>"
     );
     $( "#dashboard" ).append( enterDonation );
 
@@ -48,8 +72,7 @@ $( document ).ready( function () {
 
     } )
 
-
-
   } )
+
 
 } ); //end doc . ready fx
