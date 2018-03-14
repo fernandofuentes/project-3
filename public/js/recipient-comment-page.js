@@ -8,6 +8,7 @@ $(document).ready(function () {
 
     $("#recipient-comment-search-submit").on("click", function (event) {
         // Make sure to preventDefault on a submit event.
+        console.log("button click sucka");
         event.preventDefault();
 
         query = $("#recipient-search-for-comment").val().trim();
