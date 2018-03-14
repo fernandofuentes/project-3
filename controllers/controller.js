@@ -222,7 +222,7 @@ router.get( "/query/:query", function ( req, res ) {
 
 
 //get route for loading searchvolunteer data into for comment purposes
-router.get( "/dashboard/:q", function ( req, res ) {
+router.get( "/dashboard/donate", function ( req, res ) {
 
   db.Donor.findAll( {
 
@@ -248,6 +248,19 @@ router.get( "/dashboard/:q", function ( req, res ) {
 
 
 } ); //end profiles/volunteer
+
+router.get( "/dashboard/get", function ( req, res ) {
+  db.Donation.findAll().then( function ( donations ) {
+      res.json( donations );
+      console.log( "all donations are:", donations );
+      // console.log( 'controller line 238 res:', res );
+    } )
+    .catch( function ( err ) {
+      // Whenever a validation or flag fails, an error is thrown
+      // We can "catch" the error to prevent it from being "thrown", which could crash our node router
+      res.json( err );
+    } );
+} )
 
 
 
