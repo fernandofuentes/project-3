@@ -108,7 +108,7 @@ router.post( "/sign-up/donor", function ( req, res ) {
 } );
 
 //get route for loading searchvolunteer data into for comment purposes
-router.get( "/query/:query", function ( req, res ) {
+router.get( "/donorquery/:query", function ( req, res ) {
 
   db.Donor.findOne( {
         where: {
@@ -196,7 +196,7 @@ router.post( "/sign-up/recipient", function ( req, res ) {
 } );
 
 //get route for loading searchrecipient data into for comment purposes
-router.get( "/query/:query", function ( req, res ) {
+router.get( "/recipientquery/:query", function ( req, res ) {
 
   db.Destination.findOne( {
         where: {
@@ -314,8 +314,8 @@ router.post( "/comments", function ( req, res ) {
     } );
 } );
 
-//get route for loading donor data for posting of donations
-router.get( "/query/:query", function ( req, res ) {
+//get route for loading vol data for posting of comments
+router.get( "/volunteerquery/:query", function ( req, res ) {
 
   db.Volunteer.findOne( {
         where: {
