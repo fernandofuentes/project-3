@@ -40,7 +40,7 @@ module.exports = function ( app ) {
 
     db.Comment.findAll( {
           where: {
-            id: req.user.id
+            reviewee: req.user.id
           }
         }
 
