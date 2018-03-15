@@ -16,7 +16,7 @@ $( document ).ready( function () {
 
 
     // Send the post request.
-    $.get( "/query/" + query, function ( res ) {
+    $.get( "/volunteerquery/" + query, function ( res ) {
       if ( res ) {
         console.log( "db response for vol query is:", res );
         id = res.id;
