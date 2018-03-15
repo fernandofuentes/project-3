@@ -88,12 +88,12 @@ $( document ).ready( function () {
         // console.log( "db response for donation query was:", res );
 
         for ( var i = 0; i < res.length; i++ ) {
-          // var donashunz = $(
-          //   "<table id='donation-table'><tr><th>ID</th><th>Food</th><th>Quantity</th><th>Donor</th><th>Location</th></tr>" + "<tr><td>" + res[ i ].id + "</td><td>" + res[ i ].food_item + "</td><td>" + res[ i ].quantity + "</td><td>" + res[ i ].donor_business_name + "</td><td>" + "address dummy" + "</td></tr></table>"
-          // )
+
+          //this is to format the createdAt datetimes out of js time
+          var dates = moment( res[ i ].createdAt ).format( "dddd, MMMM Do YYYY, h:mm a" );
 
           var donashunz = $(
-            "<div class='row table-headers'><div class='col-md-1 head-cells'>ID</div><div class='col-md-3 head-cells'>Food</div><div class='col-md-1 head-cells'>Quantity</div><div class='col-md-3 head-cells'>Donor</div><div class='col-md-4 head-cells'>Address</div></div>" + "<div class='row'><div class='col-md-1 data-cell'>" + res[ i ].id + "</div><div class='col-md-3 data-cell'>" + res[ i ].food_item + "</div><div class='col-md-1 data-cell'>" + res[ i ].quantity + "</div><div class='col-md-3 data-cell'>" + res[ i ].donor_business_name + "</div><div class='col-md-4 data-cell'>" + 'dummy address' + "</div>"
+            "<div class='row table-headers'><div class='col-md-2 head-cells'>Date</div><div class='col-md-1 head-cells'>ID</div><div class='col-md-2 head-cells'>Food</div><div class='col-md-1 head-cells'>Quantity</div><div class='col-md-2 head-cells'>Donor</div><div class='col-md-4 head-cells'>Address</div></div>" + "<div class='row'><div class='col-md-2 data-cell'>" + dates + "</div><div class='col-md-1 data-cell'>" + res[ i ].id + "</div><div class='col-md-2 data-cell'>" + res[ i ].food_item + "</div><div class='col-md-1 data-cell'>" + res[ i ].quantity + "</div><div class='col-md-2 data-cell'>" + res[ i ].donor_business_name + "</div><div class='col-md-4 data-cell'>" + 'dummy address' + "</div>"
           )
 
           $( "#dashboard" ).append( donashunz );
@@ -103,7 +103,7 @@ $( document ).ready( function () {
         console.log( "error" );
       }
 
-    } )
+    } ) //end dashboard/get
 
   } ) //end on click #get button
 
