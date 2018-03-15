@@ -119,6 +119,7 @@ CALL TO ACTION
 
 .table-headers {
   background-color: yellow;
+  font-weight: bold;
 }
 
 .head-cells {
@@ -129,4 +130,12 @@ CALL TO ACTION
 
 .data-cell {
   padding: 10px;
+}
+
+.claim-btn {
+  width: 100%
+}
+
+#claim-donation {
+  width: 100%;
 }

@@ -36,11 +36,11 @@ module.exports = function ( sequelize, DataTypes ) {
 
     },
     physical_address: {
-            allowNull: false,
-            type: DataTypes.STRING(50),
-            validate: {
-                len: [1, 50]
-            }
+      allowNull: false,
+      type: DataTypes.STRING( 50 ),
+      validate: {
+        len: [ 1, 50 ]
+      }
 
     },
     manager_name: {
@@ -67,8 +67,16 @@ module.exports = function ( sequelize, DataTypes ) {
     Donor.hasMany( models.Comment, {
       foreignKey: {
         allowNull: true
+      }
+    } );
+
+    Donor.hasMany( models.Donation, {
+      foreignKey: {
+        allowNull: true
       },
     } );
+
+
   };
 
   return Donor;
