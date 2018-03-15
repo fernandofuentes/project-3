@@ -70,11 +70,11 @@ module.exports = function ( sequelize, DataTypes ) {
       }
     } );
 
-    // Donor.hasMany( models.Donation, {
-    //   foreignKey: {
-    //     allowNull: true
-    //   },
-    // } );
+    Donor.hasMany( models.Donation, {
+      foreignKey: {
+        allowNull: true
+      },
+    } );
 
 
   };

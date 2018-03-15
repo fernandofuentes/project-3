@@ -254,6 +254,7 @@ router.get( "/dashboard/get", function ( req, res ) {
       include: [
         {
           model: db.Donor
+
         }
       ]
     } ).then( function ( donations ) {
@@ -267,6 +268,15 @@ router.get( "/dashboard/get", function ( req, res ) {
       // We can "catch" the error to prevent it from being "thrown", which could crash our node router
       res.json( err );
     } );
+} )
+
+router.get( "/dashboard/shelters", function ( req, res ) {
+  db.Destination.findAll().then( function ( shelters ) {
+      res.json( shelters );
+    } )
+    .catch( function ( err ) {
+      res.json( err )
+    } )
 } )
 
 
