@@ -30,24 +30,24 @@ module.exports = function ( app ) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get( "/members", isAuthenticated, function ( req, res ) {
     res.sendFile( path.join( __dirname, "../public/members.html" ) );
-
+    console.log( "req.user.id is:", req.user.id );
 
 
   } ); //end get/members
 
   app.get( "/members/recentcomments", function ( req, res ) {
+    console.log( "req.user.id is:", req.user.id );
+
     db.Comment.findAll( {
           where: {
-            reviewee: 1
+            id: req.user.id
           }
         }
 
 
       ).then( function ( dbComments ) {
-        console.log( "req.params.id = ", req.params.id );
 
         res.json( dbComments )
-        console.log( ".then coment search happened" );
         console.log( "dbComments is:", dbComments );
 
       } )

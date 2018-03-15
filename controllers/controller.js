@@ -140,7 +140,6 @@ router.get( "/donorquery/:query", function ( req, res ) {
 // POST route for saving a new comment
 router.post( "/comments", function ( req, res ) {
   console.log( "create comment route hit" );
-  console.log( "req.body is:", req.body );
 
   // var id = $( this ).attr( "data-id" );
   // console.log( id );
@@ -161,7 +160,9 @@ router.post( "/comments", function ( req, res ) {
       //   }]
       // }
     ).then( function ( dbFam ) {
+      console.log( "req.body.reviewee is:", req.body.reviewee );
       res.json( dbFam );
+
       console.log( "comment .then happened" );
     } )
     .catch( function ( err ) {
