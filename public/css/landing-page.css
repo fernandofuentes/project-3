@@ -112,3 +112,30 @@ CALL TO ACTION
     left: 0;
     opacity: 0.3;
 }
+
+#donation-table {
+  width: 99%;
+}
+
+.table-headers {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+.head-cells {
+  font-size: 16px;
+  /* color: red; */
+  padding: 10px;
+}
+
+.data-cell {
+  padding: 10px;
+}
+
+.claim-btn {
+  width: 100%
+}
+
+#claim-donation {
+  width: 100%;
+}

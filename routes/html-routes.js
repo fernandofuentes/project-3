@@ -2,6 +2,8 @@ const express = require( "express" );
 const router = express.Router();
 // Requiring path to so we can use relative routes to our HTML files
 var path = require( "path" );
+var db = require( "../models" );
+
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require( "../config/middleware/isAuthenticated" );
@@ -28,15 +30,39 @@ module.exports = function ( app ) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get( "/members", isAuthenticated, function ( req, res ) {
     res.sendFile( path.join( __dirname, "../public/members.html" ) );
+    console.log( "req.user.id is:", req.user.id );
+
+
+  } ); //end get/members
+
+  app.get( "/members/recentcomments", function ( req, res ) {
+    console.log( "req.user.id is:", req.user.id );
+
+    db.Comment.findAll( {
+          where: {
+            id: req.user.id
+          }
+        }
+
+
+      ).then( function ( dbComments ) {
+
+        res.json( dbComments )
+        console.log( "dbComments is:", dbComments );
+
+      } )
+      .catch( function ( err ) {
+
+        res.json( err );
+      } );
+
+  } )
+
+  //testing dashboard routes
+  app.get( "/dashboard", isAuthenticated, function ( req, res ) {
+    res.sendFile( path.join( __dirname, "../views/dashboard.html" ) );
+    console.log( "dashboard file served" );
+    // console.log( "res is:", res );
   } );
-
-
-
-  //testing profile routes
-  // app.get( "/members/profiles/", isAuthenticated, function ( req, res ) {
-  //   res.sendFile( path.join( __dirname, "../views/profiles/volunteer-profile.html" ) );
-  //   console.log( "vol profile html file served" );
-  //   // console.log( "res is:", res );
-  // } );
 
 };
