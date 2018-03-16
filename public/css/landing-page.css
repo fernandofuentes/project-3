@@ -14,10 +14,36 @@ a {
     color: #333333;
 }
 
+span.home-heading {
+    font-size: 85px;
+    font-weight: 900;
+    line-height: 85px;
+}
+
+span.home-subheading {
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 30px;
+}
+
+.form-box {
+    background-color: #222222;
+    opacity: 0.8;
+    padding: 20px;
+}
+
+.form-box h2, .form-box p {
+    color: #ffffff;
+}
+
+.form-box p a {
+    color: limegreen;
+}
+
 header.masthead {
     position: relative;
     background-color: #343a40;
-    background: url("../img/bg-masthead-pizza.jpg") no-repeat center center;
+    background: url("../img/home-page-banner.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -114,28 +140,28 @@ CALL TO ACTION
 }
 
 #donation-table {
-  width: 99%;
+    width: 99%;
 }
 
 .table-headers {
-  background-color: yellow;
-  font-weight: bold;
+    background-color: yellow;
+    font-weight: bold;
 }
 
 .head-cells {
-  font-size: 16px;
-  /* color: red; */
-  padding: 10px;
+    font-size: 16px;
+    /* color: red; */
+    padding: 10px;
 }
 
 .data-cell {
-  padding: 10px;
+    padding: 10px;
 }
 
 .claim-btn {
-  width: 100%
+    width: 100%
 }
 
 #claim-donation {
-  width: 100%;
+    width: 100%;
 }
