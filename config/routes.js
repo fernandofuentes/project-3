@@ -64,6 +64,17 @@ router.get( "/members", function ( req, res ) {
 //   res.sendFile( '../public/dashboard.html', { root: 'views' } );
 // } )
 
+router.delete( "/dashboard/delete", function ( req, res ) {
+  db.User.destroy( {
+    where: {
+      id: req.user.id
+    } }).then( function (dbFam) {
+      req.method = 'GET'
+      //  res.redirect("/sign-up");
+       res.sendStatus(200);
+    })
+})
+
 
 
 

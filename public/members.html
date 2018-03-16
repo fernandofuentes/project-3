@@ -41,7 +41,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2>Welcome <span class="member-name"></span></h2>
+        <h2>Dashboard <span class="member-name"></span></h2>
       </div>
     </div>
   </div>
@@ -71,6 +71,13 @@
     </div>
 
     <div class="row">
+      <div class="col-lg-12">
+        <h3>Your recent comments</h3>
+        <ul id='user-recent-comments'></ul>
+      </div>
+    </div>
+
+    <div class="row">
       <h1>OR, click to use app</h1>
       <div class="col-md-4"></div>
       <div class="col-md-4">
@@ -78,19 +85,18 @@
       </div>
       <div class="col-md-4"></div>
 
-    </div>
+      <div class="row">
+        <div class="col-md-4"></div>
+          <button type="button" id="delete" class="btn btn-primary">Delete Profile</button>
+        <div class="col-md-4"></div>
 
-    <div class="row">
-      <div class="col-lg-12">
-        <h3>Your recent comments</h3>
-        <ul id='user-recent-comments'></ul>
-      </div>
     </div>
 
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="js/dashboard.js"></script>
 
 </body>
 

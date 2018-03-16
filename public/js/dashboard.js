@@ -105,6 +105,7 @@ $( document ).ready( function () {
         $( "#dashboard" ).append(
           "<div class='row'><div class='col-md-9'></div><div class='col-md-3'><button type='button' class='btn btn-primary claim-btn' id='claim-donation'>Claim Selected Donation(s)</button></div></div>"
         );
+         
 
       } else {
         console.log( "error" );
@@ -119,4 +120,14 @@ $( document ).ready( function () {
     console.log( 'claim btn clicked' );
   } ) //end on click for claim button
 
+  $( document ).on("click", "#delete", function(event) {
+    $.ajax({
+      url: '/dashboard/delete',
+      type: 'DELETE',
+      success: function(res) {
+        console.log(res);
+      }
+    })
+    console.log("here");
+})
 } ); //end doc . ready fx

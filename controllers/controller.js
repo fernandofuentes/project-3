@@ -7,6 +7,7 @@ var id;
 //import models
 var db = require( "../models" );
 
+//import routes
 
 // POST route for saving a new volunteer
 router.post( "/sign-up/volunteer", function ( req, res ) {
@@ -357,6 +358,17 @@ router.post( "/dashboard", function ( req, res ) {
       res.json( err );
     } );
 } )
+
+// router.delete( "/dashboard/delete", function ( req, res ) {
+//   db.User.destroy( {
+//     where: {
+//       id: req.user.id
+//     } }).then( function (dbFam) {
+//       req.method = 'GET'
+//        res.redirect("/");
+//       // res.sendStatus(200);
+//     })
+// })
 
 
 
