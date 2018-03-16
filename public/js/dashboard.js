@@ -111,11 +111,14 @@ $( document ).ready( function () {
           )
 
           $( "#dashboard" ).append( donashunz );
+
         }
 
         $( "#dashboard" ).append(
           "<div class='row'><div class='col-md-9'></div><div class='col-md-3'><button type='button' class='btn btn-primary claim-btn' id='claim-donation'>Claim Selected Donation(s)</button></div></div>"
         );
+
+        $( "#map-title" ).prepend( 'Available Donations in ' );
 
 
 
