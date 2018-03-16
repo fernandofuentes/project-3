@@ -60,3 +60,13 @@ db.sequelize.sync( {
     chalkAnimation.rainbow( "App listening on port " + PORT + "!" );
   } );
 } );
+
+db.Donation.belongsTo( db.Donor );
+db.Donor.hasMany( db.Donation );
+db.Comment.belongsTo( db.User );
+db.User.hasMany( db.Comment );
+db.Volunteer.belongsTo( db.User );
+db.Donor.belongsTo( db.User );
+db.Destination.belongsTo( db.User );
+// db.Donation.hasOne( db.Destination );
+// db.Destination.hasMany( db.Donation );

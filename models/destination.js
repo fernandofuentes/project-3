@@ -38,14 +38,14 @@ module.exports = function ( sequelize, DataTypes ) {
     timestamps: true
   } );
 
-  Destination.associate = function ( models ) {
+  // Destination.associate = function ( models ) {
 
-    Destination.hasMany( models.Comment, {
-      foreignKey: {
-        allowNull: true
-      },
-    } );
-  };
+  // Destination.hasMany( models.Comment, {
+  //   foreignKey: {
+  //     allowNull: true
+  //   },
+  // } );
+  // };
 
   return Destination;
 

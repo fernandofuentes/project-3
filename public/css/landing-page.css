@@ -40,6 +40,19 @@ span.home-subheading {
     color: limegreen;
 }
 
+.container.welcome-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+aside .btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 header.masthead {
     position: relative;
     background-color: #343a40;
@@ -165,3 +178,9 @@ CALL TO ACTION
 #claim-donation {
     width: 100%;
 }
+
+#map {
+        height: 400px;
+        width: 100%;
+        border: 1px solid black;
+       }
