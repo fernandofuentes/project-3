@@ -1,6 +1,8 @@
 const express = require( "express" );
 const router = express.Router();
 const path = require( "path" );
+var isAuthenticated = require( "../config/middleware/isAuthenticated" );
+
 
 var id;
 
@@ -8,9 +10,10 @@ var id;
 var db = require( "../models" );
 
 
-// POST route for saving a new volunteer
-router.post( "/sign-up/volunteer", function ( req, res ) {
+// // POST route for saving a new volunteer
+router.post( "/sign-up/volunteer", isAuthenticated, function ( req, res ) {
   console.log( "create happened" );
+  console.log( req.user.id );
 
   db.Volunteer.create( {
         volunteer_first_name: req.body.volunteer_first_name,
@@ -18,7 +21,8 @@ router.post( "/sign-up/volunteer", function ( req, res ) {
         phone_number: req.body.phone_number,
         email_address: req.body.email_address,
         physical_address: req.body.physical_address,
-        vehicle: req.body.vehicle
+        vehicle: req.body.vehicle,
+        UserId: req.user.id
       } //end Volunteer.create
       // , {
       //   include:[{
@@ -78,7 +82,7 @@ router.get( "/members/profiles", function ( req, res ) {
 } ); //end profiles/volunteer
 
 // POST route for saving a new donor
-router.post( "/sign-up/donor", function ( req, res ) {
+router.post( "/sign-up/donor", isAuthenticated, function ( req, res ) {
   console.log( "create Donor happened" );
 
   db.Donor.create( {
@@ -88,7 +92,8 @@ router.post( "/sign-up/donor", function ( req, res ) {
         email_address: req.body.email_address,
         physical_address: req.body.physical_address,
         manager_name: req.body.manager_name,
-        manager_phone_number: req.body.manager_phone_number
+        manager_phone_number: req.body.manager_phone_number,
+        UserId: req.user.id
       } //end Donor.create
 
       // , {
@@ -138,7 +143,7 @@ router.get( "/donorquery/:query", function ( req, res ) {
 
 
 // POST route for saving a new comment
-router.post( "/comments", function ( req, res ) {
+router.post( "/comments", isAuthenticated, function ( req, res ) {
   console.log( "create comment route hit" );
 
   // var id = $( this ).attr( "data-id" );
@@ -149,7 +154,7 @@ router.post( "/comments", function ( req, res ) {
         reviewee: req.body.reviewee,
         reviewer: req.body.reviewer,
         comment: req.body.comment,
-        volunteerId: id
+        UserId: req.user.id
 
 
 
@@ -175,14 +180,15 @@ router.post( "/comments", function ( req, res ) {
 
 
 // POST route for saving a new Recipient
-router.post( "/sign-up/recipient", function ( req, res ) {
-  console.log( "create happened" );
+router.post( "/sign-up/recipient", isAuthenticated, function ( req, res ) {
+  console.log( "create shelter happened" );
 
   db.Destination.create( {
         recipient_name: req.body.recipient_name,
         phone_number: req.body.phone_number,
         email_address: req.body.email_address,
-        physical_address: req.body.physical_address
+        physical_address: req.body.physical_address,
+        UserId: req.user.id
       }
 
     ).then( function ( dbFam ) {
@@ -255,30 +261,31 @@ router.get( "/dashboard/get", function ( req, res ) {
       include: [
         {
           model: db.Donor
-
-        }
-      ]
+  }
+]
     } ).then( function ( donations ) {
       res.json( donations );
-      console.log( "db.donor is:", db.Donor );
-      console.log( "all donations are:", donations );
-      // console.log( 'controller line 238 res:', res );
+      console.log( 'donations and donrs are:', donations );
+
     } )
     .catch( function ( err ) {
       // Whenever a validation or flag fails, an error is thrown
       // We can "catch" the error to prevent it from being "thrown", which could crash our node router
       res.json( err );
-    } );
+    } )
+
+
 } )
 
-router.get( "/dashboard/shelters", function ( req, res ) {
-  db.Destination.findAll().then( function ( shelters ) {
-      res.json( shelters );
-    } )
-    .catch( function ( err ) {
-      res.json( err )
-    } )
-} )
+// router.get( "/dashboard/shelters", function ( req, res ) {
+//   db.Destination.findAll().then( function ( shelters ) {
+//       res.json( shelters );
+//       // console.log( 'shelters are:', shelters );
+//     } )
+//     .catch( function ( err ) {
+//       res.json( err )
+//     } )
+// } )
 
 
 

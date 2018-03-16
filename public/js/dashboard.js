@@ -3,6 +3,7 @@ $( document ).ready( function () {
   var quantity;
   var donor_business_name;
   var shelters;
+  var donorID;
 
   $( "#donate" ).on( "click", function ( event ) {
     event.preventDefault();
@@ -15,7 +16,7 @@ $( document ).ready( function () {
         console.log( res[ 0 ].business_name );
 
         for ( var i = 0; i < res.length; i++ ) {
-          var allDonors = $( "<option>" + res[ i ].business_name + "</option>" )
+          var allDonors = $( "<option>" + res[ i ].business_name + " < /option>" )
           $( "#donor_business_name" ).append( allDonors );
         }
       } else {
@@ -79,6 +80,9 @@ $( document ).ready( function () {
     //     console.log( "dashboard/shelters res is:", res );
     //     for ( var i = 0; i < res.length; i++ ) {
     //
+    //       // shelters = $(
+    //       //   "<option>" + shelters[ i ].address + "</option>"
+    //       // )
     //
     //     }
     //   } else {
@@ -88,7 +92,7 @@ $( document ).ready( function () {
 
     $.get( "/dashboard/get", function ( res ) {
       if ( res ) {
-        // console.log( "db response for donation query was:", res );
+        console.log( "db response for donation query was:", res );
 
         for ( var i = 0; i < res.length; i++ ) {
 
@@ -96,7 +100,7 @@ $( document ).ready( function () {
           var dates = moment( res[ i ].createdAt ).format( "dddd, MMMM Do YYYY, h:mm a" );
 
           var donashunz = $(
-            "<div class='row table-headers'><div class='col-md-1 head-cells'>ID</div><div class='col-md-2 head-cells'>Date</div><div class='col-md-2 head-cells'>Food</div><div class='col-md-1 head-cells'>Quantity</div><div class='col-md-2 head-cells'>Donor</div><div class='col-md-2 head-cells'>Address</div><div class='col-md-2 head-cells'>Claim</div></div>" + "<div class='row' id='" + res[ i ].id + "'><div class='col-md-1 data-cell'>" + res[ i ].id + "</div><div class='col-md-2 data-cell'>" + dates + "</div><div class='col-md-2 data-cell'>" + res[ i ].food_item + "</div><div class='col-md-1 data-cell'>" + res[ i ].quantity + "</div><div class='col-md-2 data-cell'>" + res[ i ].donor_business_name + "</div><div class='col-md-2 data-cell'>1234 Main St.</div><div class='col-md-2 data-cell'><select class='form-control'><option></option><option>" + res[ i ].recipient_name + "</option><select></div></div>"
+            "<div class='row table-headers'><div class='col-md-1 head-cells'>ID</div><div class='col-md-2 head-cells'>Date</div><div class='col-md-2 head-cells'>Food</div><div class='col-md-1 head-cells'>Quantity</div><div class='col-md-2 head-cells'>Donor</div><div class='col-md-2 head-cells'>Address</div><div class='col-md-2 head-cells'>Claim</div></div>" + "<div class='row' id='" + res[ i ].id + "'><div class='col-md-1 data-cell'>" + res[ i ].id + "</div><div class='col-md-2 data-cell'>" + dates + "</div><div class='col-md-2 data-cell'>" + res[ i ].food_item + "</div><div class='col-md-1 data-cell'>" + res[ i ].quantity + "</div><div class='col-md-2 data-cell'>" + res[ i ].donor_business_name + "</div><div class='col-md-2 data-cell'>" + "<option>" + res[ i ].address + "</option>" + "</div><div class='col-md-2 data-cell'><select class='form-control'><option></option><option>" + res[ i ].recipient_name + "</option><select></div></div>"
           )
 
           $( "#dashboard" ).append( donashunz );

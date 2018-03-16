@@ -31,14 +31,14 @@ module.exports = function ( sequelize, DataTypes ) {
     timestamps: true
   } );
 
-  Donation.associate = function ( models ) {
-
-    Donation.belongsTo( models.Donor, {
-      foreignKey: {
-        allowNull: true
-      },
-    } );
-  };
+  // Donation.associate = function ( models ) {
+  //
+  //   Donation.belongsTo( models.Donor, {
+  //     foreignKey: {
+  //       allowNull: true
+  //     },
+  //   } );
+  // };
 
   return Donation;
 

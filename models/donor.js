@@ -62,22 +62,22 @@ module.exports = function ( sequelize, DataTypes ) {
     timestamps: true
   } );
 
-  Donor.associate = function ( models ) {
+  // Donor.associate = function ( models ) {
 
-    Donor.hasMany( models.Comment, {
-      foreignKey: {
-        allowNull: true
-      }
-    } );
-
-    Donor.hasMany( models.Donation, {
-      foreignKey: {
-        allowNull: true
-      },
-    } );
-
-
-  };
+  //   Donor.hasMany( models.Comment, {
+  //     foreignKey: {
+  //       allowNull: true
+  //     }
+  //   } );
+  //
+  //   Donor.hasMany( models.Donation, {
+  //     foreignKey: {
+  //       allowNull: true
+  //     },
+  //   } );
+  //
+  //
+  // };
 
   return Donor;
 

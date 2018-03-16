@@ -39,14 +39,9 @@ module.exports = function ( app ) {
     console.log( "req.user.email is:", req.user.email );
 
     db.Comment.findAll( {
-          where: {
-            id: req.user.id
-          }
-        }
-        //this where need to be reviewee id
+        where: { reviewee: db.Volunteer.id }
 
-
-      ).then( function ( dbComments ) {
+      } ).then( function ( dbComments ) {
 
         res.json( dbComments )
         console.log( "dbComments is:", dbComments );
@@ -65,5 +60,39 @@ module.exports = function ( app ) {
     console.log( "dashboard file served" );
     // console.log( "res is:", res );
   } );
+
+
+
+
+
+
+
+  // POST route for saving a new volunteer
+  // router.post( "/sign-up/volunteer", isAuthenticated, function ( req, res ) {
+  //   console.log( "create happened" );
+  //
+  //   db.Volunteer.create( {
+  //         volunteer_first_name: req.body.volunteer_first_name,
+  //         volunteer_last_name: req.body.volunteer_last_name,
+  //         phone_number: req.body.phone_number,
+  //         email_address: req.body.email_address,
+  //         physical_address: req.body.physical_address,
+  //         vehicle: req.body.vehicle,
+  //       } //end Volunteer.create
+  //       // , {
+  //       //   include:[{
+  //       //     association: buses.BusId
+  //       //   }]
+  //       // }
+  //     ).then( function ( dbFam ) {
+  //       res.json( dbFam );
+  //       console.log( ".then happened" );
+  //     } )
+  //     .catch( function ( err ) {
+  //       // Whenever a validation or flag fails, an error is thrown
+  //       // We can "catch" the error to prevent it from being "thrown", which could crash our node router
+  //       res.json( err );
+  //     } );
+  // } );
 
 };

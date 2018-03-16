@@ -57,14 +57,14 @@ module.exports = function ( sequelize, DataTypes ) {
     } );
 
 
-  Volunteer.associate = function ( models ) {
-
-    Volunteer.hasMany( models.Comment, {
-      foreignKey: {
-        allowNull: true
-      },
-    } );
-  };
+  // Volunteer.associate = function ( models ) {
+  //
+  //   Volunteer.hasMany( models.Comment, {
+  //     foreignKey: {
+  //       allowNull: true
+  //     },
+  //   } );
+  // };
 
   return Volunteer;
 
