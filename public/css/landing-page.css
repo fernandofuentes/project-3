@@ -178,3 +178,9 @@ CALL TO ACTION
 #claim-donation {
     width: 100%;
 }
+
+#map {
+        height: 400px;
+        width: 100%;
+        border: 1px solid black;
+       }

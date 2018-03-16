@@ -4,6 +4,7 @@ $( document ).ready( function () {
   var donor_business_name;
   var shelters;
   var donorID;
+  var markers = [];
 
   $( "#donate" ).on( "click", function ( event ) {
     event.preventDefault();
@@ -92,6 +93,13 @@ $( document ).ready( function () {
     $.get( "/dashboard/get", function ( res ) {
       if ( res ) {
         console.log( "db response for donation query was:", res );
+        for ( var i = 0; i < res.length; i++ ) {
+
+          markers.push( res[ i ].Donor.physical_address );
+
+        }
+
+        console.log( '1markers are;', markers );
 
         for ( var i = 0; i < res.length; i++ ) {
 
@@ -109,9 +117,69 @@ $( document ).ready( function () {
           "<div class='row'><div class='col-md-9'></div><div class='col-md-3'><button type='button' class='btn btn-primary claim-btn' id='claim-donation'>Claim Selected Donation(s)</button></div></div>"
         );
 
+
+
+        //map code//
+        console.log( "maps code loaded on dashboard!" );
+
+        function initMap() {
+          var geocoder = new google.maps.Geocoder();
+
+          for ( var i = 0; i < markers.length; i++ ) {
+            geocoder.geocode( { 'address': markers[ i ] }, function ( results, status ) {
+              if ( status == google.maps.GeocoderStatus.OK ) {
+                var marker = new google.maps.Marker( {
+                  map: map,
+                  position: results[ 0 ].geometry.location
+                } );
+              } else {
+                alert( "Geocode was not successful for the following reason: " + status );
+              }
+            } );
+          }
+
+
+          var center = { lat: 29.760202, lng: -95.369835 };
+          var houston = { lat: 29.760202, lng: -95.369835 };
+
+
+          var map = new google.maps.Map( document.getElementById( 'map' ), {
+            zoom: 10,
+            center: center
+          } );
+
+        } //end init map fx
+
+        initMap();
+
       } else {
         console.log( "error" );
       }
+
+      // //map code//
+      // console.log( "maps code loaded on dashboard!" );
+      //
+      // function initMap() {
+      //   console.log( 'intit map started' );
+      //   console.log( '2markers are;', markers );
+      //
+      //
+      //   var center = { lat: 29.760202, lng: -95.369835 };
+      //   var houston = { lat: 29.760202, lng: -95.369835 };
+      //
+      //
+      //   var map = new google.maps.Map( document.getElementById( 'map' ), {
+      //     zoom: 10,
+      //     center: center
+      //   } );
+      //   var houston = new google.maps.Marker( {
+      //     position: houston,
+      //     map: map
+      //   } )
+      // } //end init map fx
+
+
+      //close map code//
 
     } ) //end dashboard/get
 

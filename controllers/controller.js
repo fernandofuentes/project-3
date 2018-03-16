@@ -261,13 +261,13 @@ router.get( "/dashboard/get", function ( req, res ) {
       include: [
         {
           model: db.Donor,
-          include: [
-            {
-              model: db.Destination
-         }
-       ]
-     }
-   ]
+          // include: [
+          //   {
+          //     model: db.Destination
+          //   }
+          // ]
+        }
+      ]
     } ).then( function ( donations ) {
       res.json( donations );
       console.log( 'donations and donrs are:', donations );
