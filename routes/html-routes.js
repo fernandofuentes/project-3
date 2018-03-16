@@ -39,7 +39,7 @@ module.exports = function ( app ) {
     console.log( "req.user.email is:", req.user.email );
 
     db.Comment.findAll( {
-        where: { reviewee: db.Volunteer.id }
+        where: { reviewee: req.user.id }
 
       } ).then( function ( dbComments ) {
 

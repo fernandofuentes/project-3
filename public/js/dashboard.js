@@ -16,7 +16,7 @@ $( document ).ready( function () {
         console.log( res[ 0 ].business_name );
 
         for ( var i = 0; i < res.length; i++ ) {
-          var allDonors = $( "<option>" + res[ i ].business_name + " < /option>" )
+          var allDonors = $( "<option>" + res[ i ].business_name + "</option>" )
           $( "#donor_business_name" ).append( allDonors );
         }
       } else {
@@ -44,7 +44,7 @@ $( document ).ready( function () {
     var donationObj = {
       food_item: food_item,
       quantity: quantity,
-      donor_business_name: donor_business_name
+      donor_business_name: donor_business_name,
     }
 
     console.log( "don obj:", donationObj );

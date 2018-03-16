@@ -12,8 +12,8 @@ var db = require( "../models" );
 
 // // POST route for saving a new volunteer
 router.post( "/sign-up/volunteer", isAuthenticated, function ( req, res ) {
-  console.log( "create happened" );
-  console.log( req.user.id );
+  // console.log( "create happened" );
+  // console.log( req.user.id );
 
   db.Volunteer.create( {
         volunteer_first_name: req.body.volunteer_first_name,
@@ -58,7 +58,7 @@ router.get( "/members/profiles", function ( req, res ) {
       // res.sendFile( path.join( __dirname, "../views/profiles/volunteer-profile.html" ) );
       // res.sendFile( path.join( __dirname, "../views/profiles/volunteer-profile.html" ) );
       res.json( dbFam )
-      console.log( ".then volunteer profile load happened" );
+      // console.log( ".then volunteer profile load happened" );
 
       var lastName = dbFam.volunteer_last_name;
       var firstName = dbFam.volunteer_first_name;
@@ -69,7 +69,7 @@ router.get( "/members/profiles", function ( req, res ) {
         date: date
       }
 
-      console.log( "volData Object is:", volDataObj );
+      // console.log( "volData Object is:", volDataObj );
 
 
       // console.log( "res is:", res );
@@ -83,7 +83,7 @@ router.get( "/members/profiles", function ( req, res ) {
 
 // POST route for saving a new donor
 router.post( "/sign-up/donor", isAuthenticated, function ( req, res ) {
-  console.log( "create Donor happened" );
+  // console.log( "create Donor happened" );
 
   db.Donor.create( {
         business_name: req.body.business_name,
@@ -103,7 +103,7 @@ router.post( "/sign-up/donor", isAuthenticated, function ( req, res ) {
       // }
     ).then( function ( dbFam ) {
       res.json( dbFam );
-      console.log( ".then happened" );
+      // console.log( ".then happened" );
     } )
     .catch( function ( err ) {
       // Whenever a validation or flag fails, an error is thrown
@@ -127,7 +127,7 @@ router.get( "/donorquery/:query", function ( req, res ) {
       // }
     ).then( function ( dbFam ) {
       res.json( dbFam );
-      console.log( 'res:', res );
+      // console.log( 'res:', res );
 
 
     } )
@@ -144,7 +144,7 @@ router.get( "/donorquery/:query", function ( req, res ) {
 
 // POST route for saving a new comment
 router.post( "/comments", isAuthenticated, function ( req, res ) {
-  console.log( "create comment route hit" );
+  // console.log( "create comment route hit" );
 
   // var id = $( this ).attr( "data-id" );
   // console.log( id );
@@ -165,10 +165,10 @@ router.post( "/comments", isAuthenticated, function ( req, res ) {
       //   }]
       // }
     ).then( function ( dbFam ) {
-      console.log( "req.body.reviewee is:", req.body.reviewee );
+      // console.log( "req.body.reviewee is:", req.body.reviewee );
       res.json( dbFam );
 
-      console.log( "comment .then happened" );
+      // console.log( "comment .then happened" );
     } )
     .catch( function ( err ) {
 
@@ -181,7 +181,7 @@ router.post( "/comments", isAuthenticated, function ( req, res ) {
 
 // POST route for saving a new Recipient
 router.post( "/sign-up/recipient", isAuthenticated, function ( req, res ) {
-  console.log( "create shelter happened" );
+  // console.log( "create shelter happened" );
 
   db.Destination.create( {
         recipient_name: req.body.recipient_name,
@@ -193,7 +193,7 @@ router.post( "/sign-up/recipient", isAuthenticated, function ( req, res ) {
 
     ).then( function ( dbFam ) {
       res.json( dbFam );
-      console.log( ".then happened" );
+      // console.log( ".then happened" );
     } )
     .catch( function ( err ) {
       // Whenever a validation or flag fails, an error is thrown
@@ -213,7 +213,7 @@ router.get( "/recipientquery/:query", function ( req, res ) {
 
     ).then( function ( dbFam ) {
       res.json( dbFam );
-      console.log( 'res:', res );
+      // console.log( 'res:', res );
 
 
     } )
@@ -242,7 +242,7 @@ router.get( "/dashboard/donate", function ( req, res ) {
       // }
     ).then( function ( donorz ) {
       res.json( donorz );
-      console.log( donorz );
+      // console.log( donorz );
       // console.log( 'controller line 238 res:', res );
 
 
@@ -265,7 +265,7 @@ router.get( "/dashboard/get", function ( req, res ) {
 ]
     } ).then( function ( donations ) {
       res.json( donations );
-      console.log( 'donations and donrs are:', donations );
+      // console.log( 'donations and donrs are:', donations );
 
     } )
     .catch( function ( err ) {
@@ -291,8 +291,8 @@ router.get( "/dashboard/get", function ( req, res ) {
 
 // POST route for saving a new comment
 router.post( "/comments", function ( req, res ) {
-  console.log( "create comment route hit" );
-  console.log( "req.body is:", req.body );
+  // console.log( "create comment route hit" );
+  // console.log( "req.body is:", req.body );
 
   // var id = $( this ).attr( "data-id" );
   // console.log( id );
@@ -314,7 +314,7 @@ router.post( "/comments", function ( req, res ) {
       // }
     ).then( function ( dbFam ) {
       res.json( dbFam );
-      console.log( "comment .then happened" );
+      // console.log( "comment .then happened" );
     } )
     .catch( function ( err ) {
 
@@ -337,7 +337,7 @@ router.get( "/volunteerquery/:query", function ( req, res ) {
       // }
     ).then( function ( dbFam ) {
       res.json( dbFam );
-      console.log( 'res:', res );
+      // console.log( 'res:', res );
 
 
     } )
@@ -350,11 +350,13 @@ router.get( "/volunteerquery/:query", function ( req, res ) {
 
 } ); //end profiles/volunteer
 
-router.post( "/dashboard", function ( req, res ) {
+router.post( "/dashboard", isAuthenticated, function ( req, res ) {
+  console.log( "req.user.id from donation post is", req.user.id );
   db.Donation.create( {
       food_item: req.body.food_item,
       quantity: req.body.quantity,
-      donor_business_name: req.body.donor_business_name
+      donor_business_name: req.body.donor_business_name,
+      DonorId: req.user.id
     } ).then( function ( dbFam ) {
       res.json( dbFam );
       console.log( "donation .then happened" );
