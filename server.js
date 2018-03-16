@@ -68,3 +68,5 @@ db.User.hasMany( db.Comment );
 db.Volunteer.belongsTo( db.User );
 db.Donor.belongsTo( db.User );
 db.Destination.belongsTo( db.User );
+// db.Donation.hasOne( db.Destination );
+// db.Destination.hasMany( db.Donation );

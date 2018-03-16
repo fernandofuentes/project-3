@@ -260,12 +260,17 @@ router.get( "/dashboard/get", function ( req, res ) {
   db.Donation.findAll( {
       include: [
         {
-          model: db.Donor
-  }
-]
+          model: db.Donor,
+          // include: [
+          //   {
+          //     model: db.Destination
+          //   }
+          // ]
+        }
+      ]
     } ).then( function ( donations ) {
       res.json( donations );
-      // console.log( 'donations and donrs are:', donations );
+      console.log( 'donations and donrs are:', donations );
 
     } )
     .catch( function ( err ) {
@@ -351,7 +356,6 @@ router.get( "/volunteerquery/:query", function ( req, res ) {
 } ); //end profiles/volunteer
 
 router.post( "/dashboard", isAuthenticated, function ( req, res ) {
-  console.log( "req.user.id from donation post is", req.user.id );
   db.Donation.create( {
       food_item: req.body.food_item,
       quantity: req.body.quantity,
