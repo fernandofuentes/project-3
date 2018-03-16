@@ -36,13 +36,14 @@ module.exports = function ( app ) {
   } ); //end get/members
 
   app.get( "/members/recentcomments", function ( req, res ) {
-    console.log( "req.user.id is:", req.user.id );
+    console.log( "req.user.email is:", req.user.email );
 
     db.Comment.findAll( {
           where: {
-            reviewee: req.user.id
+            id: req.user.id
           }
         }
+        //this where need to be reviewee id
 
 
       ).then( function ( dbComments ) {
