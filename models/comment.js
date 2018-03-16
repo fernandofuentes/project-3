@@ -38,14 +38,14 @@ module.exports = function ( sequelize, DataTypes ) {
     } )
 
 
-  Comment.associate = function ( models ) {
-
-    Comment.belongsTo( models.Volunteer, {
-      foreignKey: {
-        allowNull: true
-      }
-    } );
-  };
+  // Comment.associate = function ( models ) {
+  //
+  //   Comment.belongsTo( models.Volunteer, {
+  //     foreignKey: {
+  //       allowNull: true
+  //     }
+  //   } );
+  // };
 
   return Comment;
 };

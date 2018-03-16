@@ -28,7 +28,7 @@ $( document ).ready( function () {
     // Send the POST request.
     $.post( "/sign-up/volunteer", newVol, function ( res ) {
       if ( res ) {
-        console.log( res );
+        console.log( "signup vol post happeed" );
 
       } else {
         console.log( "error" );
