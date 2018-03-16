@@ -9,6 +9,8 @@ $( document ).ready( function () {
   $( "#donate" ).on( "click", function ( event ) {
     event.preventDefault();
 
+    $( "#dashboard" ).empty()
+
     $.get( "/dashboard/donate", function ( res ) {
       if ( res ) {
         console.log( "db response for donor query is:", res );
@@ -74,21 +76,7 @@ $( document ).ready( function () {
 
   $( "#get" ).on( "click", function ( event ) {
     event.preventDefault();
-
-    // $.get( "dashboard/shelters", function ( res ) {
-    //   if ( res ) {
-    //     console.log( "dashboard/shelters res is:", res );
-    //     for ( var i = 0; i < res.length; i++ ) {
-    //
-    //       // shelters = $(
-    //       //   "<option>" + shelters[ i ].address + "</option>"
-    //       // )
-    //
-    //     }
-    //   } else {
-    //     console.log( "error" )
-    //   }
-    // } )
+    $( "#dashboard" ).empty()
 
     $.get( "/dashboard/get", function ( res ) {
       if ( res ) {
@@ -120,8 +108,6 @@ $( document ).ready( function () {
 
         $( "#map-title" ).prepend( 'Available Donations in ' );
 
-
-
         //map code//
         console.log( "maps code loaded on dashboard!" );
 
@@ -141,10 +127,8 @@ $( document ).ready( function () {
             } );
           }
 
-
           var center = { lat: 29.760202, lng: -95.369835 };
           var houston = { lat: 29.760202, lng: -95.369835 };
-
 
           var map = new google.maps.Map( document.getElementById( 'map' ), {
             zoom: 10,
@@ -159,34 +143,24 @@ $( document ).ready( function () {
         console.log( "error" );
       }
 
-      // //map code//
-      // console.log( "maps code loaded on dashboard!" );
-      //
-      // function initMap() {
-      //   console.log( 'intit map started' );
-      //   console.log( '2markers are;', markers );
-      //
-      //
-      //   var center = { lat: 29.760202, lng: -95.369835 };
-      //   var houston = { lat: 29.760202, lng: -95.369835 };
-      //
-      //
-      //   var map = new google.maps.Map( document.getElementById( 'map' ), {
-      //     zoom: 10,
-      //     center: center
-      //   } );
-      //   var houston = new google.maps.Marker( {
-      //     position: houston,
-      //     map: map
-      //   } )
-      // } //end init map fx
-
-
-      //close map code//
-
     } ) //end dashboard/get
 
   } ) //end on click #get button
+
+  //on click for pickup button
+  $( "#pickup" ).on( 'click', function ( event ) {
+    event.preventDefault();
+    $( "#dashboard" ).empty()
+
+    //this should then display all donations that have been claimed by shelters.
+    //display should also be a map of Available donations.
+    //display should be a table with checkbox for volunteer to claim they're picking the donation up
+    // in the talbe should be donation with id, donor, donor address, and shelter claiming it with id and address?
+    //check row, then Submit
+    //post happens which creates new row in 'pick_up' table.
+    //google map populates with address, or addresses of pick_up table where vol id matches user.id
+
+  } )
 
   // this on click is for claiming a donation for your shelter
   $( "#dashboard" ).on( "click", ".claim-btn", function () {
