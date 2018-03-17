@@ -2,7 +2,7 @@ const express = require( "express" );
 const router = express.Router();
 const path = require( "path" );
 var isAuthenticated = require( "../config/middleware/isAuthenticated" );
-const Sequelize = require( "Sequelize" )
+const Sequelize = require( "sequelize" )
 const Op = Sequelize.Op
 
 
@@ -283,15 +283,15 @@ router.get( "/dashboard/get", function ( req, res ) {
 
 } )
 
-// router.get( "/dashboard/shelters", function ( req, res ) {
-//   db.Destination.findAll().then( function ( shelters ) {
-//       res.json( shelters );
-//       // console.log( 'shelters are:', shelters );
-//     } )
-//     .catch( function ( err ) {
-//       res.json( err )
-//     } )
-// } )
+router.get( "/dashboard/shelters", function ( req, res ) {
+  db.Destination.findAll().then( function ( shelters ) {
+      res.json( shelters );
+      // console.log( 'shelters are:', shelters );
+    } )
+    .catch( function ( err ) {
+      res.json( err )
+    } )
+} )
 
 
 
