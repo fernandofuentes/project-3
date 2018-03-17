@@ -2,6 +2,9 @@ const express = require( "express" );
 const router = express.Router();
 const path = require( "path" );
 var isAuthenticated = require( "../config/middleware/isAuthenticated" );
+const Sequelize = require( "Sequelize" )
+const Op = Sequelize.Op
+
 
 
 var id;
@@ -46,7 +49,9 @@ router.get( "/members/profiles", function ( req, res ) {
 
   db.Volunteer.findOne( {
         where: {
-          volunteer_first_name: "Brandon"
+          volunteer_first_name: {
+          [ Op.like ]: 'foo%'
+          }
         }
       }
       //end Volunteer.findByID
@@ -118,7 +123,9 @@ router.get( "/donorquery/:query", function ( req, res ) {
 
   db.Donor.findOne( {
         where: {
-          business_name: req.params.query
+          business_name: {
+      [ Op.like ]: '%' + req.params.query + '%'
+          }
         }
       } //end Donor.findOne
       // , {
@@ -208,7 +215,9 @@ router.get( "/recipientquery/:query", function ( req, res ) {
 
   db.Destination.findOne( {
         where: {
-          recipient_name: req.params.query
+          recipient_name: {
+      [ Op.like ]: '%' + req.params.query + '%'
+          }
         }
       }
 
@@ -332,16 +341,12 @@ router.post( "/comments", function ( req, res ) {
 router.get( "/volunteerquery/:query", function ( req, res ) {
 
   db.Volunteer.findOne( {
-        where: {
-          volunteer_first_name: req.params.query
+      where: {
+        volunteer_first_name: {
+      [ Op.like ]: '%' + req.params.query + '%'
         }
-      } //end Volunteer.findOne
-      // , {
-      //   include:[{
-      //     association: buses.BusId
-      //   }]
-      // }
-    ).then( function ( dbFam ) {
+      }
+    } ).then( function ( dbFam ) {
       res.json( dbFam );
       // console.log( 'res:', res );
 

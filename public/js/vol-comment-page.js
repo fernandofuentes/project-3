@@ -9,6 +9,8 @@ $( document ).ready( function () {
   $( "#vol-comment-search-submit" ).on( "click", function ( event ) {
     event.preventDefault();
 
+    $( "#query-display" ).empty();
+
     query = $( "#vol-search-for-comment" ).val().trim();
     // console.log( query );
     $( "#vol-search-for-comment" ).val( '' );

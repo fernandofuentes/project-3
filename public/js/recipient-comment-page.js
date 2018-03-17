@@ -11,6 +11,9 @@ $( document ).ready( function () {
     console.log( "button click sucka" );
     event.preventDefault();
 
+    $( "#query-display" ).empty();
+
+
     query = $( "#shelter-search-for-comment" ).val().trim();
     console.log( query );
     $( "#shelter-search-for-comment" ).val( '' );
