@@ -23,10 +23,9 @@ $( document ).ready( function () {
     $.get( "/donorquery/" + query, function ( res ) {
       if ( res ) {
         console.log( "db response for donor query is:", res );
-        id = res.id;
 
         var queriedName = $(
-          "<div class='card' id='donor-card' data-id='" + res.id + "'" + "style='width: 400px;'>" + "<div><img class='card-img-top' style='width: 150px' src='img/dummy.png' alt='profile pic'>" + "</img></div>" + "<div class='card-body'>" + "<h5 class='card-title'>" + id + " " + res.business_name + " " + "</h5>" + "<textarea class='comment-input' id='donor-comment-input' placeholder='Enter Comment Here'></textarea>" + "<input type='text' class='commenter-name-input' id='donor-commenter-name-input' placeholder='Enter Your Name Here Here'></input>" + "<button type='button' class='btn btn-primary' id='donor-comment-submit'>Submit</button>"
+          "<div class='card' id='donor-card' data-id='" + res.UserId + "'" + "style='width: 400px;'>" + "<div><img class='card-img-top' style='width: 150px' src='img/dummy.png' alt='profile pic'>" + "</img></div>" + "<div class='card-body'>" + "<h5 class='card-title'>" + res.UserId + " " + res.business_name + " " + "</h5>" + "<textarea class='comment-input' id='donor-comment-input' placeholder='Enter Comment Here'></textarea>" + "<input type='text' class='commenter-name-input' id='donor-commenter-name-input' placeholder='Enter Your Name Here Here'></input>" + "<button type='button' class='btn btn-primary' id='donor-comment-submit'>Submit</button>"
         )
 
         $( "#query-display" ).append( queriedName );
