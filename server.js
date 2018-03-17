@@ -56,7 +56,6 @@ db.sequelize.sync( {
 
 } ).then( function () {
   app.listen( PORT, function () {
-    // console.log("App is running " + PORT + "!")
     chalkAnimation.rainbow( "App listening on port " + PORT + "!" );
   } );
 } );
@@ -68,5 +67,5 @@ db.User.hasMany( db.Comment );
 db.Volunteer.belongsTo( db.User );
 db.Donor.belongsTo( db.User );
 db.Destination.belongsTo( db.User );
-// db.Donation.hasOne( db.Destination );
-// db.Destination.hasMany( db.Donation );
+db.Volunteer.hasMany( db.Donation );
+db.Destination.hasMany( db.Donation );
