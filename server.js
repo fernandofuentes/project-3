@@ -68,4 +68,4 @@ db.Volunteer.belongsTo( db.User );
 db.Donor.belongsTo( db.User );
 db.Destination.belongsTo( db.User );
 db.Volunteer.hasMany( db.Donation );
-db.Destination.hasMany( db.Donation );
+db.Destination.hasMany( db.Donation )

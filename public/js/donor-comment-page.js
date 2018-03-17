@@ -10,6 +10,9 @@ $( document ).ready( function () {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
+    $( "#query-display" ).empty();
+
+
     query = $( "#donor-search-for-comment" ).val().trim();
     console.log( query );
     $( "#donor-search-for-comment" ).val( '' );
