@@ -82,9 +82,7 @@ $( document ).ready( function () {
       if ( res ) {
         console.log( "db response for donation query was:", res );
         for ( var i = 0; i < res.length; i++ ) {
-
           markers.push( res[ i ].Donor.physical_address );
-
         }
 
         console.log( '1markers are;', markers );
@@ -151,7 +149,7 @@ $( document ).ready( function () {
   //on click for pickup button
   $( "#pickup" ).on( 'click', function ( event ) {
     event.preventDefault();
-    $( "#dashboard" ).empty()
+    $( "#dashboard" ).empty();
 
     //this should then display all donations that have been claimed by shelters.
     //display should also be a map of Available donations.

@@ -56,6 +56,9 @@ db.sequelize.sync( {
 
 } ).then( function () {
   app.listen( PORT, function () {
+    console.log( "------------------------------------------------------------------------------------------------------------" );
+    console.log( 'N - e - w     D - a - t - a     N - e - w     D - a - t - a     N - e - w     D - a - t - a' );
+    console.log( "------------------------------------------------------------------------------------------------------------" );
     chalkAnimation.rainbow( "App listening on port " + PORT + "!" );
   } );
 } );
