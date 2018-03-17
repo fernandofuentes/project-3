@@ -268,7 +268,10 @@ router.get( "/dashboard/donate", function ( req, res ) {
 
 router.get( "/dashboard/get", function ( req, res ) {
   db.Donation.findAll( {
-      include: [ { all: true } ]
+      include: [ { all: true } ],
+      order: [
+            [ 'id', 'DESC' ]
+        ]
     } ).then( function ( donations ) {
       res.json( donations );
       console.log( 'donations and donrs are:', donations );
