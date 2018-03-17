@@ -5,7 +5,7 @@ $( document ).ready( function () {
     $( ".member-name" ).text( data.email );
   } );
 
-
+  //comments code keep!!!!!//
   $.get( "/members/recentcomments", function ( res ) {
     if ( res ) {
       console.log( 'reviewee 1 comments are:', res );
@@ -27,10 +27,10 @@ $( document ).ready( function () {
       console.log( 'error loading users recent comments' );
     }
   } )
+  //comments code keeeeeep!!!!//
 
 
-
-
+  //delte user from users table//
   $( "#delete" ).on( "click", function ( event ) {
     event.preventDefault();
     console.log( 'delete user button clicked' );
@@ -44,5 +44,6 @@ $( document ).ready( function () {
     } )
     console.log( "here" );
   } )
+  //delete user from users table//
 
 } );
