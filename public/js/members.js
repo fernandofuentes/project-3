@@ -31,6 +31,18 @@ $( document ).ready( function () {
 
 
 
+  $( "#delete" ).on( "click", function ( event ) {
+    event.preventDefault();
+    console.log( 'delete user button clicked' );
 
+    $.ajax( {
+      url: '/dashboard/delete',
+      type: 'DELETE',
+      success: function ( res ) {
+        console.log( res );
+      }
+    } )
+    console.log( "here" );
+  } )
 
 } );

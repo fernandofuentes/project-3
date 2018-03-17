@@ -372,16 +372,17 @@ router.post( "/dashboard", isAuthenticated, function ( req, res ) {
     } );
 } )
 
-// router.delete( "/dashboard/delete", function ( req, res ) {
-//   db.User.destroy( {
-//     where: {
-//       id: req.user.id
-//     } }).then( function (dbFam) {
-//       req.method = 'GET'
-//        res.redirect("/");
-//       // res.sendStatus(200);
-//     })
-// })
+router.delete( "/dashboard/delete", isAuthenticated, function ( req, res ) {
+  db.User.destroy( {
+    where: {
+      id: req.user.id
+    }
+  } ).then( function ( dbFam ) {
+    req.method = 'GET'
+    res.redirect( "/" );
+    res.sendStatus( 200 );
+  } )
+} )
 
 
 
