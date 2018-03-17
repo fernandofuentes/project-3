@@ -66,7 +66,6 @@ $( document ).ready( function () {
 
         $( ".modal" ).modal( 'show' );
         $( "#modal-body-text" ).text( 'Thanks for the feedback!' );
-
         $( "#query-display" ).empty();
 
       } else {
@@ -76,5 +75,6 @@ $( document ).ready( function () {
     } )
 
   } )
+
 
 } ); //end doc ready fx
