@@ -1,3 +1,7 @@
+body {
+    background-color: #F8F9FA;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -30,6 +34,12 @@ a, a:hover, a:focus {
 
 img {
     max-width: 100%;
+}
+
+/* NAV */
+
+.navbar-brand {
+    max-width: 350px;
 }
 
 ::-moz-selection {
@@ -202,6 +212,14 @@ img {
 
 .social-login-buttons {
     margin-top: 25px;
+}
+
+footer {
+    padding: 50px 0 50px 0;
+}
+
+.copyright {
+    color: #bbbbbb;
 }
 
 /***** Media queries *****/

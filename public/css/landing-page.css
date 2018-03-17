@@ -1,12 +1,19 @@
-h1, h2, h3, h4, h5, h6 {
+h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     color: #303E4E;
 }
 
+h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #ED4854;
+}
+
 p {
     font-family: 'Roboto', sans-serif;
     color: #333333;
+    line-height: 2em;
 }
 
 a {
@@ -15,15 +22,15 @@ a {
 }
 
 span.home-heading {
-    font-size: 85px;
+    font-size: 5em;
     font-weight: 900;
-    line-height: 85px;
+    line-height: 1em;
 }
 
 span.home-subheading {
-    font-size: 30px;
-    font-weight: 900;
-    line-height: 30px;
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 1em;
 }
 
 .form-box {
@@ -63,16 +70,30 @@ header.masthead {
     background-size: cover;
     padding-top: 4rem;
     padding-bottom: 4rem;
+    color: #ffffff;
+}
+
+header.masthead p {
+    color: #ffffff;
+}
+
+header.masthead a {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+header.masthead a:hover {
+    color: #11A033;
 }
 
 header.masthead .overlay {
     position: absolute;
-    background-color: #212529;
+    background-color: #000000;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
 header.masthead h1 {
@@ -180,7 +201,7 @@ CALL TO ACTION
 }
 
 #map {
-        height: 400px;
-        width: 100%;
-        border: 1px solid black;
-       }
+    height: 400px;
+    width: 100%;
+    border: 1px solid black;
+}
