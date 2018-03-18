@@ -6,6 +6,14 @@ const Sequelize = require( "sequelize" )
 const Op = Sequelize.Op
 
 
+//twilio setup
+var accountSid = 'ACc0bdc6bfc67a339c86edea631f4084cf'; // Your Account SID from www.twilio.com/console
+var authToken = '696ac2e1a151eaed7a538fbaf8d797d3'; // Your Auth Token from www.twilio.com/console
+
+var twilio = require( 'twilio' );
+var client = new twilio( accountSid, authToken );
+var shelterNumbers;
+//end twilio setup
 
 var id;
 
@@ -364,6 +372,23 @@ router.post( "/dashboard", isAuthenticated, function ( req, res ) {
     } ).then( function ( dbFam ) {
       res.json( dbFam );
       console.log( "donation .then happened" );
+
+      // router.get( "/dashboard", isAuthenticated, function ( req, res ) {
+      //   db.Destination.findAll().then( function ( shelterNumbers ) {
+      //     console.log( 'volnumz are:', shelterNumbers );
+      //   } )
+      // } )
+
+      //need to loop thru shelterNumbers array and create messages for each shelter so they know a donation was made
+      //start twilio message
+      client.messages.create( {
+          body: 'New donation posted to Leftover Delight!',
+          to: '', // Text this number
+          from: '+12569739723' // From a valid Twilio number
+        } )
+        .then( ( message ) => console.log( message.sid ) );
+      //end twilio message
+
     } )
     .catch( function ( err ) {
 
@@ -382,6 +407,7 @@ router.delete( "/dashboard/delete", isAuthenticated, function ( req, res ) {
     res.sendStatus( 200 );
   } )
 } )
+
 
 
 
