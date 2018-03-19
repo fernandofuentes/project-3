@@ -11,7 +11,7 @@ $(document).ready(function() {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
-
+  // This is now unnecessary because input is validated on the client
     if (!userData.email || !userData.password) {
       return;
     }
@@ -28,13 +28,18 @@ $(document).ready(function() {
       email: email,
       password: password
     }).then(function(data) {
+      if (data.errors) {
+         // If there's an error, handle it by throwing up a boostrap alert
+        handleLoginErr(data.errors[0]);
+        return console.error('Save failed:', data.errors[0].message);
+      }
       window.location.replace(data);
-      // If there's an error, handle it by throwing up a boostrap alert
-    }).catch(handleLoginErr);
+     
+    });
   }
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
+    $("#alert .msg").text(err.message);
     $("#alert").fadeIn(500);
   }
 });
