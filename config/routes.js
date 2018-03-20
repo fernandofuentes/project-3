@@ -38,6 +38,10 @@ router.get( "/faq", function ( req, res ) {
   res.sendFile( '/faq.html', { root: 'views' } );
 } );
 
+router.get( "/about", function ( req, res ) {
+  res.sendFile( '/about.html', { root: 'views' } );
+} );
+
 router.post( "/sign-up/donor", function ( req, res ) {
   // res.sendFile( '/sign-up/sign-up-donor.html', { root: 'views' } );
   //res.send("response")

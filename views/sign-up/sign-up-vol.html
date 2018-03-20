@@ -2,103 +2,106 @@
 <html>
 
 <head>
-   <meta charset="utf-8">
-   <title>Leftovers Delight</title>
+  <meta charset="utf-8">
+  <title>Leftovers Delight</title>
 
-   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-   <!-- Custom fonts for this template -->
-   <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-   <link href="/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <!-- Custom fonts for this template -->
+  <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-   <!-- Custom styles for this template -->
-   <link href="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css" rel="stylesheet" type="text/css" />
+  <!-- Custom styles for this template -->
+  <link href="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css" rel="stylesheet" type="text/css" />
 
-   <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
-   <!-- Navigation -->
-   <nav class="navbar navbar-light bg-light static-top">
-      <div class="container">
-         <a class="navbar-brand" href="/"><img class="navbar-brand" src="../img/leftovers-delight-logo-2.png"></a>
-         <ul class="nav nav-pills">
-            <li class="nav-item">
-               <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="/faq">FAQ</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="/comments">Comment</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link active" href="/sign-up">Sign-Up</a>
-            </li>
-         </ul>
-         <a class="btn btn-primary" href="/sign-up">Sign In</a>
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="navbar-brand" src="../img/leftovers-delight-logo-2.png"></a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/faq">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/comments">Comment</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/sign-up">Sign-Up</a>
+        </li>
+      </ul>
+      <a class="btn btn-primary" href="/sign-up">Sign In</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <h1>Volunteer Sign-Up Page</h1>
+
+    <form class="add-volunteer-form">
+
+      <h2> Please Enter Your Information Below To Get Started </h2>
+
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="input-first-name">First Name</label>
+          <input type="text" class="form-control" id="input-first-name" data-validation="required" placeholder="First Name">
+        </div>
       </div>
-   </nav>
 
-   <div class="container">
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="input-last-name">Last Name</label>
+          <input type="text" class="form-control" id="input-last-name" data-validation="required" placeholder="Last Name">
+        </div>
+      </div>
 
-      <h1>Volunteer Sign-Up Page</h1>
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="input-email">Phone Number</label>
+          <input type="text" class="form-control" data-format="(ddd) ddd-dddd" data-validation="required custom" data-validation-regexp="^[\(]{0,1}[0-9]{3}[\)]{0,1}[ ]{0,1}[0-9]{3}[- ]{0,1}[0-9]{4}$" id="input-vol-phone" placeholder="Phone Number">
+        </div>
+      </div>
 
-      <form class="add-volunteer-form">
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="input-email">Email</label>
+          <input type="text" class="form-control" data-validation="email required" id="input-email-vol" placeholder="Email">
+        </div>
+      </div>
 
-         <h2> Please Enter Your Information Below To Get Started </h2>
+      <div class="form-row">
+        <div class="form-group col-md-12 col-sm-12">
+          <label for="input-address">Address</label>
+          <input type="text" class="form-control" data-validation="required alphanumeric" data-validation-allowing="#.- " id="input-address" placeholder="1234 Main St">
+        </div>
+      </div>
 
-         <div class="form-row">
-            <div class="form-group col-md-6 col-sm-12">
-               <label for="input-first-name">First Name</label>
-               <input type="text" class="form-control" id="input-first-name" data-validation="required" placeholder="First Name">
-            </div>
-         </div>
+      <div class="form-row">
+        <div class="form-group col-md-4 col-sm-12">
+          <label for="input-address-2">Address 2</label>
+          <input type="text" class="form-control" id="input-address-2" data-validation="required alphanumeric" data-validation-allowing="#.- " placeholder="Apartment, studio, or floor">
+        </div>
+      </div>
 
-         <div class="form-row">
-            <div class="form-group col-md-6 col-sm-12">
-               <label for="input-last-name">Last Name</label>
-               <input type="text" class="form-control" id="input-last-name" data-validation="required" placeholder="Last Name">
-            </div>
-         </div>
-
-         <div class="form-row">
-            <div class="form-group col-md-6 col-sm-12">
-               <label for="input-email">Phone Number</label>
-               <input type="text" class="form-control" data-format="(ddd) ddd-dddd" data-validation="required custom" data-validation-regexp="^[\(]{0,1}[0-9]{3}[\)]{0,1}[ ]{0,1}[0-9]{3}[- ]{0,1}[0-9]{4}$" id="input-vol-phone" placeholder="Phone Number">
-            </div>
-         </div>
-
-         <div class="form-row">
-            <div class="form-group col-md-6 col-sm-12">
-               <label for="input-email">Email</label>
-               <input type="text" class="form-control" data-validation="email required" id="input-email-vol" placeholder="Email">
-            </div>
-         </div>
-
-         <div class="form-row">
-            <div class="form-group col-md-12 col-sm-12">
-               <label for="input-address">Address</label>
-               <input type="text" class="form-control" data-validation="required alphanumeric" data-validation-allowing="#.- " id="input-address" placeholder="1234 Main St">
-            </div>
-         </div>
-
-         <div class="form-row">
-            <div class="form-group col-md-4 col-sm-12">
-               <label for="input-address-2">Address 2</label>
-               <input type="text" class="form-control" id="input-address-2" data-validation="required alphanumeric" data-validation-allowing="#.- " placeholder="Apartment, studio, or floor">
-            </div>
-         </div>
-
-         <div class="form-row">
-            <div class="form-group col-md-4 col-sm-12">
-               <label for="input-city">City</label>
-               <input type="text" class="form-control" data-validation="required" placeholder="Houston" id="input-city">
-            </div>
-            <div class="form-group col-md-3 col-sm-12">
-               <label for="input-state">State</label>
-               <select id="input-state" data-validation="required" class="form-control">
+      <div class="form-row">
+        <div class="form-group col-md-4 col-sm-12">
+          <label for="input-city">City</label>
+          <input type="text" class="form-control" data-validation="required" placeholder="Houston" id="input-city">
+        </div>
+        <div class="form-group col-md-3 col-sm-12">
+          <label for="input-state">State</label>
+          <select id="input-state" data-validation="required" class="form-control">
             <option value="" selected>Choose...</option>
             <option value="TX">Texas</option>
             <option value="AL">Alabama</option>
@@ -153,82 +156,82 @@
             <option value="WY">Wyoming</option>
             </option>
           </select>
-            </div>
+        </div>
 
-            <div class="form-group col-md-3 col-sm-12">
-               <label for="input-zip">Zip</label>
-               <input type="text" class="form-control" data-validation="required number length" data-validation-length="5" id="input-zip">
-            </div>
+        <div class="form-group col-md-3 col-sm-12">
+          <label for="input-zip">Zip</label>
+          <input type="text" class="form-control" data-validation="required number length" data-validation-length="5" id="input-zip">
+        </div>
 
-            <div class="form-group col-md-2 col-sm-12">
-               <label for="input-vehicle-vol">Transportation</label>
-               <select id="input-vehicle-vol" data-validation="required" class="form-control">
+        <div class="form-group col-md-2 col-sm-12">
+          <label for="input-vehicle-vol">Transportation</label>
+          <select id="input-vehicle-vol" data-validation="required" class="form-control">
             <option value="" selected>Choose...</option>
             <option value="car">Car</option>
             <option value="motorcycle">Motocycle</option>
             <option value="bicycle">Bicycle</option>
             <option value="public">Public Transportation</option>
           </select>
-            </div>
-            <div class="col-md-8">
-               <button type="submit" id="submit-volunteer-new" class="btn btn-primary">Submit</button>
-            </div>
-         </div>
-      </form>
-   </div>
-   <!--close container-->
-
-   <!-- Footer -->
-   <footer class="footer bg-light">
-      <div class="container">
-         <div class="row text-center">
-            <div class="col-12">
-               <img style="max-width:200px; margin-bottom:30px;" src="../img/leftovers-delight-logo-2.png">
-            </div>
-            <div class="col-12">
-               <span class="copyright">©2018 Leftovers Delight</span>
-            </div>
-
-         </div>
+        </div>
+        <div class="col-md-8">
+          <button type="submit" id="submit-volunteer-new" class="btn btn-primary">Submit</button>
+        </div>
       </div>
-   </footer>
+    </form>
+  </div>
+  <!--close container-->
 
-   <!-- Begin modal -->
-   <!-- Modal -->
-   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-         <div class="modal-content">
-            <div class="modal-header">
-               <!-- <h5 class="modal-title" id="exampleModalLabel">Welcome to the team!</h5> -->
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12">
+          <img style="max-width:200px; margin-bottom:30px;" src="../img/leftovers-delight-logo-2.png">
+        </div>
+        <div class="col-12">
+          <span class="copyright">©2018 Leftovers Delight</span>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Begin modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h5 class="modal-title" id="exampleModalLabel">Welcome to the team!</h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-            </div>
-            <div class="modal-body">
-               <h5 id="modal-body-text" style="text-align: center"></h5>
-            </div>
-            <div class="modal-footer">
-               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-         </div>
+        </div>
+        <div class="modal-body">
+          <h5 id="modal-body-text" style="text-align: center"></h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
       </div>
-   </div>
-   <!-- End modal -->
+    </div>
+  </div>
+  <!-- End modal -->
 
 
 
 
-   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-   <script>
-      $.validate({
-         modules: 'security, html5'
-      });
-   </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+  <script>
+    $.validate({
+      modules: 'security, html5'
+    });
+  </script>
 
-   <script src="/js/vol-signup-script.js"></script>
+  <script src="/js/vol-signup-script.js"></script>
 
 </body>
 
