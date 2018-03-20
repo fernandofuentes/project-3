@@ -1,28 +1,31 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
 
-    <title> About Us Page </title>
+  <title> About Us Page </title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/round-about.css" rel="stylesheet">
-    <link href="css/aboutus.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    
+  <!-- Custom styles for this template -->
+  <link href="css/round-about.css" rel="stylesheet">
+  <link href="css/aboutus.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
 
-  </head>
+
+</head>
+
 <body>
 
   <!-- Navigation -->
+  
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="/">
@@ -36,11 +39,15 @@
           <a class="nav-link" href="/faq">FAQ</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/comments">Comment</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sign-up">Sign-Up</a>
         </li>
+  
       </ul>
       <a class="btn btn-primary" href="/sign-up">Sign In</a>
     </div>
@@ -101,7 +108,13 @@
       <!-- ReactJS is run in this portion of the webpage only! -->
 
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-        <div id="root"></div>
+        <div class='container'>
+          <h1> Click The Button For A Fun Fact </h1>
+          <div id='box' style='border: 1px solid #333; background-color: red; width: 100px; height: 100px;'></div>
+          <hr/>
+
+          <div id='root' class='mt-3'></div>
+        </div>
       </div>
 
     </div>
@@ -124,15 +137,20 @@
     </div>
   </footer>
 
-  <script src="/src/app.js"></script>
-  <script src="/src/index.js"></script>
-  <script src="/src/app.js"></script>
-  <script src="/src/registrationServiceWorker.js"></script>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.min.js"></script>
+
+  <script src="component.js" type='text/babel'></script>
+  <script src="script.js"></script>
 
 </body>
 
