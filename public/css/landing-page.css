@@ -1,128 +1,142 @@
 h1 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  color: #303E4E;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #303E4E;
 }
 
 h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  color: #222222;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #222222;
 }
 
 p {
-  font-family: 'Roboto', sans-serif;
-  color: #333333;
-  line-height: 2em;
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+    line-height: 2em;
 }
 
 a {
-  font-family: 'Roboto', sans-serif;
-  color: #333333;
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
 }
 
 span.home-heading {
-  font-size: 5em;
-  font-weight: 900;
-  line-height: 1em;
+    font-size: 5em;
+    font-weight: 900;
+    line-height: 1em;
 }
 
 span.home-subheading {
-  font-size: 2em;
-  font-weight: 300;
-  line-height: 1em;
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 1em;
 }
 
 .form-box {
-  background-color: #222222;
-  opacity: 0.8;
-  padding: 20px;
+    background-color: #222222;
+    opacity: 0.8;
+    padding: 20px;
 }
 
 .form-box h2, .form-box p {
-  color: #ffffff;
+    color: #ffffff;
 }
 
 .form-box p a {
-  color: limegreen;
+    color: limegreen;
 }
 
 .container.welcome-container {
-  margin-top: 40px;
-  margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 aside .btn-primary {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-  width: 100%;
-  margin-bottom: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+aside .btn-success {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+aside .btn-info {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+aside .btn-warning {
+    /* background-color: #007bff;
+    border-color: #007bff; */
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 header.masthead {
-  position: relative;
-  background-color: #343a40;
-  background: url("../img/home-page-banner.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  color: #ffffff;
+    position: relative;
+    background-color: #343a40;
+    background: url("../img/home-page-banner.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    color: #ffffff;
 }
 
 header.masthead p {
-  color: #ffffff;
+    color: #ffffff;
 }
 
 header.masthead a {
-  color: #ffffff;
-  font-weight: bold;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 header.masthead a:hover {
-  color: #11A033;
+    color: #11A033;
 }
 
 header.masthead .overlay {
-  position: absolute;
-  background-color: #000000;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0.5;
+    position: absolute;
+    background-color: #000000;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
 }
 
 header.masthead h1 {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 @media (min-width: 768px) {
-  header.masthead {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-  header.masthead h1 {
-    font-size: 3rem;
-  }
+    header.masthead {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    header.masthead h1 {
+        font-size: 3rem;
+    }
 }
 
 .showcase .showcase-text {
-  padding: 3rem;
+    padding: 3rem;
 }
 
 .showcase .showcase-img {
-  min-height: 30rem;
-  background-size: cover;
+    min-height: 30rem;
+    background-size: cover;
 }
 
 @media (min-width: 768px) {
-  .showcase .showcase-text {
-    padding: 7rem;
-  }
+    .showcase .showcase-text {
+        padding: 7rem;
+    }
 }
 
 /******************************************
@@ -132,17 +146,17 @@ Testimonials
 ******************************************/
 
 .testimonials {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
 }
 
 .testimonials .testimonial-item {
-  max-width: 18rem;
+    max-width: 18rem;
 }
 
 .testimonials .testimonial-item img {
-  max-width: 12rem;
-  box-shadow: 0px 5px 5px 0px #adb5bd;
+    max-width: 12rem;
+    box-shadow: 0px 5px 5px 0px #adb5bd;
 }
 
 /******************************************
@@ -152,56 +166,56 @@ CALL TO ACTION
 ******************************************/
 
 .call-to-action {
-  position: relative;
-  background-color: #343a40;
-  background: url("/img/bg-masthead.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+    position: relative;
+    background-color: #343a40;
+    background: url("/img/bg-masthead.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
 }
 
 .call-to-action .overlay {
-  position: absolute;
-  background-color: #212529;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0.3;
+    position: absolute;
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
 }
 
 #donation-table {
-  width: 99%;
+    width: 99%;
 }
 
 .table-headers {
-  background-color: yellow;
-  font-weight: bold;
+    background-color: yellow;
+    font-weight: bold;
 }
 
 .head-cells {
-  font-size: 16px;
-  /* color: red; */
-  padding: 10px;
+    font-size: 16px;
+    /* color: red; */
+    padding: 10px;
 }
 
 .data-cell {
-  padding: 10px;
+    padding: 10px;
 }
 
 .claim-btn {
-  width: 100%
+    width: 100%
 }
 
 #claim-donation {
-  width: 100%;
+    width: 100%;
 }
 
 #map {
-  height: 400px;
-  width: 100%;
-  border: 1px solid black;
+    height: 400px;
+    width: 100%;
+    border: 1px solid black;
 }
