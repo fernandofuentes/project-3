@@ -2,150 +2,151 @@
 <html lang="en">
 
 <head>
-    <title>Dashboard</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Dashboard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Custom fonts for this template -->
-    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <!-- Custom fonts for this template -->
+  <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/landing-page.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/landing-page.css" rel="stylesheet">
 
-    <meta name="google-site-verification" content="f04-mSHaVqHobMAYg2o4DIIkOILh9G-rrT3OsIg9-VM" />
+  <meta name="google-site-verification" content="f04-mSHaVqHobMAYg2o4DIIkOILh9G-rrT3OsIg9-VM" />
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light static-top">
-        <div class="container">
-            <a class="navbar-brand" href="/"><img class="navbar-brand" src="img/leftovers-delight-logo-2.png"></a>
-            <ul class="nav nav-pills">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/faq">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/comments">Comment</a>
-                </li>
-
-            </ul>
-            <a class="btn btn-danger" href="/logout">Logout</a>
-        </div>
-    </nav>
-
-    <!-- Welcome *NAME" -->
+  <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2>Welcome <span class="member-name"></span></h2>
-            </div>
-        </div>
+      <a class="navbar-brand" href="/"><img class="navbar-brand" src="img/leftovers-delight-logo-2.png"></a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/faq">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/comments">Comment</a>
+        </li>
+
+      </ul>
+      <a class="btn btn-danger" href="/logout">Logout</a>
     </div>
+  </nav>
 
-    <!-- Sign up portal / 3 choices -->
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1>How would you like to help today?</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div>
-                    <label>Volunteer to deliver food</label><br>
-                    <button type="button" class="btn btn-primary" id="pickup">Pickup/Deliver</button>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div>
-                    <label>I want to donate food from my business</label><br>
-                    <button type="button" class="btn btn-primary" id="donate">Donate</button>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div>
-                    <label>I would like food</label><br>
-                    <button type="button" class="btn btn-primary" id="get">Receive</button>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="dashboard"></div>
-            </div>
-        </div>
-        <div class='row'>
-            <h4 id='map-title'>Houston</h4>
-            <div id='map'></div>
-        </div>
+  <!-- Welcome *NAME" -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2>Welcome <span class="member-name"></span></h2>
+      </div>
     </div>
+  </div>
+
+  <!-- Sign up portal / 3 choices -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>How would you like to help today?</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div>
+          <label>Volunteer to deliver food</label><br>
+          <button type="button" class="btn btn-primary" id="pickup">Pickup/Deliver</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div>
+          <label>I want to donate food from my business</label><br>
+          <button type="button" class="btn btn-primary" id="donate">Donate</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div>
+          <label>I would like food</label><br>
+          <button type="button" class="btn btn-primary" id="get">Receive</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="dashboard"></div>
+      </div>
+    </div>
+    <div class='row'>
+      <h4 id='map-title'>Houston</h4>
+      <div id='map'></div>
+    </div>
+  </div>
 
 
 
-    <!-- Begin modal -->
-    <!-- Modal -->
-    <div class="modal fade" id="dashboardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <!-- Begin modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="dashboardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
-                <div class="modal-body">
-                    <h5 id="modal-body-text" style="text-align: center"></h5>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
         </div>
+        <div class="modal-body">
+          <h5 id="modal-body-text" style="text-align: center"></h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
-    <!-- End modal -->
+  </div>
+  <!-- End modal -->
 
-    <!-- Footer -->
-    <footer class="footer bg-light">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-12">
-                    <img style="max-width:200px; margin-bottom:30px;" src="../img/leftovers-delight-logo-2.png">
-                </div>
-                <div class="col-12">
-                    <span class="copyright">©2018 Leftovers Delight</span>
-                </div>
-
-            </div>
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12">
+          <img style="max-width:200px; margin-bottom:30px;" src="../img/leftovers-delight-logo-2.png">
         </div>
-    </footer>
+        <div class="col-12">
+          <span class="copyright">©2018 Leftovers Delight</span>
+        </div>
 
-    <!-- JQuery 3.3.1 -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+      </div>
+    </div>
+  </footer>
 
-    <!-- TETHER -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <!-- JQuery 3.3.1 -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
-    <!-- POPPER / A Bootstrap CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <!-- TETHER -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 
-    <!-- BOOTSTRAP JS -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- POPPER / A Bootstrap CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
-    <!-- Maps API Key -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEkI7qU2GiLBFGdTKSINkkZnHToR6DXxU&callback=initMap">
+  <!-- BOOTSTRAP JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Maps API Key -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEkI7qU2GiLBFGdTKSINkkZnHToR6DXxU&callback=initMap">
+  </script>
 
 
-    </script>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.js"></script>
-    <script type="text/javascript" src="js/dashboard.js"></script>
-    <script type="text/javascript" src="js/maps.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.js"></script>
+  <script type="text/javascript" src="js/dashboard.js"></script>
+  <script type="text/javascript" src="js/maps.js"></script>
 
 
 
