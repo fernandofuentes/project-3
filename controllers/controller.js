@@ -5,7 +5,17 @@ var isAuthenticated = require( "../config/middleware/isAuthenticated" );
 const Sequelize = require( "sequelize" )
 const Op = Sequelize.Op
 
+const key = require( "./key.js" );
 
+
+//twilio setup
+var accountSid = key.accountSid; // Your Account SID from www.twilio.com/console
+var authToken = key.authToken; // Your Auth Token from www.twilio.com/console
+
+var twilio = require( 'twilio' );
+var client = new twilio( accountSid, authToken );
+var shelterNumbers;
+//end twilio setup
 
 var id;
 
@@ -357,19 +367,44 @@ router.get( "/volunteerquery/:query", function ( req, res ) {
 
 router.post( "/dashboard", isAuthenticated, function ( req, res ) {
   db.Donation.create( {
-      food_item: req.body.food_item,
-      quantity: req.body.quantity,
-      donor_business_name: req.body.donor_business_name,
-      DonorId: req.user.id
-    } ).then( function ( dbFam ) {
-      res.json( dbFam );
-      console.log( "donation .then happened" );
-    } )
-    .catch( function ( err ) {
+    food_item: req.body.food_item,
+    quantity: req.body.quantity,
+    donor_business_name: req.body.donor_business_name,
+    DonorId: req.user.id
+  } ).then( function ( dbFam ) {
+    res.json( dbFam );
+    console.log( "donation .then happened" );
 
-      res.json( err );
-    } );
-} )
+    db.Destination.findAll().then( function ( shelterNumbers ) {
+        console.log( 'volnumz are:', shelterNumbers );
+
+
+        // var numbers = shelterNumbers[ 0 ].phone_number );
+
+        var numbers = shelterNumbers.map( function ( e ) {
+          return e.phone_number
+        } )
+
+
+        //need to loop thru shelterNumbers array and create messages for each shelter so they know a donation was made
+        //start twilio message
+        client.messages.create( {
+            body: `${dbFam.donor_business_name} posted a new donation of ${dbFam.food_item}`,
+            to: numbers, // Text this number
+            from: '+12569739723' // From a valid Twilio number
+          } )
+          .then( ( message ) => console.log( message.sid ) );
+        //end twilio message
+
+      } )
+      .catch( function ( err ) {
+
+        res.json( err );
+      } );
+
+  } )
+
+} ) //end dashboard post
 
 router.delete( "/dashboard/delete", isAuthenticated, function ( req, res ) {
   db.User.destroy( {
@@ -382,6 +417,7 @@ router.delete( "/dashboard/delete", isAuthenticated, function ( req, res ) {
     res.sendStatus( 200 );
   } )
 } )
+
 
 
 

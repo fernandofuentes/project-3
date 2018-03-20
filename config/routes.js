@@ -15,7 +15,7 @@ router.get( "/", function ( req, res ) {
 
 //sign-up portal
 router.get( "/sign-up", function ( req, res ) {
-  res.sendFile( 'signup-portal.html', { root: 'views' } );
+  // res.sendFile( 'signup-portal.html', { root: 'views' } );
 } );
 
 //sign-up volunteer
@@ -39,7 +39,7 @@ router.get( "/faq", function ( req, res ) {
 } );
 
 router.post( "/sign-up/donor", function ( req, res ) {
-  res.sendFile( '/sign-up/sign-up-donor.html', { root: 'views' } );
+  // res.sendFile( '/sign-up/sign-up-donor.html', { root: 'views' } );
   //res.send("response")
 } );
 //why is there and 2nd sign-up/donor?//
@@ -57,23 +57,24 @@ router.get( "/comments", function ( req, res ) {
 } )
 
 router.get( "/members", function ( req, res ) {
-  res.sendFile( '../public/members.html', { root: 'views' } );
+  // res.sendFile( '../public/members.html', { root: 'views' } );
 } )
 
 // router.get( "/dashboard", function ( req, res ) {
 //   res.sendFile( '../public/dashboard.html', { root: 'views' } );
 // } )
 
-router.delete( "/dashboard/delete", function ( req, res ) {
-  db.User.destroy( {
-    where: {
-      id: req.user.id
-    } }).then( function (dbFam) {
-      req.method = 'GET'
-      //  res.redirect("/sign-up");
-       res.sendStatus(200);
-    })
-})
+// router.delete( "/dashboard/delete", function ( req, res ) {
+//   db.User.destroy( {
+//     where: {
+//       id: req.user.id
+//     }
+//   } ).then( function ( dbFam ) {
+//     req.method = 'GET'
+//     //  res.redirect("/sign-up");
+//     res.sendStatus( 200 );
+//   } )
+// } )
 
 
 

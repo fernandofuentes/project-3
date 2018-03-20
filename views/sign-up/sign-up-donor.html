@@ -2,106 +2,107 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Leftovers Delight</title>
+   <meta charset="utf-8">
+   <title>Leftovers Delight</title>
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Custom fonts for this template -->
-    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+   <!-- Custom fonts for this template -->
+   <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   <link href="/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- Custom styles for this template -->
-    <link href="../../public/css/landing-page.css" rel="stylesheet">
+   <!-- Custom styles for this template -->
+   <link href="../public/css/landing-page.css" rel="stylesheet">
+   <link href="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css" rel="stylesheet" type="text/css" />
 
-    <link href="../../public/css/style.css" rel="stylesheet">
-    <link href="../../public/css/custom.css" rel="stylesheet">
+   <link href="../css/style.css" rel="stylesheet">
+   <link href="../css/custom.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Navigation -->
+   <!-- Navigation -->
 
-    <nav class="navbar navbar-light bg-light static-top">
-        <div class="container">
-            <a class="navbar-brand" href="/"><img class="navbar-brand" src="../img/leftovers-delight-logo-2.png"></a>
-            <ul class="nav nav-pills">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/faq">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/comments">Comment</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/sign-up">Sign-Up</a>
-                </li>
+   <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+         <a class="navbar-brand" href="/"><img class="navbar-brand" src="../img/leftovers-delight-logo-2.png"></a>
+         <ul class="nav nav-pills">
+            <li class="nav-item">
+               <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="/faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="/comments">Comment</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link active" href="/sign-up">Sign-Up</a>
+            </li>
 
-            </ul>
-            <a class="btn btn-primary" href="/sign-up">Sign In</a>
-        </div>
-    </nav>
+         </ul>
+         <a class="btn btn-primary" href="/sign-up">Sign In</a>
+      </div>
+   </nav>
 
-    <div class="container">
-        <h1>Donor Sign-Up Page</h1>
-        <form class="add-donor-form">
-            <h2> Please Enter Your Information Below To Get Started </h2>
-            <div class="form-row">
-                <div class="form-group col-md-6 col-sm-12">
-                    <label for="input-business-name">Business Name</label>
-                    <input type="text" class="form-control" id="input-business-name" placeholder="Business Name">
-                </div>
+   <div class="container">
+      <h1>Donor Sign-Up Page</h1>
+      <form class="add-donor-form">
+         <h2> Please Enter Your Information Below To Get Started </h2>
+         <div class="form-row">
+            <div class="form-group col-md-6 col-sm-12">
+               <label for="input-business-name">Business Name</label>
+               <input type="text" class="form-control" data-validation="required" id="input-business-name" placeholder="Business Name">
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6 col-sm-12">
-                    <label for="input-business-name">Business Type</label>
-                    <input type="text" class="form-control" id="input-business-type" placeholder="Business Type">
-                </div>
+         </div>
+         <div class="form-row">
+            <div class="form-group col-md-6 col-sm-12">
+               <label for="input-business-name">Business Type</label>
+               <input type="text" class="form-control" data-validation="required" id="input-business-type" placeholder="Business Type">
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6 col-sm-12">
-                    <label for="input-phone-number">Phone Number</label>
-                    <input type="text" class="form-control" data-format="(ddd) ddd-dddd" id="input-phone-number" placeholder="Phone Number">
-                </div>
+         </div>
+         <div class="form-row">
+            <div class="form-group col-md-6 col-sm-12">
+               <label for="input-phone-number">Phone Number</label>
+               <input type="text" class="form-control" data-validation="required custom" data-validation-regexp="^[\(]{0,1}[0-9]{3}[\)]{0,1}[ ]{0,1}[0-9]{3}[- ]{0,1}[0-9]{4}$" data-format="(ddd) ddd-dddd" id="input-phone-number" placeholder="Phone Number">
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6 col-sm-12">
-                    <label for="input-email-address">Email Address</label>
-                    <input type="text" class="form-control" id="input-email-address" placeholder="Email Address">
-                </div>
+         </div>
+         <div class="form-row">
+            <div class="form-group col-md-6 col-sm-12">
+               <label for="input-email-address">Email Address</label>
+               <input type="text" class="form-control" data-validation="email required" id="input-email-address" placeholder="Email Address">
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="input-manager-name">Manager Name</label>
-                    <input type="text" class="form-control" id="input-manager-name" placeholder="Manager Name">
-                </div>
+         </div>
+         <div class="form-row">
+            <div class="form-group col-md-6">
+               <label for="input-manager-name">Manager Name</label>
+               <input type="text" class="form-control" data-validation="required" id="input-manager-name" placeholder="Manager Name">
             </div>
+         </div>
 
-            <div class="form-row">
-                <div class="form-group col-md-6 col-sm-12">
-                    <label for="input-manager-phone-number">Manager Phone Number</label>
-                    <input type="text" class="form-control" data-format="(ddd) ddd-dddd" id="input-manager-phone-number" placeholder="Manager Phone Number">
-                </div>
+         <div class="form-row">
+            <div class="form-group col-md-6 col-sm-12">
+               <label for="input-manager-phone-number">Manager Phone Number</label>
+               <input type="text" class="form-control" data-validation="required custom" data-validation-regexp="^[\(]{0,1}[0-9]{3}[\)]{0,1}[ ]{0,1}[0-9]{3}[- ]{0,1}[0-9]{4}$" data-format="(ddd) ddd-dddd" id="input-manager-phone-number" placeholder="Manager Phone Number">
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6 col-sm-12">
-                    <label for="input-physical-address">Physical Address</label>
-                    <input type="text" class="form-control" id="input-physical-address" placeholder="Physical Address">
-                </div>
+         </div>
+         <div class="form-row">
+            <div class="form-group col-md-6 col-sm-12">
+               <label for="input-physical-address">Physical Address</label>
+               <input type="text" class="form-control" id="input-physical-address" data-validation="required alphanumeric" data-validation-allowing="#.- " placeholder="Physical Address">
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6 col-sm-12">
-                    <label for="input-city">City</label>
-                    <input type="text" class="form-control" id="input-city" placeholder="City">
-                </div>
+         </div>
+         <div class="form-row">
+            <div class="form-group col-md-6 col-sm-12">
+               <label for="input-city">City</label>
+               <input type="text" class="form-control" data-validation="required" id="input-city" placeholder="City">
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6 col-sm-12">
-                    <label for="input-state">State</label>
-                    <select id="input-state" class="form-control">
-                                <option selected>Choose...</option>
+         </div>
+         <div class="form-row">
+            <div class="form-group col-md-6 col-sm-12">
+               <label for="input-state">State</label>
+               <select id="input-state" data-validation="required" class="form-control">
+                                <option value="" selected>Choose...</option>
                                     <option value="TX">Texas</option>
                                     <option value="AL">Alabama</option>
                                     <option value="AK">Alaska</option>
@@ -155,62 +156,69 @@
                                     <option value="WY">Wyoming</option>
                                 </option>
                             </select>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6 col-sm-12">
-                        <label for="input-zip-code">Zip Code</label>
-                        <input type="text" class="form-control" id="input-zip-code" placeholder="Zip Code">
-                    </div>
-                </div>
-
-                <div class="col-md-8 col-sm-12">
-                    <button type="submit" id="submit-donor-new" class="btn btn-primary">Submit</button>
-                </div>
             </div>
-        </form>
-    </div>
-    <!--close container-->
-
-    <!-- Footer -->
-    <footer class="footer bg-light">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-12">
-                    <img style="max-width:200px; margin-bottom:30px;" src="img/leftovers-delight-logo-2.png">
-                </div>
-                <div class="col-12">
-                    <span class="copyright">©2018 Leftovers Delight</span>
-                </div>
+            <div class="form-row">
+               <div class="form-group col-md-6 col-sm-12">
+                  <label for="input-zip-code">Zip Code</label>
+                  <input type="text" class="form-control" id="input-zip-code" data-validation="required number length" data-validation-length="5" placeholder="Zip Code">
+               </div>
             </div>
-        </div>
-    </footer>
 
-    <!-- Begin modal -->
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Donor Data Successfully Added</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="col-md-8 col-sm-12">
+               <button type="submit" id="submit-donor-new" class="btn btn-primary">Submit</button>
+            </div>
+         </div>
+      </form>
+   </div>
+   <!--close container-->
+
+   <!-- Footer -->
+   <footer class="footer bg-light">
+      <div class="container">
+         <div class="row text-center">
+            <div class="col-12">
+               <img style="max-width:200px; margin-bottom:30px;" src="../img/leftovers-delight-logo-2.png">
+            </div>
+            <div class="col-12">
+               <span class="copyright">©2018 Leftovers Delight</span>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-- Begin modal -->
+   <!-- Modal -->
+   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Donor Data Successfully Added</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-                </div>
-                <div class="modal-body">
-                    <h5 id="modal-body-text"></h5>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
             </div>
-        </div>
-    </div>
-    <!-- End modal -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+            <div class="modal-body">
+               <h5 id="modal-body-text"></h5>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- End modal -->
+   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+   <script>
+      $.validate({
+         modules: 'security, html5'
+      });
+   </script>
 
-    <script src="/js/script-donor.js"></script>
+
+   <script src="/js/script-donor.js"></script>
 </body>
 
 </html>
