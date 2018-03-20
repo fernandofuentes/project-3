@@ -20,22 +20,22 @@ router.get( "/sign-up", function ( req, res ) {
 
 //sign-up volunteer
 router.get( "/sign-up/volunteer", function ( req, res ) {
-  // res.sendFile( '/sign-up/sign-up-vol.html', { root: 'views' } );
+  res.sendFile( '/sign-up/sign-up-vol.html', { root: 'views' } );
 } );
 
 //sign-up donor
 router.get( "/sign-up/donor", function ( req, res ) {
-  // res.sendFile( '/sign-up/sign-up-donor.html', { root: 'views' } );
+  res.sendFile( '/sign-up/sign-up-donor.html', { root: 'views' } );
 } );
 
 //sign-up recipient
 router.get( "/sign-up/recipient", function ( req, res ) {
-  // res.sendFile( '/sign-up/sign-up-recipient.html', { root: 'views' } );
+  res.sendFile( '/sign-up/sign-up-recipient.html', { root: 'views' } );
 } );
 
 //faq
 router.get( "/faq", function ( req, res ) {
-  // res.sendFile( '/faq.html', { root: 'views' } );
+  res.sendFile( '/faq.html', { root: 'views' } );
 } );
 
 router.post( "/sign-up/donor", function ( req, res ) {
@@ -53,7 +53,7 @@ router.post( "/sign-up/donor", function ( req, res ) {
 
 //comments
 router.get( "/comments", function ( req, res ) {
-  // res.sendFile( '/comment-page.html', { root: 'views' } );
+  res.sendFile( '/comment-page.html', { root: 'views' } );
 } )
 
 router.get( "/members", function ( req, res ) {
