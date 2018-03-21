@@ -1,20 +1,16 @@
 {
-  "name": "about-us",
-  "version": "0.1.0",
-  "private": true,
+  "name": "",
+  "version": "",
   "dependencies": {
-    "bootstrap": "^4.0.0",
-    "browser-sync": "^2.23.6",
-    "gulp": "^3.9.1",
+    "babel": "^6.23.0",
+    "http-server": "^0.11.1",
     "jquery": "^3.3.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-scripts": "1.0.13"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "^1.1.1",
+    "startbootstrap-round-about": "^4.0.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
   }
 }
