@@ -5,15 +5,12 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
-  color: #333333;
+  color: #303E4E;
 }
 
 p {
   font-family: 'Lato', sans-serif;
-  color: #999999;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 25px;
+  color: #333333;
 }
 
 strong {
@@ -223,52 +220,6 @@ footer {
 
 .copyright {
   color: #bbbbbb;
-}
-
-.form-error {
-  color: #FFFFFF;
-}
-
-/* * {
-  border: 1px solid black;
-} */
-
-#profile-img {
-  float: left;
-  border: 1px solid black;
-  height: 260px;
-  margin-right: 15px;
-}
-
-#comments-box {
-  clear: both;
-}
-
-#left-div {
-  border-right: 1px solid red;
-}
-
-.profile-header-text {
-  font-weight: bold;
-}
-
-.profile-text {
-  color: red;
-  font-style: italic;
-}
-
-.comments {
-  background-color: #eeeeee;
-  padding: 10px;
-}
-
-.map-dashboard {
-  margin-top: 40px;
-}
-
-.box-thing {
-  background: #dddddd;
-  padding: 20px;
 }
 
 /***** Media queries *****/
