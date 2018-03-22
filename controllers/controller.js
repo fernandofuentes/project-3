@@ -382,6 +382,7 @@ router.post( "/dashboard", isAuthenticated, function ( req, res ) {
         // var numbers = shelterNumbers[ 0 ].phone_number );
 
         var numbers = shelterNumbers.map( function ( e ) {
+          console.log( "e.phone number is:", e.phone_number );
           return e.phone_number
         } )
 
