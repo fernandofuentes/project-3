@@ -150,8 +150,16 @@ $( document ).ready( function () {
 
 
   // this on click is for claiming a donation for your shelter
-  $( "#dashboard" ).on( "click", "#claim-btn", function () {
+  $( "#dashboard" ).on( "click", "#claim-donation", function ( event ) {
+    event.preventDefault();
+
+    $( ".modal" ).modal( 'show' );
+    $( "#modal-body-text" ).text( "Your shelter has made a claim on a donation. A volunteer will be dropping it off soon." );
+
+    $( "#dashboard" ).empty();
     console.log( 'claim btn clicked' );
+
+    //launch modal
 
   } ) //end on click for claim button
 
@@ -162,15 +170,14 @@ $( document ).ready( function () {
   //on click for pickup button
   $( "#pickup" ).on( 'click', function ( event ) {
     event.preventDefault();
-    $( "#dashboard" ).empty();
 
-    //this should then display all donations that have been claimed by shelters.
-    //display should also be a map of Available donations.
-    //display should be a table with checkbox for volunteer to claim they're picking the donation up
-    // in the talbe should be donation with id, donor, donor address, and shelter claiming it with id and address?
-    //check row, then Submit
-    //post happens which creates new row in 'pick_up' table.
-    //google map populates with address, or addresses of pick_up table where vol id matches user.id
+    $( ".modal" ).modal( 'show' );
+    $( "#modal-body-text" ).text( "Thanks for volunteering to deliver this donation. You are appreciated." );
+
+    $( "#dashboard" ).empty();
+    console.log( 'pickup button clicked' );
+
+    //launch modal
 
   } )
 
