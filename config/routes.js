@@ -39,7 +39,7 @@ router.get( "/faq", function ( req, res ) {
 } );
 
 router.get( "/about", function ( req, res ) {
-  res.sendFile( '/about-us/build/index.html', { root: 'views' } );
+  res.sendFile( '/aboutus.html', { root: 'views' } );
 } );
 
 router.post( "/sign-up/donor", function ( req, res ) {
